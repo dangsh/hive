@@ -24,8 +24,14 @@ for i in range(10):
         time = a.split('/')[-2]
         store = a.split('/')[-3]
         # author = a.split('/')[-4]
-        name = a.split('/')[0:-4]
-        newsary.append({'title': title , 'name': name , 'person':person , 'jianjie': jianjie , 'price' : price , 'time' : time , 'store' : store })
+        # name = a.split('/')[:-4]
+        name1 = news.select('p')[0].text.split('/')[:-3][0]
+        name2 = ""
+        try:
+            name2 = "," + news.select('p')[0].text.split('/')[:-3][1]
+        except:
+            pass;
+        newsary.append({'title': title , 'name': name1 + name2 , 'person':person , 'jianjie': jianjie , 'price' : price , 'time' : time , 'store' : store })
 
 newsdf = pandas.DataFrame(newsary)
 newsdf.to_excel('doubanbook1.xlsx')
