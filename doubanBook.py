@@ -11,7 +11,7 @@ for i in range(10):
     for news in soup.select('.item'): #定位
         person = news.find_all(class_='pl')[1].text.replace(' ','')
         title = news.select('a')[1].text.replace(' ','')
-
+        
         jianjie = ""
         try:
             jianjie = news.find_all(class_='inq')[0].text 
@@ -19,7 +19,13 @@ for i in range(10):
             pass;
         
         name = news.select('p')[0].text
-        newsary.append({'title': title , 'name': name , 'person':person , 'jianjie': jianjie})
+        a = news.select('p')[0].text
+        price = a.split('/')[-1]
+        time = a.split('/')[-2]
+        store = a.split('/')[-3]
+        # author = a.split('/')[-4]
+        name = a.split('/')[0:-4]
+        newsary.append({'title': title , 'name': name , 'person':person , 'jianjie': jianjie , 'price' : price , 'time' : time , 'store' : store })
 
 newsdf = pandas.DataFrame(newsary)
 newsdf.to_excel('doubanbook1.xlsx')
