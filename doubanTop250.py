@@ -8,12 +8,8 @@ headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/5
 for i in range(10):
     res = requests.get('https://movie.douban.com/top250?start='+ str(25*i) +'&filter=' , headers = headers)
     soup = BeautifulSoup(res.text , 'html.parser') 
-
     for news in soup.select('#content li'): #定位
-            
-        
             newsary.append({'title':news.select('span')[0].text , 'author':news.select('p')[0].text})
-    
 newsdf = pandas.DataFrame(newsary)
 newsdf.to_excel('douban.xlsx')
 

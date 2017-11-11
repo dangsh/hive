@@ -1,24 +1,21 @@
-# rank-view-list li
+import os
 import requests
 from bs4 import BeautifulSoup
-import pandas
-
-newsary = []
-
-
-for i in range(25):
+import csv
+tmp = os.path.exists("500.csv")
+c = open("500.csv","a")
+writer = csv.writer(c, lineterminator='\n')
+if tmp == False:
+    writer.writerow(['title', 'name', 'style', 'describe', 'lastest', 'url'])
+for i in range(1):
     res = requests.get('http://r.qidian.com/yuepiao?chn=-1&page='+str(i))
     soup = BeautifulSoup(res.text , 'html.parser') 
-
     for news in soup.select('.rank-view-list li'): #定位
-        # print(news)
-
-        # print(news.select('a')[1].text,news.select('a')[2].text,news.select('a')[3].text,news.select('p')[1].text,news.select('p')[2].text,news.select('a')[0]['href'])
-
-        newsary.append({'title':news.select('a')[1].text,'name':news.select('a')[2].text,'style':news.select('a')[3].text,'describe':news.select('p')[1].text,'lastest':news.select('p')[2].text,'url':news.select('a')[0]['href']})
-    
-
-newsdf = pandas.DataFrame(newsary)
-# print(newsdf)
-newsdf.to_excel('qidian2.xlsx')
-# newsdf.to_excel('qidian_rank1.xlsx')
+        data = []
+        data.append(news.select('a')[1].text.strip())
+        data.append(news.select('a')[2].text.strip())
+        data.append(news.select('a')[3].text.strip())
+        data.append(news.select('p')[1].text.strip())
+        data.append(news.select('p')[2].text.strip())
+        data.append(news.select('a')[0]['href'].strip())
+        writer.writerow(data)
