@@ -20,12 +20,12 @@ try:
         gongzuo.append(work_href)
 
 
-    gongzuo = gongzuo[:20]
+    gongzuo = gongzuo[:60]
 
     for j in gongzuo:
         print(j)
-        for i in range(10):
-            time.sleep(4)
+        for i in range(20):
+            time.sleep(2)
             res = requests.get( j + str(i+1) , headers = headers)
             soup = BeautifulSoup(res.text , 'html.parser') 
             for news in soup.select('.default_list'): #定位
@@ -42,11 +42,11 @@ try:
                 newsary.append({'companyName': companyName , 'companyClass' : companyClass , 'companySpeak':companySpeak , 'workName' : workName , 'workMoney' : workMoney , 'workNeed' : workNeed , 'url' : url , 'place' : place})
 except:
     newsdf = pandas.DataFrame(newsary)
-    newsdf.to_excel('lagouPlusp3.xlsx')
+    newsdf.to_excel('lagouPlusp.xlsx')
 
 
 newsdf = pandas.DataFrame(newsary)
-newsdf.to_excel('lagouPlusp3.xlsx')
+newsdf.to_excel('lagouPlusp.xlsx')
 
 
 
