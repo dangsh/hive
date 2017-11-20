@@ -18,7 +18,6 @@ class SpiderMan(scrapy.Spider):
         #     oneItem["title"] = title
         #     oneItem["targetUrl"] = targetUrl
         #     print(oneItem)
-            
 
 
         for item in response.xpath("//div/dl/dd/a"):

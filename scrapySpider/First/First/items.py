@@ -14,4 +14,10 @@ class FirstItem(scrapy.Item):
     title = scrapy.Field()
     targetUrl = scrapy.Field()
     docName = scrapy.Field()
+
+    jobClass = scrapy.Field()
+    jobUrl = scrapy.Field()
+    jobName = scrapy.Field()
+    jobMoney = scrapy.Field()
+    jobNeed = scrapy.Field()
     pass
