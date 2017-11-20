@@ -20,4 +20,7 @@ class FirstItem(scrapy.Item):
     jobName = scrapy.Field()
     jobMoney = scrapy.Field()
     jobNeed = scrapy.Field()
+    jobCompany = scrapy.Field()
+    jobType = scrapy.Field()
+    jobSpesk = scrapy.Field()
     pass

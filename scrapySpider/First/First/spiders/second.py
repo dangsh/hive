@@ -48,11 +48,25 @@ class Lagou(scrapy.Spider):
         for sel2 in response.xpath('//ul[@class="item_con_list"]/li'):
             jobName = sel2.xpath('div/div/div/a/h3/text()').extract()
             jobMoney = sel2.xpath('div/div/div/div/span/text()').extract()
-            jobNeed = sel2.xpath('div/div/div/div/text()').extract()
+            jobNeed = sel2.xpath('div/div/div/div/text()').extract() 
+            jobNeed = jobNeed[2].strip() 
+            jobCompany = sel2.xpath('div/div/div/a/text()').extract()
+            jobCompany =jobCompany[3].strip()
+
+            jobType = sel2.xpath('div/div/div/text()').extract()
+            jobType = jobType[7].strip()
+
+            jobSpesk = sel2.xpath('div[@class="list_item_bot"]/div/text()').extract()
+            jobSpesk =jobSpesk[-1].strip()
+
             Item = FirstItem()
             Item["jobName"] = jobName
+            Item["jobMoney"] = jobMoney
+            Item["jobNeed"] = jobNeed
+            Item["jobCompany"] = jobCompany
+            Item["jobType"] = jobType
+            Item["jobSpesk"] = jobSpesk
             # print(oneItem["jobName"])
-
             yield Item
             
 
