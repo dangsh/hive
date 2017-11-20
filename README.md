@@ -38,3 +38,12 @@ lagouPlusP.xlsx文件储存了简单测试的结果，gongzuo.xlsx储存了所�
 理论上应该可以爬取到整个网站15000条左右的招聘信息
 进行了简单的测试，爬取到了3000多条数据储存在 lagouPlusp.xlsx文件之中
 在之后还会对这个爬虫进行一些改良
+
+## 整合了文件夹的结构
+创建了两个文件夹 1.beautiSoupSpider  2.scrapySpider
+将之前的文件放入了 beautiSoupSpider
+
+## 7.First
+利用scrapy框架重写了拉钩爬虫，极大程度上提高了性能
+十秒左右可以爬取到4000条数据，并且做了简单的反反爬虫处理
+还会进行一些升级
