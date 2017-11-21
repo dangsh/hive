@@ -29,7 +29,6 @@ class Lagou(scrapy.Spider):
     }
 
     def parse(self , response):
-        print("pparsepppppppppppppppppppppppppppppppp")
         for item in response.xpath('//div[@class="menu_box"]/div/dl/dd/a'):
             jobClass = item.xpath('text()').extract()
             jobUrl = item.xpath("@href").extract_first()
@@ -39,8 +38,19 @@ class Lagou(scrapy.Spider):
             oneItem["jobUrl"] = jobUrl
             # print(jobUrl)
             # yield oneItem
-            yield scrapy.Request(url = jobUrl  ,cookies=self.cookie , meta = {"jobClass":jobClass} , callback=self.parse_url)
-        
+
+            # jobUrl https://www.lagou.com/zhaopin/Java/2/?filterOption=3
+            # https://www.lagou.com/zhaopin/Java/
+            # print(jobUrl)
+            for i in range(30):
+                
+                jobUrl2 = jobUrl + str(i+1)
+                # print(jobUrl2)
+                try:
+                    yield scrapy.Request(url = jobUrl2  ,cookies=self.cookie , meta = {"jobClass":jobClass} , callback=self.parse_url)
+                except:
+                    pass
+                    
     def parse_url(self , response):
         jobClass = response.meta["jobClass"]
 
@@ -58,6 +68,8 @@ class Lagou(scrapy.Spider):
 
             jobSpesk = sel2.xpath('div[@class="list_item_bot"]/div/text()').extract()
             jobSpesk =jobSpesk[-1].strip()
+
+
 
             Item = FirstItem()
             Item["jobName"] = jobName
