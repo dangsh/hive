@@ -17,7 +17,9 @@ class FirstItem(scrapy.Item):
 
     jobClass = scrapy.Field()
     jobUrl = scrapy.Field()
+
     jobName = scrapy.Field()
+    jobPlace = scrapy.Field()
     jobMoney = scrapy.Field()
     jobNeed = scrapy.Field()
     jobCompany = scrapy.Field()

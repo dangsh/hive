@@ -2,7 +2,7 @@ import scrapy
 from First.items import FirstItem
 
 class Lagou(scrapy.Spider):
-    name = "sean"
+    name = "three"
     start_urls = [
         "https://www.lagou.com/"
     ]
@@ -51,38 +51,20 @@ class Lagou(scrapy.Spider):
                 except:
                     pass
                     
+    # def parse_url(self , response):
+    #     jobClass = response.meta["jobClass"]
+    #     for sel2 in response.xpath('//ul[@class="item_con_list"]/li'):
+    #         jobName = sel2.xpath('div/div/div/a/h3/text()').extract()
+    #         Item = FirstItem()
+    #         Item["jobName"] = jobName
+    #         print(jobName)
+    #         # yield Item
+            
     def parse_url(self , response):
         jobClass = response.meta["jobClass"]
 
-        # print(title)
-        for sel2 in response.xpath('//ul[@class="item_con_list"]/li'):
-            jobName = sel2.xpath('div/div/div/a/h3/text()').extract()
-            jobPlace = sel2.xpath('div/div/div/a/span/em/text()').extract()
-            jobMoney = sel2.xpath('div/div/div/div/span/text()').extract()
-            jobNeed = sel2.xpath('div/div/div/div/text()').extract() 
-            jobNeed = jobNeed[2].strip() 
-            jobCompany = sel2.xpath('div/div/div/a/text()').extract()
-            jobCompany =jobCompany[3].strip()
 
+        for sel2 in response.css('.list_item_top div div a h3'):
+            jobName = sel2.xpath('text()').extract()
 
-            jobType = sel2.xpath('div/div/div/text()').extract()
-            jobType = jobType[7].strip()
-
-            jobSpesk = sel2.xpath('div[@class="list_item_bot"]/div/text()').extract()
-            jobSpesk =jobSpesk[-1].strip()
-
-
-
-            Item = FirstItem()
-            Item["jobName"] = jobName
-            Item["jobPlace"] = jobPlace
-            Item["jobMoney"] = jobMoney
-            Item["jobNeed"] = jobNeed
-            Item["jobCompany"] = jobCompany
-            Item["jobType"] = jobType
-            Item["jobSpesk"] = jobSpesk
-            # print(oneItem["jobName"])
-            yield Item
-            
-
-            
+            print(jobName)
