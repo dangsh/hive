@@ -9,7 +9,6 @@ class Lagou(scrapy.Spider):
     
 
     def parse(self , response):
-        for item in response.css('.title a'):
+        for item in response.css('div:not(#content-container) h1'):
             jobMessage = item.css('::text').extract()
             print(jobMessage)
-            
