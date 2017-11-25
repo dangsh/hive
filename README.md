@@ -52,3 +52,7 @@ lagouPlusP.xlsx文件储存了简单测试的结果，gongzuo.xlsx储存了所�
 升级了First的功能，添加了反反爬虫，20分钟左右爬取到了8万条数据
 速度感人，并且没有被屏蔽
 添加了一个honey文件夹，存储爬取到的数据，以后数据分析可以使用
+
+# 9.xxx
+用于练习middlewares 和 webdriver PhantomJS 爬取动态数据，并且写博客进行记录
+每天都会运行一下First爬虫，继续获取数据 2017 11 25
