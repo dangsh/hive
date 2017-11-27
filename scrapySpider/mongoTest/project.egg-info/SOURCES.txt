@@ -1,0 +1,13 @@
+setup.py
+mongoTest/__init__.py
+mongoTest/items.py
+mongoTest/middlewares.py
+mongoTest/pipelines.py
+mongoTest/settings.py
+mongoTest/spiders/__init__.py
+mongoTest/spiders/test.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt

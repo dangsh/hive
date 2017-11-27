@@ -1,0 +1,42 @@
+2017-11-27 16:45:46 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: mongoTest)
+2017-11-27 16:45:46 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'mongoTest', 'LOG_FILE': 'logs\\day11_27\\test\\2074a800d34f11e799d76807158b033f.log', 'NEWSPIDER_MODULE': 'mongoTest.spiders', 'SPIDER_MODULES': ['mongoTest.spiders']}
+2017-11-27 16:45:46 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-11-27 16:45:47 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'mongoTest.middlewares.MyCustomDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-11-27 16:45:47 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-11-27 16:45:47 [scrapy.middleware] INFO: Enabled item pipelines:
+['mongoTest.myPipeLines.mongoPipe.MongopipClass']
+2017-11-27 16:45:47 [scrapy.core.engine] INFO: Spider opened
+2017-11-27 16:45:47 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-11-27 16:45:47 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2017-11-27 16:47:09 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:57566/wd/hub/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "phantomjs", "platformName": "any"}}, "desiredCapabilities": {"browserName": "phantomjs", "version": "", "platform": "ANY", "javascriptEnabled": true}}
+2017-11-27 16:47:09 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2017-11-27 16:47:09 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:57566/wd/hub/session/8dbc1440-d34f-11e7-b271-97229a54b8fc/url {"url": "https://www.douban.com/doulist/36980/", "sessionId": "8dbc1440-d34f-11e7-b271-97229a54b8fc"}
+2017-11-27 16:47:10 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2017-11-27 16:47:11 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:57566/wd/hub/session/8dbc1440-d34f-11e7-b271-97229a54b8fc/execute {"script": "var q=document.documentElement.scrollTop=10000", "args": [], "sessionId": "8dbc1440-d34f-11e7-b271-97229a54b8fc"}
+2017-11-27 16:47:11 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2017-11-27 16:47:14 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://127.0.0.1:57566/wd/hub/session/8dbc1440-d34f-11e7-b271-97229a54b8fc/source {"sessionId": "8dbc1440-d34f-11e7-b271-97229a54b8fc"}
+2017-11-27 16:47:14 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2017-11-27 16:47:14 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://127.0.0.1:57566/wd/hub/session/8dbc1440-d34f-11e7-b271-97229a54b8fc/url {"sessionId": "8dbc1440-d34f-11e7-b271-97229a54b8fc"}
+2017-11-27 16:47:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2017-11-27 16:47:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.douban.com/doulist/36980/> (referer: None)
+2017-11-27 16:47:15 [scrapy.extensions.logstats] INFO: Crawled 1 pages (at 1 pages/min), scraped 0 items (at 0 items/min)

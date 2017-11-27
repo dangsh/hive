@@ -43,16 +43,19 @@ lagouPlusP.xlsx文件储存了简单测试的结果，gongzuo.xlsx储存了所�
 创建了两个文件夹 1.beautiSoupSpider  2.scrapySpider
 将之前的文件放入了 beautiSoupSpider
 
-## 7.First
+## 7.scrapySpider/First
 利用scrapy框架重写了拉钩爬虫，极大程度上提高了性能
 十秒左右可以爬取到4000条数据，并且做了简单的反反爬虫处理
 还会进行一些升级
 
-## 8.First
+## 8.scrapySpider/First
 升级了First的功能，添加了反反爬虫，20分钟左右爬取到了8万条数据
 速度感人，并且没有被屏蔽
 添加了一个honey文件夹，存储爬取到的数据，以后数据分析可以使用
 
-# 9.xxx
+# 9.scrapySpider/xxx
 用于练习middlewares 和 webdriver PhantomJS 爬取动态数据，并且写博客进行记录
 每天都会运行一下First爬虫，继续获取数据 2017 11 25
+
+10.scrapySpider/mongoTest
+测试将爬取的数据存储在mongoDB中，学习mongoDB的用法
