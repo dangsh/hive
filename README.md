@@ -57,5 +57,8 @@ lagouPlusP.xlsx文件储存了简单测试的结果，gongzuo.xlsx储存了所�
 用于练习middlewares 和 webdriver PhantomJS 爬取动态数据，并且写博客进行记录
 每天都会运行一下First爬虫，继续获取数据 2017 11 25
 
-10.scrapySpider/mongoTest
+# 10.scrapySpider/mongoTest
 测试将爬取的数据存储在mongoDB中，学习mongoDB的用法
+
+# 11.scrapySpider/company
+获取黄页上软件行业中的信息，企业名称，类型，法人信息等
