@@ -15,4 +15,11 @@ class CompanyItem(scrapy.Item):
     firstUrl = scrapy.Field()
     firstName = scrapy.Field()
     hangye = scrapy.Field()
+
+    lianxiren = scrapy.Field()
+    telephone = scrapy.Field()
+    companyName = scrapy.Field()
+    youbian = scrapy.Field()
+    zhuye = scrapy.Field()
+    
     pass

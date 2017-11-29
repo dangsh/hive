@@ -3,12 +3,9 @@ import scrapy
 from company.items import CompanyItem
 
 class YellowSpider(scrapy.Spider):
-    name = 'yellow'
-    
+    name = 'yellow'  
     sum = 0
-
     start_urls = ['http://b2b.huangye88.com/qiye/ruanjian1720/']
-
     cookie = {
         'user_trace_token':'20170823200708-9624d434-87fb-11e7-8e7c-5254005c3644',
         'LGUID':'20170823200708-9624dbfd-87fb-11e7-8e7c-5254005c3644 ',
@@ -35,19 +32,12 @@ class YellowSpider(scrapy.Spider):
         for i in response.xpath('//div[@class="main"]/div[1]/div[@class="ad_list"]/a'):
             firstName = i.xpath("text()").extract()
             firstUrl = i.xpath("@href").extract()
-            
-            # print(firstName)
-            # print(firstUrl)
-
             oneItem = CompanyItem()
             oneItem["firstName"] = firstName
             oneItem["firstUrl"] = firstUrl
-            # yield oneItem
-            
+
             for url in oneItem["firstUrl"]:
                 yield scrapy.Request(url=url , cookies=self.cookie , meta = {"firstName" : firstName} , callback=self.parse_url)
-        
-
     def parse_url(self , response):
         #第二次解析 获取公司链接 ，进入下一层
         firstName = response.meta["firstName"]
@@ -63,29 +53,44 @@ class YellowSpider(scrapy.Spider):
         #找到公司链接
         for i in response.css('#jubao dl dt h4 a'):
             # companyName = i.xpath('text()').extract()
-            companyUrl = i.xpath('@href').extract()
-            
-            # print(companyName , companyUrl)
-            
+            companyUrl = i.xpath('@href').extract()           
             yield scrapy.Request(url=companyUrl[0] , cookies=self.cookie , callback=self.parse_url2)
 
     def parse_url2(self , response):
         #第三次解析 获得公司简介，联系方式url
-        
-        # a = response.xpath('//p[@class="txt"]/a/@href').extract()
-        # print("xxxxxxxxxxxxxxxxxxxxxxxxx" , a)
 
-        jianjieUrl = response.xpath('//ul[@class="meun"]/a[2]/@href').extract()
-        # print(jianjieUrl)
-        yield scrapy.Request(url=jianjieUrl[0] , cookies=self.cookie , callback=self.parse_url3)
+        jianjieUrl = response.xpath('//ul[@class="meun"]/a/@href').extract()
+        # print(jianjieUrl[-1:])
+        # print(type(jianjieUrl[-1:])) --> list
+        url2 = jianjieUrl[-1:][0]
+        yield scrapy.Request(url=url2 , cookies=self.cookie , callback=self.parse_url3)
 
     def parse_url3(self , response):
+        
         #第四次解析 获取公司简介
+        # print("4444444444444444444444")
+        # data = response.css('.con-txt li a::text').extract()
+        # print(data)
 
-        hangye = response.xpath('//ul[@class="con-txt"]/li/text()').extract()
+        for i in response.css('.con-txt'):
+            lianxiren = i.xpath('li[1]/a/text()').extract()
+            # print("联系人: " , lianxiren[0])
 
-        oneItem = CompanyItem()
-        oneItem["hangye"] = hangye
-        yield oneItem
+            telephone = i.xpath('li[2]/text()').extract()
+            # print("手机号： ", telephone)
 
-        # print(hangye)
+            companyName = i.xpath('li[3]/text()').extract()
+            # print("公司名称： " , companyName)
+            
+            youbian = i.xpath('li[4]/text()').extract()
+            zhuye = i.xpath('li[5]/a/@href').extract()
+            # print("公司主页： " , zhuye)
+
+            oneItem = CompanyItem()
+            oneItem["lianxiren"] = lianxiren
+            oneItem["telephone"] = telephone
+            oneItem["companyName"] = companyName
+            oneItem["youbian"] = youbian
+            oneItem["zhuye"] = zhuye
+
+            yield oneItem
