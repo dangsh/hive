@@ -21,5 +21,8 @@ class CompanyItem(scrapy.Item):
     companyName = scrapy.Field()
     youbian = scrapy.Field()
     zhuye = scrapy.Field()
-    
+
+    companyType = scrapy.Field()
+    companyProduct = scrapy.Field()
+    companyLocal = scrapy.Field()
     pass

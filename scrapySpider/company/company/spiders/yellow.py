@@ -71,6 +71,7 @@ class YellowSpider(scrapy.Spider):
         # print("4444444444444444444444")
         # data = response.css('.con-txt li a::text').extract()
         # print(data)
+        oneItem = CompanyItem()
 
         for i in response.css('.con-txt'):
             lianxiren = i.xpath('li[1]/a/text()').extract()
@@ -82,15 +83,40 @@ class YellowSpider(scrapy.Spider):
             companyName = i.xpath('li[3]/text()').extract()
             # print("公司名称： " , companyName)
             
-            youbian = i.xpath('li[4]/text()').extract()
+            # youbian = i.xpath('li[4]/text()').extract()
             zhuye = i.xpath('li[5]/a/@href').extract()
             # print("公司主页： " , zhuye)
 
-            oneItem = CompanyItem()
             oneItem["lianxiren"] = lianxiren
             oneItem["telephone"] = telephone
             oneItem["companyName"] = companyName
-            oneItem["youbian"] = youbian
+            # oneItem["youbian"] = youbian
             oneItem["zhuye"] = zhuye
 
-            yield oneItem
+
+        for x in response.xpath('//ul[@class="l-txt"][2]'):
+            
+            #  ul + p 选取ul后面的第一个p元素
+            companyType = x.css('.company-rz + li::text').extract()
+            # print(companyType)
+
+            companyProduct = x.xpath('li[@class="contro-num"]/text()').extract()
+            # print(companyProduct)
+
+            oneItem["companyType"] = companyType
+            oneItem["companyProduct"] = companyProduct
+
+            # companyLocal = x.css('.contro-num + li')
+
+            companyLocal = ""
+
+            for local in x.css('.contro-num + li'):
+                local1 = local.xpath('a[1]/text()').extract()
+                local2 = local.xpath('a[2]/text()').extract()
+
+                companyLocal = local1 + local2
+            
+            # print(companyLocal)
+            oneItem["companyLocal"] = companyLocal
+
+        yield oneItem
