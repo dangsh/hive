@@ -2,6 +2,7 @@
 import scrapy
 from company.items import CompanyItem
 
+
 class YellowSpider(scrapy.Spider):
     name = 'yellow'  
     sum = 0
@@ -37,19 +38,31 @@ class YellowSpider(scrapy.Spider):
             oneItem["firstUrl"] = firstUrl
 
             for url in oneItem["firstUrl"]:
-                yield scrapy.Request(url=url , cookies=self.cookie , meta = {"firstName" : firstName} , callback=self.parse_url)
-    def parse_url(self , response):
+                yield scrapy.Request(url=url , cookies=self.cookie , meta = {"firstUrl" : firstUrl} , callback=self.get_page)
+    
+    def get_page(self , response):
         #第二次解析 获取公司链接 ，进入下一层
-        firstName = response.meta["firstName"]
-
+        firstUrl = response.meta["firstUrl"]
+        
         #首先计算这个页面有多少页
-        # page = response.css('.box .tit2 span em::text').extract()
+        page = response.css('.box .tit2 span em::text').extract()
         # print(page)
         #测试类型转换
         # print(type(int(page[0])))
-        # page = int(page[0])//20 + 1
-        # print(firstName , page)
+        page = int(page[0])//20 + 1
         
+        # print(firstUrl , page) #获得url 和 page
+
+        for p in range(page):
+            #获取所有页数的url
+            newUrl = firstUrl[0] + "pn" + str(p+1)  
+            # print(newUrl)
+            yield scrapy.Request(url=newUrl , cookies=self.cookie , callback=self.parse_url)
+
+        
+
+
+    def parse_url(self , response):
         #找到公司链接
         for i in response.css('#jubao dl dt h4 a'):
             # companyName = i.xpath('text()').extract()

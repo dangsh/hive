@@ -38,7 +38,7 @@ FEED_EXPORTERS_BASE = {
 MONGO_HOST = "127.0.0.1"
 MONGO_PORT = 27017
 MONGO_DBNAME = "company"
-MONGO_COLLECTION = "data1"
+MONGO_COLLECTION = "data2"
 
 ITEM_PIPELINES = {
     'company.myPipeLines.mongoPipe.MongopipClass' : 300,

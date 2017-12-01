@@ -58,10 +58,12 @@ lagouPlusP.xlsx文件储存了简单测试的结果，gongzuo.xlsx储存了所�
 每天都会运行一下First爬虫，继续获取数据 2017 11 25
 
 ## 10.scrapySpider/mongoTest
-测试将爬取的数据存储在mongoDB中，学习mongoDB的用法
+测试将爬取的数据存储在MongoDB中，学习MongoDB的用法
 
 ## 11.scrapySpider/company
 获取黄页上软件行业中的信息，企业名称，类型，法人信息等
 实现了大部分功能 2017 11 28
-将数据放入MongoDB中，练习MongoDB的使用 2017 12 1
-
+将数据放入MongoDB中，练习MongoDB的使用 
+再次更新后添加了换页的操作，可以获得所有页数上的数据，爬虫基本完成了
+将数据存入了MongoDB中，但是为了方便查看又运行了一次，放入json文件，3700余条数据
+2017 12 1
