@@ -34,6 +34,15 @@ FEED_EXPORTERS_BASE = {
     'jsonlines' : 'scrapy.contrib.exporter.JsonLinesItemExporter',
 
 }
+
+MONGO_HOST = "127.0.0.1"
+MONGO_PORT = 27017
+MONGO_DBNAME = "company"
+MONGO_COLLECTION = "data1"
+
+ITEM_PIPELINES = {
+    'company.myPipeLines.mongoPipe.MongopipClass' : 300,
+}
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 

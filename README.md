@@ -63,3 +63,5 @@ lagouPlusP.xlsx文件储存了简单测试的结果，gongzuo.xlsx储存了所�
 ## 11.scrapySpider/company
 获取黄页上软件行业中的信息，企业名称，类型，法人信息等
 实现了大部分功能 2017 11 28
+将数据放入MongoDB中，练习MongoDB的使用 2017 12 1
+
