@@ -19,8 +19,21 @@ NEWSPIDER_MODULE = 'KrSpider.spiders'
 #USER_AGENT = 'KrSpider (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
+MY_USER_AGENT = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36",
+    ]
 
+
+DOWNLOADER_MIDDLEWARES = {
+    'KrSpider.middle.myMiddleware.JavaScriptMiddleware':100 ,
+}
+
+FEED_EXPORTERS_BASE = {
+    'json' : 'KrSpider.xxx.chongxie' , 
+    'jsonlines' : 'scrapy.contrib.exporter.JsonLinesItemExporter',
+
+}
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
