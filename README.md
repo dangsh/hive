@@ -67,3 +67,6 @@ lagouPlusP.xlsx文件储存了简单测试的结果，gongzuo.xlsx储存了所�
 再次更新后添加了换页的操作，可以获得所有页数上的数据，爬虫基本完成了
 将数据存入了MongoDB中，但是为了方便查看又运行了一次，放入json文件，3700余条数据
 2017 12 1
+
+## 12.scrapySpider/KrSpider
+爬取36kr的实时资讯
