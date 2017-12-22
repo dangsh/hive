@@ -70,3 +70,6 @@ lagouPlusP.xlsx文件储存了简单测试的结果，gongzuo.xlsx储存了所�
 
 ## 12.scrapySpider/KrSpider
 爬取36kr的实时资讯
+
+## 13.newSpider/bilibili
+请求接口，获取bilibili直播的弹幕内容，简单实现
