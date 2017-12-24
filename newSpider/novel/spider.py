@@ -24,6 +24,8 @@ def getNovelInfo(url):
     response = requests.get(url)
     response.encoding = 'gbk'
     result = response.text
+    reg = r'<meta property="og:description" content="(.*?)"/>'
+    description = re.findall(reg,result,re.S)[0]
     reg = r'<meta property="og:image" content="(.*?)"/>'
     imgUrl = re.findall(reg,result)[0]
     reg = r'<meta property="og:novel:category" content="(.*?)"/>'
@@ -34,7 +36,8 @@ def getNovelInfo(url):
     status = re.findall(reg,result)[0]
     reg = r'<a href="(.*?)" class="reader"'
     chapterUrl = re.findall(reg,result)[0]
-    return imgUrl , sort , author , status , chapterUrl
+
+    return imgUrl , sort , author , status , chapterUrl , description
 
 def getChapterList(url):
     response = requests.get(url)
@@ -52,19 +55,13 @@ def getChapterContent(url):
     chapterContent = re.findall(reg , result , re.S)[0] #re.S python中可以匹配多行
     return chapterContent
 
-
 for novelName , novelUrl in getSortNovelList():
-    imgUrl , sort , author , status , chapterListUrl = getNovelInfo(novelUrl)
-    cursor.execute("insert into novel (sortname , name , imgurl , description , status , author) values ('{}' , '{}' , '{}' , '{}' , '{}' , '{}')" .format (sort , novelName , imgUrl , u'这里是描述' , status , author))
+    imgUrl , sort , author , status , chapterListUrl , description = getNovelInfo(novelUrl)
+    cursor.execute("insert into novel (sortname , name , imgurl , description , status , author) values ('{}' , '{}' , '{}' , '{}' , '{}' , '{}')" .format (sort , novelName , imgUrl , description , status , author))
     conn.commit()
     lastrowid = cursor.lastrowid #插入数据的ID值
     for chapterUrl , chapterName in getChapterList(chapterListUrl):
         chapterContent = getChapterContent(chapterUrl)
-        cursor.execute("insert into chapter(novelid , title , content values({} , '{}' , '{}')".format(lastrowid , chapterName , chapterContent))
+        cursor.execute("insert into chapter(novelid , title , content) values({} , '{}' , '{}')".format(lastrowid , chapterName , chapterContent))
         conn.commit()
-        break
-    break
-
-
-
 conn.close()
