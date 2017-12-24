@@ -73,3 +73,6 @@ lagouPlusP.xlsx文件储存了简单测试的结果，gongzuo.xlsx储存了所�
 
 ## 13.newSpider/bilibili
 请求接口，获取bilibili直播的弹幕内容，简单实现
+
+## 14.newSpider/novel
+全站爬虫，爬取全书网所有小说信息及内容并入库
