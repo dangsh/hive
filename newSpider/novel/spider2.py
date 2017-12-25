@@ -1,6 +1,17 @@
 import requests
 import re
 
+import pymysql
+
+conn = pymysql.connect(
+    host='localhost',
+    port=3306,
+    user='root',
+    passwd='5801200zxg',
+    db='mynovel',
+    charset='utf8'
+)
+cursor = conn.cursor()
 
 def getClassList():
     response = requests.get('http://www.quanshuwang.com/')
@@ -74,9 +85,15 @@ for classUrl , className in getClassList():
     page = getPage(classUrl)
     for novelName , novelUrl in getNovelList(classUrl):
         imgUrl , sort , author , status , chapterUrl , description = getNovelPage(novelUrl)
+        cursor.execute("insert into novel (sortname , name , imgurl , description , status , author) values ('{}' , '{}' , '{}' , '{}' , '{}' , '{}')" .format (sort , novelName , imgUrl , description , status , author))
+        conn.commit()
+        lastrowid = cursor.lastrowid #插入数据的ID值
         for chapterUrl , chapterName in getNovelChapter(chapterUrl):
             content = getChapterContent(chapterUrl)
+            cursor.execute("insert into chapter(novelid , title , content) values({} , '{}' , '{}')".format(lastrowid , chapterName , content))
+            conn.commit()
     print(className , classUrl , page)
 
 
 
+conn.close()
