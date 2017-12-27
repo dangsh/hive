@@ -78,3 +78,6 @@ lagouPlusP.xlsx文件储存了简单测试的结果，gongzuo.xlsx储存了所�
 全站爬虫，爬取全书网所有小说信息及内容并入库
 spider2 更新了spider，可以获取全站的数据，并且保存到数据库
 2017 12 25
+
+## 15.scrapySpider/companyP
+改进爬虫，爬取整个网站的信息
