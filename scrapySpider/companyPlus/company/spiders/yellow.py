@@ -110,34 +110,34 @@ class YellowSpider(scrapy.Spider):
 
             oneItem["lianxiren"] = lianxiren
             oneItem["telephone"] = telephone
-            oneItem["companyName"] = companyName
+            # oneItem["companyName"] = companyName
             # oneItem["youbian"] = youbian
-            oneItem["zhuye"] = zhuye
+            # oneItem["zhuye"] = zhuye
 
 
-        for x in response.xpath('//ul[@class="l-txt"][2]'):
+        # for x in response.xpath('//ul[@class="l-txt"][2]'):
             
-            #  ul + p 选取ul后面的第一个p元素
-            companyType = x.css('.company-rz + li::text').extract()
-            # print(companyType)
+        #     #  ul + p 选取ul后面的第一个p元素
+        #     companyType = x.css('.company-rz + li::text').extract()
+        #     # print(companyType)
 
-            companyProduct = x.xpath('li[@class="contro-num"]/text()').extract()
-            # print(companyProduct)
+        #     companyProduct = x.xpath('li[@class="contro-num"]/text()').extract()
+        #     # print(companyProduct)
 
-            oneItem["companyType"] = companyType
-            oneItem["companyProduct"] = companyProduct
+        #     oneItem["companyType"] = companyType
+        #     oneItem["companyProduct"] = companyProduct
 
-            # companyLocal = x.css('.contro-num + li')
+        #     # companyLocal = x.css('.contro-num + li')
 
-            companyLocal = ""
+        #     companyLocal = ""
 
-            for local in x.css('.contro-num + li'):
-                local1 = local.xpath('a[1]/text()').extract()
-                local2 = local.xpath('a[2]/text()').extract()
+        #     for local in x.css('.contro-num + li'):
+        #         local1 = local.xpath('a[1]/text()').extract()
+        #         local2 = local.xpath('a[2]/text()').extract()
 
-                companyLocal = local1 + local2
+        #         companyLocal = local1 + local2
             
-            # print(companyLocal)
-            oneItem["companyLocal"] = companyLocal
+        #     # print(companyLocal)
+        #     oneItem["companyLocal"] = companyLocal
 
         yield oneItem
