@@ -1,0 +1,3 @@
+[1228/202222.220:ERROR:process_reader_win.cc(123)] NtOpenThread: {无法访问} 过程已请求访问一对象，但未给访问权限。  (0xc0000022)
+[1228/202222.222:ERROR:exception_snapshot_win.cc(87)] thread ID 13524 not found in process
+[1228/202222.222:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
