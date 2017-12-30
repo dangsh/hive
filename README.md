@@ -81,3 +81,6 @@ spider2 更新了spider，可以获取全站的数据，并且保存到数据库
 
 ## 15.scrapySpider/companyP
 改进爬虫，爬取整个网站的信息
+
+## 16.newSpider/jd,weibo
+模拟登录jd，模拟登录weibo并转发微博
