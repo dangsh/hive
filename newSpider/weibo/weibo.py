@@ -2,36 +2,14 @@ from splinter.browser import Browser
 from selenium import webdriver
 import time
 
-# b = Browser(driver_name = 'chrome')
-# b.visit("https://weibo.com/")
-# time.sleep(10)
-# b.fill('username' , '123')
-# b.fill('password' , '123')
-# b.click_link_by_text("你好，请登录")
+b = Browser(driver_name = 'chrome')
+b.visit("https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=3349&r=http%3A%2F%2Fm.weibo.cn%2F")
+time.sleep(10)
+b.find_by_id("loginName").fill("18613723052")
+b.find_by_id("loginPassword").fill("5801200")
+b.find_by_id("loginAction").click()
+time.sleep(10)
+b.find_by_value('转发').first.click()
+time.sleep(3)
+# b.click_link_by_text("发送")
 
-browser = webdriver.Chrome()
-#设置浏览器加载超时时间
-browser.set_page_load_timeout(30)
-loginUrl = "https://weibo.com/"
-browser.get(loginUrl)
-
-try:
-    browser.find_element_by_xpath('//*[@name="username"]').send_keys('13096925043')
-    print('user success!')
-except:
-    print('user error!')
-time.sleep(1)
-
-try:
-    browser.find_element_by_xpath('//*[@name="password"]').send_keys('c2ptymvr')
-    print('pw success!')
-except:
-    print('pw error!')
-time.sleep(1)
-
-try:
-    browser.find_element_by_xpath('//*[@id="pl_login_form"]/div/div[3]/div[6]/a').click()
-    print('click success!')
-except:
-    print('click error!')
-time.sleep(30)
