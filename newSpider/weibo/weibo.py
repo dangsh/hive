@@ -2,6 +2,7 @@ from splinter.browser import Browser
 from selenium import webdriver
 import time
 import json
+import requests
 
 #从user.json中读取账号信息，num为读取第几条账号
 def login(num):
@@ -56,7 +57,29 @@ def oneForward2(b):
         print("转发微博成功")
     except:
         print("转发微博出错")
-for i in range(2):
+
+#通过ip代理获取ip
+def getIp():
+    all_url = [] # 存储IP地址的容器
+    # 代理IP的网址
+    url = "http://api.xicidaili.com/free2016.txt"
+    r = requests.get(url=url)
+    print(r.text)
+    # all_url = re.findall("\d+\.\d+\.\d+\.\d+\:\d+",r.text)
+    # with open("D:\\code\\python\\new\\Brush ticket\\IP.txt",'w') as f:
+    #     for i in all_url:
+    #         f.write(i)
+    #         f.write('\n')
+    # return all_url
+
+#转发特定微博
+def forwardMoney(b):
+    time.sleep(10)
+    b.visit("https://m.weibo.cn/1255795640/4192089996527286")
+    time.sleep(10)
+    oneForward(b)
+
+for i in range(3):
     username , password = login(i)
     b = Browser(driver_name = 'chrome')
     b.visit("https://passport.weibo.cn/signin/login?entry=mweibo&res=wel&wm=3349&r=http%3A%2F%2Fm.weibo.cn%2F")
@@ -66,12 +89,8 @@ for i in range(2):
     b.find_by_id("loginAction").click()
     time.sleep(10)
     forward(b)
-    time.sleep(5)
+    time.sleep(10)
     b.quit()
+    time.sleep(10)
 
 
-##转发特定微博
-# time.sleep(10)
-# b.visit("https://m.weibo.cn/1255795640/4192089996527286")
-# time.sleep(10)
-# oneForward(b)
