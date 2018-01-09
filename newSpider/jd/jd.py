@@ -20,19 +20,22 @@ def loop(b):
         if b.title=="商品已成功加入购物车":
             print("加入购物车成功")
         else:  #多次抢购操作后，有可能会被转到京东首页，所以要再打开手机主页
-            b.visit("https://item.jd.com/4993737.html")
+            print("抢购出错")
+            # b.visit("https://item.jd.com/6086957.html")
+            b.visit("https://item.jd.com/4993751.html")
+            time.sleep(3)
             b.click_link_by_text("立即抢购")
-            time.sleep(1)
-        
     except:
         print("没找到抢购按钮")
-        time.sleep(1)
+        b.reload()
+        time.sleep(2)
         loop(b)
 
 b=Browser(driver_name="chrome") #打开浏览器
-b.visit("https://item.jd.com/4993737.html")
-login(b)
+b.visit("https://item.jd.com/4993751.html")
 time.sleep(2)
+login(b)
+time.sleep(10)
 loop(b)
 
 
