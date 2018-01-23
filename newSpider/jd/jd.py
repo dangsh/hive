@@ -22,7 +22,7 @@ def loop(b):
         else:  #多次抢购操作后，有可能会被转到京东首页，所以要再打开手机主页
             print("抢购出错")
             # b.visit("https://item.jd.com/6086957.html")
-            b.visit("https://item.jd.com/4993751.html")
+            b.visit("https://item.jd.com/6063140.html")
             time.sleep(3)
             b.click_link_by_text("立即抢购")
     except:
@@ -32,7 +32,7 @@ def loop(b):
         loop(b)
 
 b=Browser(driver_name="chrome") #打开浏览器
-b.visit("https://item.jd.com/4993751.html")
+b.visit("https://item.jd.com/6063140.html")
 time.sleep(2)
 login(b)
 time.sleep(10)
