@@ -80,5 +80,8 @@ MySQL 5.7 <br/>
     使用splinter,模拟登录jd，秒杀商品<br/>
 4. weibo<br/>
     使用splinter,模拟登录weibo，自动转发微博<br/>
+4. csdn<br/>
+	使用selenuim,模拟浏览csdn博客，使用ip代理。
+	IP代理从数据库中获得。
 
 </2017><2018>Make everyday better<br/>
