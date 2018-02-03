@@ -14,4 +14,11 @@ def getUrl():
             r.lpush("url" , i.groups()[0])
     print("--------向redis中添加数据完成--------")
 
+#情况redis中的内容
+if __name__ == "__main__":
+    print(r.lrange("url" , 0 , -1))
+    for i in range(500):
+        r.rpop("url")
+    print(r.lrange("url" , 0 , -1))
+
 

@@ -1,10 +1,12 @@
 import requests
 import re
+from utils.linkMongo import storeData
+
 def getCntent(url):
     # print(url)
-    print("111111111111")
+    print("线程1")
     reg = '<span property="v:itemreviewed">(.*?)</span>'
     response = requests.get(url)
     response = response.text
     result = re.findall(reg , response)
-    print(result)
+    storeData(result)
