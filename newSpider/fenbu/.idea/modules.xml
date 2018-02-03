@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../../../IPProxyPool-master/.idea/IPProxyPool-master.iml" filepath="$PROJECT_DIR$/../../../IPProxyPool-master/.idea/IPProxyPool-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/fenbu.iml" filepath="$PROJECT_DIR$/.idea/fenbu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../images/.idea/images.iml" filepath="$PROJECT_DIR$/../images/.idea/images.iml" />
     </modules>
   </component>
 </project>

@@ -85,4 +85,7 @@ MySQL 5.7 <br/>
 	IP代理从数据库中获得。
 5. genbu<br/>
 	利用redis完成分布式爬虫，爬取豆瓣电影top250
+6. images<br/>
+	使用requests下载壁纸网站的图片资源，实现搜索并下载图片
+	2018 2 3
 </2017><2018>Make everyday better<br/>
