@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../../IPProxyPool-master/.idea/IPProxyPool-master.iml" filepath="$PROJECT_DIR$/../../../IPProxyPool-master/.idea/IPProxyPool-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../csdn/.idea/csdn.iml" filepath="$PROJECT_DIR$/../csdn/.idea/csdn.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/fenbu.iml" filepath="$PROJECT_DIR$/.idea/fenbu.iml" />
       <module fileurl="file://$PROJECT_DIR$/../images/.idea/images.iml" filepath="$PROJECT_DIR$/../images/.idea/images.iml" />
+      <module fileurl="file://D:/pythonPra/test/.idea/test.iml" filepath="D:/pythonPra/test/.idea/test.iml" />
     </modules>
   </component>
 </project>
