@@ -28,8 +28,8 @@
       <file leaf-file-name="w2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/weibo/spiders/w2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="37" column="19" lean-forward="false" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="81" />
+            <state relative-caret-position="447">
+              <caret line="49" column="33" lean-forward="true" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -37,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data3.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/data3.json">
+      <file leaf-file-name="pageP.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/pageP.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="9954" column="31" lean-forward="true" selection-start-line="9954" selection-start-column="31" selection-end-line="9954" selection-end-column="31" />
+            <state relative-caret-position="150">
+              <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -50,8 +50,8 @@
       <file leaf-file-name="items.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/weibo/items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            <state relative-caret-position="390">
+              <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -60,18 +60,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/weibo/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="37" column="38" lean-forward="true" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/page.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="155">
+              <caret line="30" column="38" lean-forward="false" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -132,6 +122,7 @@
         <option value="$PROJECT_DIR$/../../scrapySpider/weibo/weibo/middlewares.py" />
         <option value="$PROJECT_DIR$/../../scrapySpider/weibo/weibo/items.py" />
         <option value="$PROJECT_DIR$/../../scrapySpider/weibo/weibo/settings.py" />
+        <option value="$PROJECT_DIR$/../../scrapySpider/weibo/pageP.json" />
         <option value="$PROJECT_DIR$/../../scrapySpider/weibo/weibo/spiders/w2.py" />
       </list>
     </option>
@@ -164,6 +155,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,17 +172,10 @@
               <item name="weibo" type="462c0819:PsiDirectoryNode" />
               <item name="weibo" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="fenbu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="weibo" type="462c0819:PsiDirectoryNode" />
-              <item name="weibo" type="462c0819:PsiDirectoryNode" />
-              <item name="spiders" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -442,13 +427,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Control/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/redis/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -619,17 +597,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TODO.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="510">
             <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -701,9 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2460">
           <caret line="82" column="12" lean-forward="false" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="33" />
-          <folding>
-            <element signature="e#39#78#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -711,19 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3450">
           <caret line="115" column="10" lean-forward="false" selection-start-line="115" selection-start-column="10" selection-end-line="115" selection-end-column="10" />
-          <folding>
-            <marker date="1518228248071" expanded="true" signature="492:554" ph="INSERT INTO blog1... " />
-            <marker date="1518228248071" expanded="true" signature="824:853" ph="DELETE FROM blog1... " />
-            <marker date="1518228248071" expanded="true" signature="1116:1196" ph="select id , blog1" />
-            <marker date="1518228248071" expanded="true" signature="1516:1545" ph="select count... blog1" />
-            <marker date="1518228248071" expanded="true" signature="1886:1942" ph="select id , blog1" />
-            <marker date="1518228248071" expanded="true" signature="2277:2323" ph="select id , blog1" />
-            <marker date="1518228248071" expanded="true" signature="2277:2345" ph="select , fro... " />
-            <marker date="1518228248071" expanded="true" signature="2277:2346" ph="select ip , proxy" />
-            <marker date="1518228248071" expanded="true" signature="2277:2354" ph="select ip , proxy" />
-            <marker date="1518228248071" expanded="true" signature="2680:2748" ph="select ip , proxy" />
-            <marker date="1518228248071" expanded="true" signature="3073:3124" ph="select ip , proxy" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -731,7 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -739,10 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-153">
           <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-          <folding>
-            <marker date="1518249033570" expanded="true" signature="633:688" ph="insert into weibouser... " />
-            <marker date="1518249033570" expanded="true" signature="633:696" ph="insert into weibouser... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -750,9 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="15" column="62" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="62" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -760,15 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-23689">
           <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/data2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="8309" column="0" lean-forward="true" selection-start-line="8309" selection-start-column="0" selection-end-line="8309" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -776,9 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="87" column="50" lean-forward="false" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="50" />
-          <folding>
-            <element signature="e#168#194#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -786,22 +728,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-240439">
           <caret line="60" column="31" lean-forward="true" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/weibo/items.py">
+    <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/data3.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/weibo/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="37" column="38" lean-forward="true" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+        <state relative-caret-position="300">
+          <caret line="9957" column="31" lean-forward="true" selection-start-line="9957" selection-start-column="31" selection-end-line="9957" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -814,20 +747,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/data2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="8309" column="0" lean-forward="false" selection-start-line="8309" selection-start-column="0" selection-end-line="8309" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/weibo/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="30" column="38" lean-forward="false" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/weibo/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/weibo/spiders/w2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="37" column="19" lean-forward="false" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="81" />
+        <state relative-caret-position="447">
+          <caret line="49" column="33" lean-forward="true" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/data3.json">
+    <entry file="file://$PROJECT_DIR$/../../scrapySpider/weibo/pageP.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="9954" column="31" lean-forward="true" selection-start-line="9954" selection-start-column="31" selection-end-line="9954" selection-end-column="31" />
+        <state relative-caret-position="150">
+          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding />
         </state>
       </provider>
