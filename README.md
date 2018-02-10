@@ -9,7 +9,7 @@ hive (虫巢)
 ## 环境依赖<br/>
 python 3.6.2<br/>
 
-####以下为可选:<br/>
+## 以下为可选:<br/>
 scrapy<br/>
 requests<br/>
 bs4 <br/>
@@ -67,6 +67,11 @@ MySQL 5.7 <br/>
     使用chromeDriver模拟浏览器操作，爬取36kr的实时资讯<br/>
 7. companyP<br/>
     改进爬虫，爬取整个网站的信息<br/>
+8. weibo<br/>
+	目标是爬取所有微博用户的信息！！<br/>
+	现在已经成功拿到了一些数据，但是由于请求过于频繁，被封了ip。<br/>
+	使用了http代理，user-Agent ,cookie 但是还是不行。<br/>
+	明天继续！ 2018-2-10<br/>
 
 
 ## V0.0.3 版本内容 newSpider <br/>

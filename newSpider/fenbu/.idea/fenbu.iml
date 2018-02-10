@@ -4,9 +4,8 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="Python 3.6.2 (C:\Users\张霄港\AppData\Local\Programs\Python\Python36-32\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="images" />
-    <orderEntry type="module" module-name="test" />
-    <orderEntry type="module" module-name="csdn" />
+    <orderEntry type="module" module-name="blog" />
+    <orderEntry type="module" module-name="weibo" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />

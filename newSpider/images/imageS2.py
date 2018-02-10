@@ -35,23 +35,23 @@ class Spider():
         return totalPagenum
 
     def main_function(self):
-        self.creat_File()
-        count = self.get_pageNum()
+        self.creat_File() #创建文件夹
+        count = self.get_pageNum() #获取图片总数
         print('We have found: {} images!'.format(count))
-        times = int(count/24 + 1)
-        j = 1
+        times = int(count/24 + 1) #获取页数
+        j = 1 # 计算图片数量
         start = time.time()
         for i in range(times):
-            pic_Urls = self.getLinks(i+1)
+            pic_Urls = self.getLinks(i+1) #获取图片的url
             start2 = time.time()
-            threads = []
-            for item in pic_Urls:
-                t = Thread(target=self.download , args=[item , j])
+            threads = [] #存放线程
+            for item in pic_Urls: #下载图片
+                t = Thread(target=self.download , args=[item , j]) #开启线程
                 t.start()
-                threads.append(t)
-                j += 1
+                threads.append(t) #将线程放进数组中
+                j += 1 #计数
             for t in threads:
-                t.join()
+                t.join() #启动线程
             end2 = time.time()
             print('This page cost: ',end2-start2 ,'s')
         end = time.time()
