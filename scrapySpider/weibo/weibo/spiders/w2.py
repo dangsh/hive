@@ -20,7 +20,7 @@ class WiwiSpider(scrapy.Spider):
 
     # start_urls 没有用，第一次parse只负责拼接url，获取weibo信息列表
     def parse(self, response):
-        for i in range(10):
+        for i in range(1000):
             url = 'https://m.weibo.cn/api/container/getIndex?containerid=102803&client=h5&featurecode=H5tuiguang0623&need_head_cards=1&wm=90112_90001&since_id='+ str(i+1)
             try:
                 yield scrapy.Request(url=url ,cookies=self.cookie ,callback=self.parse2)
@@ -44,16 +44,38 @@ class WiwiSpider(scrapy.Spider):
         weiboid = response.meta["weiboid"]
         response = response.text
         response = json.loads(response)
-        page = response['data']['max']
-        Item = WeiboItem()
-        Item["page"] = page
-        Item["weiboid"] = weiboid
-        yield Item
+        page = 2
+        try:
+            page = response['data']['max']
+        except:
+            pass
+        # Item = WeiboItem()
+        # Item["page"] = page
+        # Item["weiboid"] = weiboid
+        if page > 100:
+            page = 100
+        for i in range(page-1):
+        # for i in range(10):
+            url = 'https://m.weibo.cn/api/comments/show?id=' + weiboid + '&page='+ str(2+i)
+            yield scrapy.Request(url=url, cookies=self.cookie, callback=self.parse4)
+        # yield Item
 
     #第四次解析获取评论者的id
     def parse4(self , response):
-        pass
+        response = response.text
+        response = json.loads(response)
+        # print(response)  #这里有可能是暂无数据
+
+        # print(len(response['data']['data']))
+        for i in range(len(response['data']['data'])):
+            userid = response['data']['data'][i]['user']['id']
+            username = response['data']['data'][i]['user']['screen_name']
+            Item = WeiboItem()
+            Item["userid"] = userid
+            Item["username"] = username
+        yield Item
 
     #第五次解析获取评论者的信息
     def parse5(self , response):
         pass
+

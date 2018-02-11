@@ -1,0 +1,19 @@
+https://m.weibo.cn/api/container/getIndex?containerid=102803&client=h5&featurecode=H5tuiguang0623&need_head_cards=1&wm=90112_90001&since_id=1
+改变id，获取微博列表
+数量为：len(response['data']['cards'])
+id为： response['cards'][i]['mblog']['id']
+-------------------------------------------------------------------
+请求微博id的评论接口，获取评论总数和用户id
+评论总数：response['data']['total_number']
+评论页数：response['data']['max']
+但是由于微博只显示前100页评论，所以最大值为100
+
+https://m.weibo.cn/api/comments/show?id=4205571185795586&page=2
+
+获取用户id和用户名
+用户id：response['data']['data'][i]['user']['id']
+用户名：response['data']['data'][i]['user']['screen_name']
+-------------------------------------------------------------------
+请求用户主页，获取更多的信息（关注，粉丝，性别，地区，注册时间，信用）
+https://m.weibo.cn/u/2384516275
+
