@@ -11,8 +11,8 @@ import scrapy
 class WeiboItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    weiboid = scrapy.Field()
+    # weiboid = scrapy.Field()
     userid = scrapy.Field()
     username = scrapy.Field()
-    page = scrapy.Field()
+    # page = scrapy.Field()
     pass
