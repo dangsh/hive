@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../IPProxyPool-master/.idea/IPProxyPool-master.iml" filepath="$PROJECT_DIR$/../../../IPProxyPool-master/.idea/IPProxyPool-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../blog/.idea/blog.iml" filepath="$PROJECT_DIR$/../../../blog/.idea/blog.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/fenbu.iml" filepath="$PROJECT_DIR$/.idea/fenbu.iml" />
       <module fileurl="file://D:/pythonPra/tornadoPra/.idea/tornadoPra.iml" filepath="D:/pythonPra/tornadoPra/.idea/tornadoPra.iml" />

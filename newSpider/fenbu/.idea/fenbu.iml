@@ -7,6 +7,7 @@
     <orderEntry type="module" module-name="blog" />
     <orderEntry type="module" module-name="weibo" />
     <orderEntry type="module" module-name="tornadoPra" />
+    <orderEntry type="module" module-name="IPProxyPool-master" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />

@@ -17,3 +17,11 @@ https://m.weibo.cn/api/comments/show?id=4205571185795586&page=2
 请求用户主页，获取更多的信息（关注，粉丝，性别，地区，注册时间，信用）
 https://m.weibo.cn/u/2384516275
 
+-------------------------------------------------------------------
+要获取用户主页，和微博页的数据
+请求接口 https://m.weibo.cn/api/container/getIndex?type=uid&value=1632069872
+response['data']['tabsInfo']['tabs'] 获取两个页面的containerid
+通过uid 和 containerid 可以获取主页和微博页的json数据
+事实上 直接拼接containerid即可https://m.weibo.cn/api/container/getIndex?containerid=2302832384516275
+用户主页信息：https://m.weibo.cn/api/container/getIndex?type=uid&value=1632069872&containerid=2302831632069872
+用户微博页信息：https://m.weibo.cn/api/container/getIndex?type=uid&value=1632069872&containerid=1005051632069872

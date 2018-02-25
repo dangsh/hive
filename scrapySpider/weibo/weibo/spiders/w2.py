@@ -7,7 +7,7 @@ import time
 class WiwiSpider(scrapy.Spider):
     count = 1
     name = 'ozzy'
-    start_urls = ['http://www.baidu.com']
+    start_urls = ['http://www.4399.com']
 
     cookie = {
         'T_WM' : '6f33fb05e2825da195d0d8a6bb2c1c21',
