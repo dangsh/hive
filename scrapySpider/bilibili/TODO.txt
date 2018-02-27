@@ -1,0 +1,11 @@
+请求名为recommendnew,20006969
+
+获取用户id接口
+https://comment.bilibili.com/recommendnew,20006969
+response['data']['owner']['mid']为id
+------------------------------------------------------------------
+在主页后面拼接id，找到主页 https://space.bilibili.com/5348717/#/
+
+
+http://api.bilibili.com/x/v2/reply?callback=jQuery17207867536448219232_1496485150703&jsonp=jsonp&pn=1&type=1&oid=10972391&sort=0&_=1496485159560
+这才是真正的评论api

@@ -2,8 +2,8 @@ import pymysql
 import json
 
 def read_data():
-    with open('biginfo.json' , encoding='utf-8') as f:
-        for i in range(80467):
+    with open('2_23.json' , encoding='utf-8') as f:
+        for i in range(3066):
             line = f.readline()
             d = json.loads(line)
             userid = d["userid"]
