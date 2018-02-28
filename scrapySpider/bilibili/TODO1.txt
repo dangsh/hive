@@ -1,0 +1,28 @@
+请求名recommendnew,20006969
+
+
+https://comment.bilibili.com/recommendnew,20006969
+response['data']['owner']['mid']   id
+------------------------------------------------------------------
+ https://space.bilibili.com/5348717/#/
+
+
+https://api.bilibili.com/x/v2/reply?callback=jQuery17202843816105900221_1519822131778&jsonp=jsonp&pn=2&type=1&oid=20141782&sort=0&_=1519822184876
+
+https://api.bilibili.com/x/v2/reply?callback=jQuery17202843816105900221_1519822131782&jsonp=jsonp&pn=652&type=1&oid=20141782&sort=0&_=1519822365456
+评论api
+
+评论API可以直接用
+https://api.bilibili.com/x/v2/reply?pn=5&type=1&oid=20141782
+翻页即可
+页数为response["data"]["page"]["count"]/20
+
+
+还需要获取oid，
+在饭局的情况下：
+https://www.bilibili.com/bangumi/play/ep85055
+这个页面上没有av号，不请求接口，获取html页面，并获取到页面上显示的av号
+
+如果是普通av的话，直接拼接av号，翻页即可
+
+----------------------------------------------------
