@@ -76,7 +76,12 @@ MySQL 5.7 <br/>
 	爬了8w条用户id，用户名，有一些http代理被屏蔽了，下次会增加ip代理的数量和质量进行爬取<br/>
 	最后一层用户具体信息还没有爬，等有了高质量的代理，再进行大量数据的爬取<br/>
 	2018-2-11<br/>
-
+9. bilibili<br/>
+	原本目标是爬取bilibili的所有用户的mid，<br/>
+	突然恍悟这是一个伪需求，因为bilibili的用户是从1开始的<br/>
+	bilibili约有2 5700 0000位用户<br/>
+	直接拼接就行了 https://space.bilibili.com/257000000/#/<br/>
+	下一步是取得信息
 
 ## V0.0.3 版本内容 newSpider <br/>
 1. bilibili<br/>

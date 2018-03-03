@@ -1,4 +1,4 @@
-请求名recommendnew,20006969
+﻿请求名recommendnew,20006969
 
 
 https://comment.bilibili.com/recommendnew,20006969
@@ -26,3 +26,5 @@ https://www.bilibili.com/bangumi/play/ep85055
 如果是普通av的话，直接拼接av号，翻页即可
 
 ----------------------------------------------------
+bilibili约有2 5700 0000位用户
+直接拼接就行了 https://space.bilibili.com/257000000/#/
