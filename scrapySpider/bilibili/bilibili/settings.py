@@ -22,7 +22,7 @@ NEWSPIDER_MODULE = 'bilibili.spiders'
 ROBOTSTXT_OBEY = False
 
 MY_USER_AGENT = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; …) Gecko/20100101 Firefox/58.0",
     ]
 
 DOWNLOADER_MIDDLEWARES = {
