@@ -1,22 +1,9 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import json
-
+from bilibili.items import BilibiliItem
 class BbSpider(scrapy.Spider):
     name = 'bb'
-    start_urls = ['http://www.ip181.com/']
-
-    # headers = {
-    #     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36',
-    #     'X-Requested-With': 'XMLHttpRequest',
-    #     'Referer': 'http://space.bilibili.com/45388',
-    #     'Origin': 'http://space.bilibili.com',
-    #     'Host': 'space.bilibili.com',
-    #     'AlexaToolbar-ALX_NS_PH': 'AlexaToolbar/alx-4.0',
-    #     'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6,ja;q=0.4',
-    #     'Accept': 'application/json, text/javascript, */*; q=0.01',
-    # }
-
     headers = {
         'Accept':'*/*',
         'Accept-Encoding':'gzip, deflate, br',
@@ -33,9 +20,8 @@ class BbSpider(scrapy.Spider):
                 post请求，提交的数据为
                 mid:1
                 csrf:82bdff2b4cf8a131c67355f4c5daf334"""
-
-    def parse(self , response):
-        for i in range(10):
+    def start_requests(self):
+        for i in range(1000000):
             url = 'https://space.bilibili.com/ajax/member/GetInfo'
             userid = str(i+1)
             yield scrapy.FormRequest(
@@ -54,4 +40,13 @@ class BbSpider(scrapy.Spider):
         register_time = response["data"]["regtime"]
         birthday = response["data"]["birthday"]
         place = response["data"]["place"]
-        print(mid,username,head_img,register_time,birthday,place)
+        # print(mid,username,head_img,register_time,birthday,place)
+        Item = BilibiliItem()
+        Item["userid"] = mid 
+        Item["username"] = username
+        Item["head_img"] = head_img
+        Item["register_time"] = register_time
+        Item["birthday"] = birthday
+        Item["place"] = place
+        yield Item
+

@@ -7,6 +7,7 @@
     <orderEntry type="module" module-name="weibo" />
     <orderEntry type="module" module-name="bilibili" />
     <orderEntry type="module" module-name="weibo" />
+    <orderEntry type="module" module-name="ali" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />

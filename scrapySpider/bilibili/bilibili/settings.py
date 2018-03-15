@@ -28,6 +28,12 @@ MY_USER_AGENT = [
 DOWNLOADER_MIDDLEWARES = {
     'bilibili.middlewares.MyUserAgentMiddleware': 400,
 }
+
+FEED_EXPORTERS_BASE = {
+    'json' : 'bilibili.tojson.chongxie' ,
+    'jsonlines' : 'scrapy.contrib.exporter.JsonLinesItemExporter',
+
+}
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
