@@ -82,6 +82,10 @@ MySQL 5.7 <br/>
 	bilibili约有2 5700 0000位用户<br/>
 	直接拼接就行了 https://space.bilibili.com/257000000/#/<br/>
 	下一步是取得信息
+10. ruleTest<br/>
+    测试scrpay的rule功能。
+11. fenbu<br/>
+    测试scrapy-redis的分布式爬虫功能
 
 ## V0.0.3 版本内容 newSpider <br/>
 1. bilibili<br/>

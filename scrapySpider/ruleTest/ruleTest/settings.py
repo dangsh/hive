@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for myredis project
+# Scrapy settings for ruleTest project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,36 +9,26 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'myredis'
+BOT_NAME = 'ruleTest'
 
-SPIDER_MODULES = ['myredis.spiders']
-NEWSPIDER_MODULE = 'myredis.spiders'
+SPIDER_MODULES = ['ruleTest.spiders']
+NEWSPIDER_MODULE = 'ruleTest.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'myredis (+http://www.yourdomain.com)'
+#USER_AGENT = 'ruleTest (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
-# 修改scrapy默认的调度器为scrapy重写的调度器 启动从reids缓存读取队列调度爬虫
-SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 
-# 调度状态持久化，不清理redis缓存，允许暂停/启动爬虫
-SCHEDULER_PERSIST = True
+MY_USER_AGENT = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36",
+    ]
 
-ITEM_PIPELINES = {
-    'RSpider.pipelines.BaseSpiderPipeline': 256,
-    'scrapy_redis.pipelines.RedisPipeline': 300
+DOWNLOADER_MIDDLEWARES = {
+    'ruleTest.middlewares.MyUserAgentMiddleware': 400,
 }
-
-# 指定redis的地址和端口(可选，程序将使用默认的地址localhost:6379)
-REDIS_HOST = 'localhost'
-REDIS_PORT = 6378
-
-DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
-LOG_LEVEL = 'INFO'
-
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -65,13 +55,13 @@ LOG_LEVEL = 'INFO'
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'myredis.middlewares.MyredisSpiderMiddleware': 543,
+#    'ruleTest.middlewares.RuletestSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'myredis.middlewares.MyredisDownloaderMiddleware': 543,
+#    'ruleTest.middlewares.RuletestDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -83,7 +73,7 @@ LOG_LEVEL = 'INFO'
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'myredis.pipelines.MyredisPipeline': 300,
+#    'ruleTest.pipelines.RuletestPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
