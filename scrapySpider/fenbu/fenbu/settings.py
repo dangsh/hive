@@ -18,7 +18,7 @@ SCHEDULER_PERSIST = True
 # 默认的 按优先级排序(Scrapy默认)，由sorted set实现的一种非FIFO、LIFO方式。
 SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderPriorityQueue'
 ITEM_PIPELINES = {
-    'scrapy_redis.pipelines.RedisPipeline':400,
+    # 'scrapy_redis.pipelines.RedisPipeline':400,
     'fenbu.myPipeLines.mongoPipe.MongopipClass':300,
 }
 
