@@ -1,14 +1,20 @@
 # -*- coding: utf-8 -*-
-from scrapy_redis.spiders import RedisSpider
+import scrapy
+from scrapy_redis.spiders import RedisCrawlSpider
+from fenbu.items import FenbuItem
 import re
+import redis
 
-class FfSpider(RedisSpider):
+
+class MoviespiderSpider(RedisCrawlSpider):
     name = 'ff'
-    redis_key = 'Search:start_urls'
-
+    redis_key = 'fenbuSpider:start_urls'
 
     def parse(self , response):
         response = response.text
         reg = '.html\?offerId=([0-9]*)'
-        data = re.findall(reg , response)
-        print(data)
+        data = re.findall(reg, response)
+        Item = FenbuItem()
+        for i in data:
+            Item["goodsid"] = i
+            yield Item

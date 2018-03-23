@@ -11,4 +11,5 @@ import scrapy
 class FenbuItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    goodsid = scrapy.Field()
     pass
