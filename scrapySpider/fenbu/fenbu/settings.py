@@ -29,5 +29,8 @@ DOWNLOAD_DELAY = 1
 
 
 # redis
-REDIS_HOST = '127.0.0.1'
+REDIS_HOST = '192.168.8.88'
 REDIS_PORT = 6379
+
+# redis
+# REDIS_URL = 'redis://192.168.8.88:6379'

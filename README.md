@@ -83,10 +83,12 @@ MySQL 5.7 <br/>
 	直接拼接就行了 https://space.bilibili.com/257000000/#/<br/>
 	下一步是取得信息
 10. ruleTest<br/>
-    测试scrpay的rule功能。
+    使用scrpay的rule功能。一个小demo爬取豆瓣top250
 11. fenbu<br/>
-    测试scrapy-redis的分布式爬虫功能
-
+    使用scrapy-redis的分布式爬虫功能
+12. xunying_redis<br/>
+    一个网上的demo ， 我用来测试scrapy-redis
+    
 ## V0.0.3 版本内容 newSpider <br/>
 1. bilibili<br/>
     请求接口，获取bilibili直播的弹幕内容，简单实现<br/>
