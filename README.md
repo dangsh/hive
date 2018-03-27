@@ -88,6 +88,10 @@ MySQL 5.7 <br/>
     使用scrapy-redis的分布式爬虫功能
 12. xunying_redis<br/>
     一个网上的demo ， 我用来测试scrapy-redis
+13. huicong<br/>
+	使用scrapy-redis的分布式爬虫，爬取hc360的商品信息，并将结果存入
+	mongo 或 hbase中，已经初步完成
+
     
 ## V0.0.3 版本内容 newSpider <br/>
 1. bilibili<br/>
