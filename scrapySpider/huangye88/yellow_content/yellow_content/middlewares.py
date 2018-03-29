@@ -6,11 +6,13 @@
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
-from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
+from yellow_content.settings import IPPOOL
 import random
+import time
 import requests
+import json
 
-class HuicongSpiderMiddleware(object):
+class YellowContentSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
@@ -58,7 +60,7 @@ class HuicongSpiderMiddleware(object):
         spider.logger.info('Spider opened: %s' % spider.name)
 
 
-class HuicongDownloaderMiddleware(object):
+class YellowContentDownloaderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
@@ -104,30 +106,12 @@ class HuicongDownloaderMiddleware(object):
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
 
-class MyUserAgentMiddleware(UserAgentMiddleware):
-    '''
-    设置User-Agent
-    '''
-
-    def __init__(self, user_agent):
-        self.user_agent = user_agent
-
-    @classmethod
-    def from_crawler(cls, crawler):
-        return cls(
-            user_agent=crawler.settings.get('MY_USER_AGENT')
-        )
-
-    def process_request(self, request, spider):
-        agent = random.choice(self.user_agent)
-        request.headers['User-Agent'] = agent
-
 class MyproxiesSpiderMiddleware(object):
 
     def __init__(self, ip=''):
         self.ip = ip
 
     def process_request(self, request, spider):
-        response = requests.get('http://192.168.8.88:8888')
-        print(response)
-        request.meta["proxy"] = "http://" + response.text
+        thisip = random.choice(IPPOOL)
+        print("this is ip:" + thisip["ipaddr"])
+        request.meta["proxy"] = "http://" + thisip["ipaddr"]

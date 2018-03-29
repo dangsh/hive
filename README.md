@@ -90,7 +90,12 @@ MySQL 5.7 <br/>
     一个网上的demo ， 我用来测试scrapy-redis
 13. huicong<br/>
 	使用scrapy-redis的分布式爬虫，爬取hc360的商品信息，并将结果存入
-	mongo 或 hbase中，已经初步完成
+	mongo 或 hbase中，由于服务器内存只有4G,redis被爆掉了，所以又改进了一个不是分布式的爬虫。<br/>
+	数据存入hbase中
+14. huangye88<br/>
+	包含了两个爬虫，一个爬取黄页88的商品url，另一个获取黄页88的商品信息并存入mongo<br/>
+	爬取了2000w数据左右
+
 
     
 ## V0.0.3 版本内容 newSpider <br/>
