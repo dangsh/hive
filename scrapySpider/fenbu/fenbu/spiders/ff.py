@@ -11,10 +11,4 @@ class MoviespiderSpider(RedisCrawlSpider):
     redis_key = 'fenbuSpider:start_urls'
 
     def parse(self , response):
-        response = response.text
-        reg = '.html\?offerId=([0-9]*)'
-        data = re.findall(reg, response)
-        Item = FenbuItem()
-        for i in data:
-            Item["goodsid"] = i
-            yield Item
+        print(response.text)
