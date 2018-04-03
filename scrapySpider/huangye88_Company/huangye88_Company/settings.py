@@ -14,13 +14,38 @@ BOT_NAME = 'huangye88_Company'
 SPIDER_MODULES = ['huangye88_Company.spiders']
 NEWSPIDER_MODULE = 'huangye88_Company.spiders'
 
+FEED_EXPORTERS_BASE = {
+    'json' : 'huangye88_Company.tojson.chongxie' ,
+    'jsonlines' : 'scrapy.contrib.exporter.JsonLinesItemExporter',
+
+}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'huangye88_Company (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
+ITEM_PIPELINES = {
+    'huangye88_Company.myPipeLines.mongoPipe.MongopipClass':500,
+}
 
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware':300,
+    'huangye88_Company.middlewares.MyproxiesSpiderMiddleware':100,
+    'huangye88_Company.middlewares.MyUserAgentMiddleware': 400,   
+}
+
+MY_USER_AGENT = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36",
+    ]
+
+IPPOOL = [
+    {'ipaddr': '192.168.14.126:3128'},
+    {'ipaddr': '192.168.14.127:3128'},
+    {'ipaddr': '192.168.14.128:3128'},
+    {'ipaddr': '192.168.14.129:3128'},
+    {'ipaddr': '192.168.14.130:3128'},
+]
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
