@@ -54,11 +54,10 @@ class HycSpider(scrapy.Spider):
     def start_requests(self):
         for i in range(2619000):
             url = 'http://b2b.huangye88.com/gongsi/%s/company_detail.html' % str(i+1)
-            yield scrapy.Request(url=url , meta={"url":url} , callback=self.parse2)
+            yield scrapy.Request(url=url , callback=self.parse2)
     def parse2(self , response):
-        url = response.meta["url"]
         Item = Huangye88CompanyItem()
-        Item["url"] = url
+        Item["url"] = response.url
         Item["response"] = response.text
         yield Item
     

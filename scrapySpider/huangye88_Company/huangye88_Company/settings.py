@@ -26,7 +26,7 @@ FEED_EXPORTERS_BASE = {
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 ITEM_PIPELINES = {
-    'huangye88_Company.myPipeLines.mongoPipe.MongopipClass':500,
+    # 'huangye88_Company.myPipeLines.mongoPipe.MongopipClass':500,
 }
 
 DOWNLOADER_MIDDLEWARES = {
