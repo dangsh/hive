@@ -7,7 +7,7 @@ import time
 class WiwiSpider(scrapy.Spider):
     count = 1
     name = 'ozzy'
-    start_urls = ['http://www.ip181.com/']
+    # start_urls = ['http://www.ip181.com/']
 
     cookie = {
         'T_WM' : '6f33fb05e2825da195d0d8a6bb2c1c21',
@@ -18,8 +18,7 @@ class WiwiSpider(scrapy.Spider):
         'M_WEIBOCN_PARAMS' : 'featurecode % 3DH5tuiguang0623 % 26oid % 3D4205574042439353 % 26luicode % 3D10000011 % 26lfid % 3D102803 % 26uicode % 3D20000061 % 26fid % 3D4205574042439353'
     }
 
-    # start_urls 没有用，第一次parse只负责拼接url，获取weibo信息列表
-    def parse(self, response):
+    def start_requests(self):
         for i in range(1000):
             url = 'https://m.weibo.cn/api/container/getIndex?containerid=102803&client=h5&featurecode=H5tuiguang0623&need_head_cards=1&wm=90112_90001&since_id='+ str(i+1)
             try:
