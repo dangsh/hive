@@ -29,8 +29,19 @@ IPPOOL = [
 ]
 
 FEED_EXPORTERS_BASE = {
+    'json' : 'huicong_com.tojson.chongxie' ,
     'jsonlines' : 'scrapy.contrib.exporter.JsonLinesItemExporter',
 
+}
+
+MY_USER_AGENT = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36",
+    ]
+
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware':300,
+    'huicong_com.middlewares.MyproxiesSpiderMiddleware':100,
+    'huicong_com.middlewares.MyUserAgentMiddleware': 400,
 }
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
