@@ -52,3 +52,5 @@ class HccSpider(scrapy.Spider):
             yield Item
 
 
+
+
