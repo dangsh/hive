@@ -1,6 +1,5 @@
 import requests
 from lxml import etree
-import re
 import matplotlib.pyplot as plt
 from pandas import Series
 
@@ -28,7 +27,7 @@ def autolabel(rects):
         height = rect.get_height()
         plt.text(rect.get_x(), 1.02*height, "%s" % height)
 
-fig = plt.figure()
+
 labels = s_blues.index.tolist()
 sizes = s_blues.values.tolist()
 rect = plt.bar(range(len(sizes)) , sizes , tick_label = labels)
