@@ -5,6 +5,8 @@ from huicong_goods.items import HuicongGoodsItem
 import io
 import time
 from scrapy.exceptions import CloseSpider
+import requests
+import json
 
 class HgSpider(scrapy.Spider):
     handle_httpstatus_list = [404]
@@ -39,8 +41,28 @@ class HgSpider(scrapy.Spider):
                 raise CloseSpider('强制停止')
             #有一个200，则将count重置
             self.count = 0
-            goods_name = response.xpath('//div[@class="proTitCon"]/h1/text()').extract()[0]
-            Item = HuicongGoodsItem()
-            Item["url"] = url
-            Item["goods_name"] = goods_name
-            yield Item
+            #获取企业url判断企业是否已被爬取
+            com_url = ""
+            try:
+                com_url = response.xpath('//p[@class="cName"]/a/@href').extract()[0]
+            except:
+                pass
+            if not com_url:
+                try:
+                    com_url = response.xpath('//div[@class="goods-tit goods-tit-blue"]/a/@href').extract()[0]
+                except:
+                    pass
+            #取出企业的关键词
+            com_word = com_url[7:-15]
+            test_com_url = 'http://spiderhub.gongchang.com/write_to_online/data_show_onerow?secret=gc7232275&dataset=hc360_company&hkey=http://' + com_word + '.wx.hc360.com/shop/show.html'
+            response = requests.get(test_com_url)
+            # print(response.text)
+            response = json.loads(response.text)
+            print(com_url , response["status"])
+
+
+            # goods_name = response.xpath('//div[@class="proTitCon"]/h1/text()').extract()[0]
+            # Item = HuicongGoodsItem()
+            # Item["url"] = url
+            # Item["goods_name"] = goods_name
+            # yield Item

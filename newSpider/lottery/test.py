@@ -33,3 +33,6 @@ sizes = s_blues.values.tolist()
 rect = plt.bar(range(len(sizes)) , sizes , tick_label = labels)
 autolabel(rect)
 plt.show()
+
+
+
