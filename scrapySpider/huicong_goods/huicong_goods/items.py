@@ -11,5 +11,6 @@ import scrapy
 class HuicongGoodsItem(scrapy.Item):
     # define the fields for your item here like:
     url = scrapy.Field()
-    goods_name = scrapy.Field()
+    goods_data = scrapy.Field()
+    com_data = scrapy.Field()
     pass
