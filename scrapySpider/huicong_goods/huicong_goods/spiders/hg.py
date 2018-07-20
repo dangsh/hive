@@ -310,7 +310,7 @@ class HgSpider(scrapy.Spider):
                         price_unit = res[1]
                 except:
                     pass
-            data = {
+            goods_data = {
                 'source_url': url,
                 'title': title,
                 'price': price,
@@ -361,7 +361,8 @@ class HgSpider(scrapy.Spider):
                 except:
                     pass
             #取出企业的关键词
-            com_word = com_url[7:-15]
+            reg = 'http://(.*?).b2b.hc360.com'
+            com_word = re.findall(reg,com_url)[0]
             test_com_url = 'http://spiderhub.gongchang.com/write_to_online/data_show_onerow?secret=gc7232275&dataset=hc360_company&hkey=http://' + com_word + '.wx.hc360.com/shop/show.html'
             response = requests.get(test_com_url)
             # print(response.text)
@@ -370,18 +371,58 @@ class HgSpider(scrapy.Spider):
             print(com_url , response["status"])
             if response["status"] != True:
                 #爬取该企业的信息,并将企业信息放入Item 的 com_data中，与goods_data 一起交给mongoPipe处理
+                url_1 = "http://detail.b2b.hc360.com/detail/turbine/template/moblie,vmoblie,getcontact_us.html?username="
                 try:
-                    yield scrapy.Request(url=url, meta={"data": data}, callback=self.parse_company)
+                    yield scrapy.Request(url=url_1 + com_word, meta={"goods_data": goods_data ,"com_word":com_word}, callback=self.parse_company)
                 except:
                     pass
             else:
-                Item = HuicongGoodsItem()
-                Item["goods_data"] = data
-                yield Item
-
-
+                # Item = HuicongGoodsItem()
+                # Item["goods_data"] = goods_data
+                # yield Item
+                pass
 
     def parse_company(self, response):
-        pass
+        goods_data = response.meta["goods_data"]
+        com_word = response.meta["com_word"]
+        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+        print(response.url)
+        content_1 = response.text
+        try:
+            content_1 = json.loads(content_1)
+        except:
+            content_1 = {}
+        address = content_1.get('address', '')
+        product = content_1.get('business', '')
+        comname = content_1.get('companyName', '')
+        com_auth = '已认证' if content_1.get('isAuth', '').lower() == 'true' else '未认证'
+        contact = content_1.get('name', '')
+        conn_peopel_sex = content_1.get('gender', '')
+        phone_info = content_1.get('phone')
+        fax = ''
+        mobile = ''
+        tel = ''
+        if phone_info:
+            for i in phone_info:
+                if i['name'] == u'传真':
+                    fax = i.get('value', '')
+                if i['name'] == u'手机':
+                    mobile = i.get('value', '')
+                if i['name'] == u'电话1':
+                    tel = i.get('value', '')
+        conn_peopel_position = content_1.get('position', '')
+        com_data = {
+            'address' : address ,
+            'product' : product ,
+            'comname' : comname ,
+            'com_auth' : com_auth ,
+            'contact' : contact ,
+            'conn_peopel_sex' : conn_peopel_sex ,
+            'fax' : fax ,
+            'mobile' : mobile ,
+            'tel' : tel ,
+            'conn_peopel_position' : conn_peopel_position ,
+        }
+        print(com_data)
 
 
