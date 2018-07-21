@@ -449,7 +449,15 @@ class HgSpider(scrapy.Spider):
             com_pic = imageUrl[0].get('companyPicUrl', '')
             if com_pic:
                 # com_pic_upyun = async_image_push.image_push(x[0], com_pic)
-                com_pic_upyun = "test"
+                hl = hashlib.md5()
+                hl.update(com_pic.encode(encoding='utf-8'))
+                src_md5 = hl.hexdigest()  # md5加密的文件名
+                # 取出图片后缀
+                b = com_pic.split(".")
+                tail = b[-1]
+                full_name = src_md5 + "." + tail
+                pic_byte = urllib2.urlopen("http:" + com_pic).read()
+                com_pic_upyun = up_to_upyun("/" + full_name, pic_byte)
         detail_info = content_2.get('detailInfo', {})
         if detail_info:
             if not com_data["address"]:
