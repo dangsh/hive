@@ -392,10 +392,11 @@ class HgSpider(scrapy.Spider):
             content_1 = json.loads(content_1)
         except:
             content_1 = {}
+
         address = content_1.get('address', '')
         product = content_1.get('business', '')
         comname = content_1.get('companyName', '')
-        com_auth = '已认证' if content_1.get('isAuth', '').lower() == 'true' else '未认证'
+        com_auth = u'已认证' if content_1.get('isAuth', '').lower() == 'true' else u'未认证'
         contact = content_1.get('name', '')
         conn_peopel_sex = content_1.get('gender', '')
         phone_info = content_1.get('phone')
@@ -423,6 +424,65 @@ class HgSpider(scrapy.Spider):
             'tel' : tel ,
             'conn_peopel_position' : conn_peopel_position ,
         }
+        url_2 = 'http://detail.b2b.hc360.com/detail/turbine/template/moblie,vmoblie,getcompany_introduction.html?username='
+        try:
+            yield scrapy.Request(url = url_2 + com_word , meta={"goods_data": goods_data, "com_word": com_word , "com_data":com_data} , callback=self.parse_company2)
+        except:
+            pass
+
+    def parse_company2(self, response):
+        goods_data = response.meta["goods_data"]
+        com_word = response.meta["com_word"]
+        com_data = response.meta["com_data"]
+        print("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy")
+        print(response.url)
+        content_2 = response.text
+        try:
+            content_2 = json.loads(content_2)
+        except:
+            content_2 = {}
+        basic_info = content_2.get('basicInfo', {})
+        comdesc = basic_info.get('companyIntroduce', '')
+        imageUrl = basic_info.get('imageUrl', [])
+        com_pic_upyun = ""
+        if imageUrl:
+            com_pic = imageUrl[0].get('companyPicUrl', '')
+            if com_pic:
+                # com_pic_upyun = async_image_push.image_push(x[0], com_pic)
+                com_pic_upyun = "test"
+        detail_info = content_2.get('detailInfo', {})
+        if detail_info:
+            if not com_data["address"]:
+                com_data["address"] = detail_info.get('address', '')
+            regcapital = detail_info.get('capital', '')
+            if not com_data["contact"]:
+                com_data["contact"] = detail_info.get('contactPeople', '')
+            regyear = detail_info.get('createDate', '')
+            if not com_data["conn_peopel_sex"]:
+                com_data["conn_peopel_sex"] = detail_info.get('gender', '')
+            main_industry = detail_info.get('industry', '')
+            if not com_data["product"]:
+                com_data["product"] = detail_info.get('majorProducts', '')
+            busmode = detail_info.get('pattern', '')
+            phone_info = detail_info.get('phone', [])
+            if phone_info:
+                for i in phone_info:
+                    if i['name'] == u'传真' and not com_data["fax"]:
+                        com_data["fax"] = i.get('value', '')
+                    if i['name'] == u'手机' and not com_data["mobile"]:
+                        com_data["mobile"] = i.get('value', '')
+                    if i['name'] == u'电话1' and not com_data["tel"]:
+                        com_data["tel"] = i.get('value', '')
+            if not com_data["conn_peopel_position"]:
+                com_data["conn_peopel_position"] = detail_info.get('position', '')
+            ceo = detail_info.get('representative', '')
+        com_data["comdesc"] = comdesc
+        com_data["com_pic_upyun"] = com_pic_upyun
+        com_data["regcapital"] = regcapital
+        com_data["regyear"] = regyear
+        com_data["main_industry"] = main_industry
+        com_data["busmode"] = busmode
+        com_data["ceo"] = ceo
         print(com_data)
 
 
