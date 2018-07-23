@@ -445,6 +445,7 @@ class HgSpider(scrapy.Spider):
         comdesc = basic_info.get('companyIntroduce', '')
         imageUrl = basic_info.get('imageUrl', [])
         com_pic_upyun = ""
+        com_pic = ""
         if imageUrl:
             com_pic = imageUrl[0].get('companyPicUrl', '')
             if com_pic:
@@ -485,12 +486,99 @@ class HgSpider(scrapy.Spider):
                 com_data["conn_peopel_position"] = detail_info.get('position', '')
             ceo = detail_info.get('representative', '')
         com_data["comdesc"] = comdesc
+        com_data["com_pic"] = com_pic
         com_data["com_pic_upyun"] = com_pic_upyun
         com_data["regcapital"] = regcapital
         com_data["regyear"] = regyear
         com_data["main_industry"] = main_industry
         com_data["busmode"] = busmode
         com_data["ceo"] = ceo
+
+        try:
+            yield scrapy.Request(url = 'https://js.hc360.com/b2b/%s/company.html' % (com_word,) , meta={"goods_data": goods_data, "com_word": com_word , "com_data":com_data} , callback=self.parse_company3)
+        except:
+            pass
+
+    def parse_company3(self, response):
+        goods_data = response.meta["goods_data"]
+        com_word = response.meta["com_word"]
+        com_data = response.meta["com_data"]
+        print("zzzzzzzzzzzzzzzzzzz")
+        print(response.url)
+        content_js = response.text
+        doc = pyquery.PyQuery(content_js)
+        aa = doc('article.intro-list ul')
+        for i in aa('li').items():
+            if i('.c-left').text() == u'主营产品或服务' and not com_data["product"]:
+                com_data["product"] = i('.c-right').text()
+            if i('.c-left').text() == u'主营行业' and not com_data["main_industry"]:
+                com_data["main_industry"] = i('.c-right').text()
+            if i('.c-left').text() == u'企业类型':
+                com_data["comtype"] = i('.c-right').text()
+            if i('.c-left').text() == u'经营模式' and not com_data["busmode"]:
+                com_data["busmode"] = i('.c-right').text()
+            if i('.c-left').text() == u'注册地址':
+                com_data["com_reg_addr"] = i('.c-right').text()
+            if i('.c-left').text() == u'经营地址' and not com_data["address"]:
+                com_data["address"] = i('.c-right').text()
+            if i('.c-left').text() == u'公司成立时间' and not com_data["regyear"]:
+                com_data["regyear"] = i('.c-right').text()
+            if i('.c-left').text() == u'法定代表人/负责人' and not com_data["ceo"]:
+                com_data["ceo"] = i('.c-right').text()
+            if i('.c-left').text() == u'员工人数':
+                com_data["employ"] = i('.c-right').text()
+            if i('.c-left').text() == u'年营业额':
+                com_data["annulsale"] = i('.c-right').text()
+            if i('.c-left').text() == u'经营品牌':
+                com_data["brand_name"] = i('.c-right').text()
+            if i('.c-left').text() == u'注册资本' and not com_data["regcapital"]:
+                com_data["regcapital"] = i('.c-right').text()
+            if i('.c-left').text() == u'主要客户群':
+                com_data["customer"] = i('.c-right').text()
+            if i('.c-left').text() == u'主要市场':
+                com_data["main_addr"] = i('.c-right').text()
+            if i('.c-left').text() == u'是否提供OEM服务':
+                com_data["OEM"] = i('.c-right').text()
+            if i('.c-left').text() == u'研发部门人数':
+                com_data["rdnum"] = i('.c-right').text()
+            if i('.c-left').text() == u'厂房面积':
+                com_data["com_area"] = i('.c-right').text()
+            if i('.c-left').text() == u'质量控制':
+                com_data["qc"] = i('.c-right').text()
+            if i('.c-left').text() == u'管理体系认证':
+                com_data["management_system"] = i('.c-right').text()
+            if i('.c-left').text() == u'认证信息' and not com_data["com_auth"]:
+                com_data["com_auth"] = i('.c-right').text()
+            if i('.c-left').text() == u'开户银行':
+                com_data["bank_type"] = i('.c-right').text()
+        if 'null' in com_data["regcapital"]:
+            com_data["regcapital"] = u'无需验资'
+        com_data["comname_short"] = ''
+        com_data["com_addr1"] = ''
+        com_data["provinces_and_cities"] = ''
+        com_data["user_auth"] = ''
+        com_data["new_login"] = ''
+        com_data["buy_goods"] = ''
+        com_data["period"] = ''
+        com_data["survey"] = ''
+        com_data["regist"] = ''
+        com_data["com_status"] = ''
+        com_data["bank_num"] = ''
+        com_data["bank_people"] = ''
+        com_data["annulexport"] = ''
+        com_data["annulimport"] = ''
+        com_data["monthly_production"] = ''
+        com_data["zip"] = ''
+        com_data["com_tel"] = ''
+        com_data["email"] = ''
+        com_data["website"] = ''
+        com_data["aministration_area"] = ''
+        com_data["com_addr2"] = ''
+        com_data["com_location"] = ''
+        com_data["business_num"] = ''
+        com_data["tax_num"] = ''
+        com_data["conn_peopel_department"] = ''
+        com_data["wechat"] = ''
+        com_data["business"] = ''
+
         print(com_data)
-
-

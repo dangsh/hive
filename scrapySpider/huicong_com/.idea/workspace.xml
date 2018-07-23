@@ -17,8 +17,8 @@
       <file leaf-file-name="hg.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../huicong_goods/huicong_goods/spiders/hg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="456" column="28" lean-forward="true" selection-start-line="456" selection-start-column="28" selection-end-line="456" selection-end-column="28" />
+            <state relative-caret-position="-53">
+              <caret line="486" column="55" lean-forward="true" selection-start-line="486" selection-start-column="55" selection-end-line="486" selection-end-column="55" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -29,8 +29,8 @@
       <file leaf-file-name="hc_company_field.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../../hc_company_field.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="129" column="19" selection-start-line="129" selection-start-column="12" selection-end-line="129" selection-end-column="19" />
+            <state relative-caret-position="202">
+              <caret line="274" column="27" lean-forward="true" selection-start-line="274" selection-start-column="27" selection-end-line="274" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -38,8 +38,8 @@
       <file leaf-file-name="hc_compant_cj.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../../hc_compant_cj.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="130" />
+            <state relative-caret-position="180">
+              <caret line="42" column="81" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="81" />
               <folding>
                 <element signature="e#70#85#0" expanded="true" />
               </folding>
@@ -58,16 +58,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>com_url</find>
-      <find>selector_content</find>
-      <find>send_money</find>
-      <find>com_addr</find>
-      <find>attrs_kv</find>
-      <find>update_time</find>
-      <find>to_areato_area</find>
-      <find>basic_info</find>
+      <find>comtype</find>
+      <find>busmode</find>
+      <find>com_reg_addr</find>
       <find>address</find>
-      <find>com_pic_upyun</find>
+      <find>employ</find>
+      <find>main_addr</find>
+      <find>OEM</find>
+      <find>rdnum</find>
+      <find>com_area</find>
+      <find>qc</find>
+      <find>management_system</find>
+      <find>com_auth</find>
+      <find>regcapital</find>
+      <find>comname</find>
+      <find>product</find>
+      <find>ceo</find>
+      <find>regyear</find>
+      <find>contact</find>
+      <find>tel</find>
+      <find>mobile</find>
+      <find>com_pic</find>
+      <find>brand_name</find>
+      <find>customer</find>
+      <find>annulsale</find>
+      <find>business</find>
+      <find>fax</find>
+      <find>conn_peopel_position</find>
+      <find>pic</find>
+      <find>wechat</find>
+      <find>bank_type</find>
     </findStrings>
     <replaceStrings>
       <replace>response</replace>
@@ -236,6 +256,33 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../huicong_goods/huicong_goods/spiders/hg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13680">
+          <caret line="456" column="28" lean-forward="true" selection-start-line="456" selection-start-column="28" selection-end-line="456" selection-end-column="28" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../hc_company_field.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3870">
+          <caret line="129" column="19" selection-start-line="129" selection-start-column="12" selection-end-line="129" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../hc_compant_cj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="130" />
+          <folding>
+            <element signature="e#70#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../huicong_goods/huicong_goods/spiders/hg.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11760">
@@ -498,8 +545,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../hc_compant_cj.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="130" />
+        <state relative-caret-position="180">
+          <caret line="42" column="81" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="81" />
           <folding>
             <element signature="e#70#85#0" expanded="true" />
           </folding>
@@ -508,15 +555,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../hc_company_field.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="129" column="19" selection-start-line="129" selection-start-column="12" selection-end-line="129" selection-end-column="19" />
+        <state relative-caret-position="202">
+          <caret line="274" column="27" lean-forward="true" selection-start-line="274" selection-start-column="27" selection-end-line="274" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../huicong_goods/huicong_goods/spiders/hg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="456" column="28" lean-forward="true" selection-start-line="456" selection-start-column="28" selection-end-line="456" selection-end-column="28" />
+        <state relative-caret-position="-53">
+          <caret line="486" column="55" lean-forward="true" selection-start-line="486" selection-start-column="55" selection-end-line="486" selection-end-column="55" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>
