@@ -16,6 +16,7 @@ class MongopipClass(object):
         except:
             pass
         return item
+        #添加处理goods_data ，com_data 的逻辑
 #
 
 # import happybase

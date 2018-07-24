@@ -14,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="hg.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hg.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../huicong_goods/huicong_goods/spiders/hg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-53">
-              <caret line="486" column="55" lean-forward="true" selection-start-line="486" selection-start-column="55" selection-end-line="486" selection-end-column="55" />
+            <state relative-caret-position="727">
+              <caret line="584" column="35" selection-start-line="584" selection-start-column="35" selection-end-line="584" selection-end-column="35" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -26,11 +26,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="mongoPipe.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../huicong_goods/huicong_goods/myPipeLines/mongoPipe.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="items.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../huicong_goods/huicong_goods/items.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="14" column="29" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="14" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="hc_company_field.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../../hc_company_field.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="274" column="27" lean-forward="true" selection-start-line="274" selection-start-column="27" selection-end-line="274" selection-end-column="27" />
+            <state relative-caret-position="8190">
+              <caret line="274" column="27" selection-start-line="274" selection-start-column="27" selection-end-line="274" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -38,8 +56,8 @@
       <file leaf-file-name="hc_compant_cj.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../../hc_compant_cj.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="42" column="81" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="81" />
+            <state relative-caret-position="1020">
+              <caret line="42" column="81" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="81" />
               <folding>
                 <element signature="e#70#85#0" expanded="true" />
               </folding>
@@ -98,13 +116,13 @@
       <list>
         <option value="$PROJECT_DIR$/../huicong_goods/huicong_goods/middlewares.py" />
         <option value="$PROJECT_DIR$/../huicong_goods/huicong_goods/settings.py" />
-        <option value="$PROJECT_DIR$/../huicong_goods/huicong_goods/myPipeLines/mongoPipe.py" />
         <option value="$PROJECT_DIR$/../huicong_goods/save.txt" />
         <option value="$PROJECT_DIR$/../../newSpider/lottery/double.py" />
         <option value="$PROJECT_DIR$/../../newSpider/lottery/t2.py" />
         <option value="$PROJECT_DIR$/../../newSpider/lottery/test.py" />
         <option value="$PROJECT_DIR$/../huicong_goods/huicong_goods/items.py" />
         <option value="$PROJECT_DIR$/../huicong_goods/huicong_goods/spiders/hg.py" />
+        <option value="$PROJECT_DIR$/../huicong_goods/huicong_goods/myPipeLines/mongoPipe.py" />
       </list>
     </option>
   </component>
@@ -123,21 +141,6 @@
       <pane id="ProjectPane">
         <subPane>
           <expand>
-            <path>
-              <item name="huicong_com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="huicong_com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="huicong_com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="huicong_com" type="462c0819:PsiDirectoryNode" />
-              <item name="huicong_com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="huicong_com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="huicong_com" type="462c0819:PsiDirectoryNode" />
-              <item name="huicong_com" type="462c0819:PsiDirectoryNode" />
-              <item name="spiders" type="462c0819:PsiDirectoryNode" />
-            </path>
             <path>
               <item name="huicong_com" type="b2602c69:ProjectViewProjectNode" />
               <item name="huicong_goods" type="462c0819:PsiDirectoryNode" />
@@ -221,9 +224,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-321" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18072917" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18072917" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32943678" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
@@ -256,6 +258,33 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../huicong_goods/huicong_goods/spiders/hg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14580">
+          <caret line="486" column="55" lean-forward="true" selection-start-line="486" selection-start-column="55" selection-end-line="486" selection-end-column="55" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../hc_company_field.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8220">
+          <caret line="274" column="27" lean-forward="true" selection-start-line="274" selection-start-column="27" selection-end-line="274" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../hc_compant_cj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="42" column="81" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="81" />
+          <folding>
+            <element signature="e#70#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../huicong_goods/huicong_goods/spiders/hg.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13680">
@@ -515,20 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../huicong_goods/huicong_goods/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../huicong_goods/huicong_goods/myPipeLines/mongoPipe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="14" column="88" selection-start-line="14" selection-start-column="88" selection-end-line="14" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../hc_product.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -545,8 +560,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../hc_compant_cj.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="42" column="81" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="81" />
+        <state relative-caret-position="1020">
+          <caret line="42" column="81" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="81" />
           <folding>
             <element signature="e#70#85#0" expanded="true" />
           </folding>
@@ -555,18 +570,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../hc_company_field.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="274" column="27" lean-forward="true" selection-start-line="274" selection-start-column="27" selection-end-line="274" selection-end-column="27" />
+        <state relative-caret-position="8190">
+          <caret line="274" column="27" selection-start-line="274" selection-start-column="27" selection-end-line="274" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../huicong_goods/huicong_goods/spiders/hg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-53">
-          <caret line="486" column="55" lean-forward="true" selection-start-line="486" selection-start-column="55" selection-end-line="486" selection-end-column="55" />
+        <state relative-caret-position="727">
+          <caret line="584" column="35" selection-start-line="584" selection-start-column="35" selection-end-line="584" selection-end-column="35" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../huicong_goods/huicong_goods/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="14" column="29" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../huicong_goods/huicong_goods/myPipeLines/mongoPipe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
         </state>
       </provider>
     </entry>

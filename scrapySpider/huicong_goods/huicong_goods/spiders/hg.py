@@ -377,9 +377,9 @@ class HgSpider(scrapy.Spider):
                 except:
                     pass
             else:
-                # Item = HuicongGoodsItem()
-                # Item["goods_data"] = goods_data
-                # yield Item
+                Item = HuicongGoodsItem()
+                Item["goods_data"] = goods_data
+                yield Item
                 pass
 
     def parse_company(self, response):
@@ -580,5 +580,8 @@ class HgSpider(scrapy.Spider):
         com_data["conn_peopel_department"] = ''
         com_data["wechat"] = ''
         com_data["business"] = ''
-
-        print(com_data)
+        # print(com_data)
+        Item = HuicongGoodsItem()
+        Item["com_data"] = com_data
+        Item["goods_data"] = goods_data
+        yield Item
