@@ -379,6 +379,7 @@ class HgSpider(scrapy.Spider):
             else:
                 Item = HuicongGoodsItem()
                 Item["goods_data"] = goods_data
+                Item["com_data"] = ""
                 yield Item
                 pass
 
@@ -580,7 +581,10 @@ class HgSpider(scrapy.Spider):
         com_data["conn_peopel_department"] = ''
         com_data["wechat"] = ''
         com_data["business"] = ''
-        # print(com_data)
+        com_data["com_word"] = ''
+
+
+        print(com_data)
         Item = HuicongGoodsItem()
         Item["com_data"] = com_data
         Item["goods_data"] = goods_data
