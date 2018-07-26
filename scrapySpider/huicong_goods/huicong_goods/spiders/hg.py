@@ -41,7 +41,7 @@ class HgSpider(scrapy.Spider):
             self.count += 1
         if response.status == 200:
             #如果404连续超过 X 个，停止爬虫
-            if self.count >= 3:
+            if self.count >= 20:
                 # 将结果写入文件
                 f = open('save.txt', 'w+')
                 f.write(stamp)
@@ -361,7 +361,7 @@ class HgSpider(scrapy.Spider):
                 except:
                     pass
             goods_data = {
-                '_id': url,
+                # '_id': url,
                 'source_url': url,
                 'title': title,
                 'price': price,
@@ -475,6 +475,57 @@ class HgSpider(scrapy.Spider):
             'tel' : tel ,
             'conn_peopel_position' : conn_peopel_position ,
         }
+
+        com_data["source_url"] = ''
+        com_data["comname_short"] = ''
+        com_data["comtype"] = ''
+        com_data["com_addr1"] = ''
+        com_data["ceo"] = ''
+        com_data["provinces_and_cities"] = ''
+        com_data["regyear"] = ''
+        com_data["regcapital"] = ''
+        com_data["employ"] = ''
+        com_data["main_industry"] = ''
+        com_data["main_addr"] = ''
+        com_data["user_auth"] = ''
+        com_data["new_login"] = ''
+        com_data["wechat"] = ''
+        com_data["comdesc"] = ''
+        com_data["com_pic"] = ''
+        com_data["com_pic_upyun"] = ''
+        com_data["buy_goods"] = ''
+        com_data["rdnum"] = ''
+        com_data["busmode"] = ''
+        com_data["period"] = ''
+        com_data["survey"] = ''
+        com_data["regist"] = ''
+        com_data["com_status"] = ''
+        com_data["bank_type"] = ''
+        com_data["bank_num"] = ''
+        com_data["bank_people"] = ''
+        com_data["brand_name"] = ''
+        com_data["customer"] = ''
+        com_data["annulsale"] = ''
+        com_data["annulexport"] = ''
+        com_data["annulimport"] = ''
+        com_data["business"] = ''
+        com_data["com_area"] = ''
+        com_data["monthly_production"] = ''
+        com_data["OEM"] = ''
+        com_data["zip"] = ''
+        com_data["com_tel"] = ''
+        com_data["email"] = ''
+        com_data["website"] = ''
+        com_data["aministration_area"] = ''
+        com_data["com_addr2"] = ''
+        com_data["qc"] = ''
+        com_data["com_location"] = ''
+        com_data["com_reg_addr"] = ''
+        com_data["business_num"] = ''
+        com_data["tax_num"] = ''
+        com_data["management_system"] = ''
+        com_data["conn_peopel_department"] = ''
+
         url_2 = 'http://detail.b2b.hc360.com/detail/turbine/template/moblie,vmoblie,getcompany_introduction.html?username='
         try:
             yield scrapy.Request(url = url_2 + com_word , meta={"goods_data": goods_data, "com_word": com_word , "com_data":com_data} , callback=self.parse_company2)
@@ -604,35 +655,8 @@ class HgSpider(scrapy.Spider):
                 com_data["bank_type"] = i('.c-right').text()
         if 'null' in com_data["regcapital"]:
             com_data["regcapital"] = u'无需验资'
-        com_data["comname_short"] = ''
-        com_data["com_addr1"] = ''
-        com_data["provinces_and_cities"] = ''
-        com_data["user_auth"] = ''
-        com_data["new_login"] = ''
-        com_data["buy_goods"] = ''
-        com_data["period"] = ''
-        com_data["survey"] = ''
-        com_data["regist"] = ''
-        com_data["com_status"] = ''
-        com_data["bank_num"] = ''
-        com_data["bank_people"] = ''
-        com_data["annulexport"] = ''
-        com_data["annulimport"] = ''
-        com_data["monthly_production"] = ''
-        com_data["zip"] = ''
-        com_data["com_tel"] = ''
-        com_data["email"] = ''
-        com_data["website"] = ''
-        com_data["aministration_area"] = ''
-        com_data["com_addr2"] = ''
-        com_data["com_location"] = ''
-        com_data["business_num"] = ''
-        com_data["tax_num"] = ''
-        com_data["conn_peopel_department"] = ''
-        com_data["wechat"] = ''
-        com_data["business"] = ''
-        com_data["com_word"] = com_word
-        com_data["_id"] = 'http://'+ com_word +'.wx.hc360.com/shop/show.html'
+        com_data["source_url"] = 'http://' + com_word + '.wx.hc360.com/shop/show.html'
+        # com_data["_id"] = 'http://'+ com_word +'.wx.hc360.com/shop/show.html'
 
         # print(com_data)
         Item = HuicongGoodsItem()
