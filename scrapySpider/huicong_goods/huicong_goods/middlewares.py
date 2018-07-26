@@ -9,6 +9,7 @@ from scrapy import signals
 from huicong_goods.settings import IPPOOL
 import random
 from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
+from gcpy_utils.proxy import adsl
 
 class HuicongGoodsSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
@@ -109,9 +110,11 @@ class MyproxiesSpiderMiddleware(object):
         self.ip = ip
 
     def process_request(self, request, spider):
-        thisip = random.choice(IPPOOL)
-        print("this is ip:" + thisip["ipaddr"])
-        request.meta["proxy"] = "http://" + thisip["ipaddr"]
+        # thisip = random.choice(IPPOOL)
+        # print("this is ip:" + thisip["ipaddr"])
+        # request.meta["proxy"] = "http://" + thisip["ipaddr"]
+        result = adsl.get_proxy_list(True)[0]
+        request.meta["proxy"] = "http://" + result
 class MyUserAgentMiddleware(UserAgentMiddleware):
     '''
     设置User-Agent

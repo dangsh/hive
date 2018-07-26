@@ -54,9 +54,9 @@ ITEM_PIPELINES = {
     'huicong_goods.myPipeLines.mongoPipe.MongopipClass':500,
 }
 # 指定mongo
-MONGO_HOST = "localhost"
+MONGO_HOST = "192.168.14.90"
 MONGO_PORT = 27017
-MONGO_DBNAME = "aaa"
+MONGO_DBNAME = "test"
 MONGO_COLLECTION = "huicong_goods"
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)

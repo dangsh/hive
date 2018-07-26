@@ -10,13 +10,15 @@ class MongopipClass(object):
         client = MongoClient(settings["MONGO_HOST"] , settings["MONGO_PORT"])
         myDb = client[settings["MONGO_DBNAME"]]
         self.myCollection = myDb[settings["MONGO_COLLECTION"]]
-        self.myCollection2 = "huicong_com"
+        self.myCollection2 = myDb["huicong_com"]
 
     def process_item(self , item , spider):
         # try:
         #     self.myCollection.insert([{'_id':item["url"] , 'goods_name':item["goods_name"]}])
         # except:
         #     pass
+        #处理goods_data 中的image
+
         #如果com_data 不存在，则只处理goods_data
         if not item["com_data"]:
             try:
@@ -24,7 +26,6 @@ class MongopipClass(object):
             except:
                 pass
         else:
-            #处理goods_data 和 com_data
             try:
                 self.myCollection.insert([item["goods_data"]])
             except:
@@ -33,7 +34,7 @@ class MongopipClass(object):
                 self.myCollection2.insert([item["com_data"]])
             except:
                 pass
-            pass
+
         return item
 #
 

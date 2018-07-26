@@ -13,14 +13,17 @@ import urllib
 import pyquery
 from gcpy_utils.upyun import *
 import hashlib
-
+"""
+When I wrote this, only God and I understood what I was doing 
+Now, God only knows
+"""
 class HgSpider(scrapy.Spider):
     handle_httpstatus_list = [404]
     name = 'hg'
     count = 0
     i = 0
     def start_requests(self):
-        with io.open('save.txt', encoding='utf-8') as f:
+        with io.open('save.txt') as f:
             stamp = f.read()
         while True:
             stamp2 = str(int(stamp)+self.i)
@@ -40,7 +43,7 @@ class HgSpider(scrapy.Spider):
             #如果404连续超过 X 个，停止爬虫
             if self.count >= 3:
                 # 将结果写入文件
-                f = open('save.txt', 'w+', encoding='utf-8')
+                f = open('save.txt', 'w+')
                 f.write(stamp)
                 f.close()
                 #爬虫关闭，将stamp写入文件
@@ -116,10 +119,10 @@ class HgSpider(scrapy.Spider):
                         send_time = send_time.replace('\r', '').replace('\n', '').replace('\t', '').replace(' ', '')
                     except:
                         pass
-                    try:
-                        send_money = response.xpath('//span[@class="i-txt"]/text()')
-                    except:
-                        pass
+                    # try:
+                    #     send_money = response.xpath('//span[@class="i-txt"]/text()')
+                    # except:
+                    #     pass
                     try:
                         buy_sell_num = response.xpath('//li[@class="line-btm"]/div/a/text()').extract()[0]
                     except:
@@ -287,7 +290,14 @@ class HgSpider(scrapy.Spider):
                     except:
                         pass
                     else:
-                        detail = doc.html()
+                        try:
+                            for i in doc('a').items():
+                                if 'b2b.hc360.com/supplyself/' in i.attr('href'):
+                                    i.replace_with(pyquery.PyQuery(i.text()))
+                        except:
+                            pass
+                        else:
+                            detail = doc.outer_html()
                 detail = detail.replace('<div style="overflow:hidden;">', '<div>')
             try:
                 min_amount = int(
@@ -310,7 +320,48 @@ class HgSpider(scrapy.Spider):
                         price_unit = res[1]
                 except:
                     pass
+
+            if thumb:
+                try:
+                    hl = hashlib.md5()
+                    hl.update(thumb.encode(encoding='utf-8'))
+                    src_md5 = hl.hexdigest()  # md5加密的文件名
+                    # 取出图片后缀
+                    b = thumb.split(".")
+                    tail = b[-1]
+                    full_name = src_md5 + "." + tail
+                    pic_byte = urllib2.urlopen("http:" + thumb).read()
+                    thumb = up_to_upyun("/" + full_name, pic_byte)
+                except:
+                    pass
+            if thumb_1:
+                try:
+                    hl = hashlib.md5()
+                    hl.update(thumb_1.encode(encoding='utf-8'))
+                    src_md5 = hl.hexdigest()  # md5加密的文件名
+                    # 取出图片后缀
+                    b = thumb_1.split(".")
+                    tail = b[-1]
+                    full_name = src_md5 + "." + tail
+                    pic_byte = urllib2.urlopen("http:" + thumb_1).read()
+                    thumb_1 = up_to_upyun("/" + full_name, pic_byte)
+                except:
+                    pass
+            if thumb_2:
+                try:
+                    hl = hashlib.md5()
+                    hl.update(thumb_2.encode(encoding='utf-8'))
+                    src_md5 = hl.hexdigest()  # md5加密的文件名
+                    # 取出图片后缀
+                    b = thumb_2.split(".")
+                    tail = b[-1]
+                    full_name = src_md5 + "." + tail
+                    pic_byte = urllib2.urlopen("http:" + thumb_2).read()
+                    thumb_2 = up_to_upyun("/" + full_name, pic_byte)
+                except:
+                    pass
             goods_data = {
+                '_id': url,
                 'source_url': url,
                 'title': title,
                 'price': price,
@@ -381,7 +432,6 @@ class HgSpider(scrapy.Spider):
                 Item["goods_data"] = goods_data
                 Item["com_data"] = ""
                 yield Item
-                pass
 
     def parse_company(self, response):
         goods_data = response.meta["goods_data"]
@@ -581,10 +631,10 @@ class HgSpider(scrapy.Spider):
         com_data["conn_peopel_department"] = ''
         com_data["wechat"] = ''
         com_data["business"] = ''
-        com_data["com_word"] = ''
+        com_data["com_word"] = com_word
+        com_data["_id"] = 'http://'+ com_word +'.wx.hc360.com/shop/show.html'
 
-
-        print(com_data)
+        # print(com_data)
         Item = HuicongGoodsItem()
         Item["com_data"] = com_data
         Item["goods_data"] = goods_data
