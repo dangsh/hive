@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from scrapy.conf import settings
 from pymongo import MongoClient
-from gcpy_utils.spider_utils import  async_dataflow_push
+from gcpy_utils.spider_utils import  sync_dataflow_push
 
 
 class MongopipClass(object):
@@ -30,18 +30,18 @@ class MongopipClass(object):
         #         pass
         if not item["com_data"]:
             try:
-                async_dataflow_push.dataflow_push("hc360_product", item["goods_data"]["source_url"], item["goods_data"])
+                sync_dataflow_push.dataflow_push("hc360_product", item["goods_data"]["source_url"], item["goods_data"])
             except:
                 print("update goods error1")
                 pass
         else:
             try:
-                async_dataflow_push.dataflow_push("hc360_product", item["goods_data"]["source_url"], item["goods_data"])
+                sync_dataflow_push.dataflow_push("hc360_product", item["goods_data"]["source_url"], item["goods_data"])
             except:
                 print("update goods error2")
                 pass
             try:
-                async_dataflow_push.dataflow_push("hc360_company", item["com_data"]["source_url"], item["com_data"])
+                sync_dataflow_push.dataflow_push("hc360_company", item["com_data"]["source_url"], item["com_data"])
             except:
                 print("update goods error2")
                 pass
