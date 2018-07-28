@@ -384,7 +384,7 @@ class HgSpider(scrapy.Spider):
                 'cate_name_1': cate_name_1,
                 'cate_name_2': cate_name_2,
                 'cate_name_3': cate_name_3,
-                'update_time': update_time,
+                'update_time': datetime.datetime.now().strftime('%Y-%m-%d'),
                 'com_username': com_username,
                 'keywords': keywords,
                 'min_amount': min_amount,
