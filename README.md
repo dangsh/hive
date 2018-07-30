@@ -101,7 +101,10 @@ MySQL 5.7 <br/>
     爬取hc360的企业信息。
 17. huicong_goods<br/>
 	定时同步爬取慧聪新发布的商品
-
+18. ali<br/>
+    获取1688.com的店铺id，商品id
+18. ali_F<br/>
+    获取1688.com的商品详情，使用之前获取到的商品id
     
 ## V0.0.3 版本内容 newSpider <br/>
 1. bilibili<br/>

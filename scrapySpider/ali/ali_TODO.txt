@@ -1,0 +1,23 @@
+﻿1.通过关键词搜索店铺，获取店铺id
+	一个关键词最多只显示2000个店铺，分67页
+2.1000个关键词，最多产生200万 条店铺数据
+	数据去重，获取优质的店铺id信息
+3.请求店铺信息的全部商品接口，获取商品url（id）
+4.请求商品页面获取到商品信息
+
+
+搜索店铺（keywords为关键词 ， beginPage为页数）：
+返回html页面，通过解析获取店铺id
+https://m.1688.com/gongsi_search/-61.html?keywords=%E8%BE%A3%E6%9D%A1&sortType=pop&beginPage=2
+
+在店铺全部商品接口上拼接（memberId 店铺id ，pageIndex 页数），获取商品url（id）
+返回的数据直接用正则切（href）
+https://m.1688.com/winport/asyncView?memberId=b2b-2862207773455a9&_async_id=offerlist%3Aoffers&pageIndex=29
+
+（
+  全部商品页面 ： https://m.1688.com/winport/b2b-332254085466717.html 
+）
+
+
+在商品接口拼接商品id，获取商品数据，返回html
+https://m.1688.com/offer/554652524231.html

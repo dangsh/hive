@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/huicong_com.iml" filepath="$PROJECT_DIR$/.idea/huicong_com.iml" />
       <module fileurl="file://$PROJECT_DIR$/../huicong_goods/.idea/huicong_goods.iml" filepath="$PROJECT_DIR$/../huicong_goods/.idea/huicong_goods.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../newSpider/lottery/.idea/lottery.iml" filepath="$PROJECT_DIR$/../../newSpider/lottery/.idea/lottery.iml" />
     </modules>
   </component>
 </project>

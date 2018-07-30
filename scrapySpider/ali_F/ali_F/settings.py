@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for huicong_goods project
+# Scrapy settings for ali_F project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,61 +9,24 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'huicong_goods'
+BOT_NAME = 'ali_F'
 
-SPIDER_MODULES = ['huicong_goods.spiders']
-NEWSPIDER_MODULE = 'huicong_goods.spiders'
+SPIDER_MODULES = ['ali_F.spiders']
+NEWSPIDER_MODULE = 'ali_F.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'huicong_goods (+http://www.yourdomain.com)'
+#USER_AGENT = 'ali_F (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
-IPPOOL = [
-    {'ipaddr': '192.168.14.130:3128'} ,
-    {'ipaddr': '192.168.14.129:3128'} ,
-    {'ipaddr': '192.168.14.128:3128'} ,
-    {'ipaddr': '192.168.14.127:3128'} ,
-    {'ipaddr': '192.168.14.126:3128'}
-]
+
 
 FEED_EXPORTERS_BASE = {
-    'json' : 'huicong_com.tojson.chongxie' ,
+    'json' : 'ali_F.tojson.chongxie' ,
     'jsonlines' : 'scrapy.contrib.exporter.JsonLinesItemExporter',
 
 }
-
-MY_USER_AGENT = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36",
-    "Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)",
-    "Baiduspider-image+(+http://www.baidu.com/search/spider.htm)",
-    "Mozilla/5.0 (compatible; Baiduspider-render/2.0; +http://www.baidu.com/search/spider.html)",
-    "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
-    "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)",
-    ]
-
-DOWNLOADER_MIDDLEWARES = {
-    'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware':300,
-    'huicong_goods.middlewares.MyproxiesSpiderMiddleware':100,
-    'huicong_goods.middlewares.MyUserAgentMiddleware': 400,
-}
-
-ITEM_PIPELINES = {
-    # 'scrapy_redis.pipelines.RedisPipeline':400,
-    'huicong_goods.myPipeLines.mongoPipe.MongopipClass':500,
-}
-# 指定mongo
-MONGO_HOST = "192.168.14.90"
-MONGO_PORT = 27017
-MONGO_DBNAME = "test"
-MONGO_COLLECTION = "huicong_goods"
-
-DOWNLOAD_DELAY = 0
-CONCURRENT_REQUESTS = 100
-CONCURRENT_REQUESTS_PER_DOMAIN = 100
-CONCURRENT_REQUESTS_PER_IP = 100
-COOKIES_ENABLED = False
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -90,13 +53,13 @@ COOKIES_ENABLED = False
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'huicong_goods.middlewares.HuicongGoodsSpiderMiddleware': 543,
+#    'ali_F.middlewares.AliFSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'huicong_goods.middlewares.HuicongGoodsDownloaderMiddleware': 543,
+#    'ali_F.middlewares.AliFDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -108,7 +71,7 @@ COOKIES_ENABLED = False
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'huicong_goods.pipelines.HuicongGoodsPipeline': 300,
+#    'ali_F.pipelines.AliFPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
