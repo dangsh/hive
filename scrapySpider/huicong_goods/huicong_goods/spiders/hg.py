@@ -44,7 +44,7 @@ class HgSpider(scrapy.Spider):
             if self.count >= 20:
                 # 将结果写入文件
                 f = open('save.txt', 'w+')
-                f.write(stamp)
+                f.write(str(int(stamp)-25))
                 f.close()
                 #爬虫关闭，将stamp写入文件
                 raise CloseSpider('强制停止')

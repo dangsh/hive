@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ali_F.iml" filepath="$PROJECT_DIR$/.idea/ali_F.iml" />
+      <module fileurl="file://D:/pythonPra/tesserocr_test/.idea/tesserocr_test.iml" filepath="D:/pythonPra/tesserocr_test/.idea/tesserocr_test.iml" />
     </modules>
   </component>
 </project>
