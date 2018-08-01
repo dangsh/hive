@@ -5,6 +5,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="tesserocr_test" />
+    <orderEntry type="module" module-name="huicong_goods_geturl" />
+    <orderEntry type="module" module-name="huicong_goods_fenbu" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="Twisted Trial" />

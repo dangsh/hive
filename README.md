@@ -103,9 +103,13 @@ MySQL 5.7 <br/>
 	定时同步爬取慧聪新发布的商品
 18. ali<br/>
     获取1688.com的店铺id，商品id
-18. ali_F<br/>
+19. ali_F<br/>
     获取1688.com的商品详情，使用之前获取到的商品id
-    
+20. huicong_goods_geturl<br/>
+    由于#17爬虫的效率较低，单机爬取一天只有3w条左右数据，不满足需求，所以使用scrapy_redis重构为分布式爬虫，这个是分布式爬虫的第一部分，用于获取url。
+21. huicong_goods_fenbu<br/>
+    这是分布式爬虫的第二部分，用于爬取并选择页面信息。
+        
 ## V0.0.3 版本内容 newSpider <br/>
 1. bilibili<br/>
     请求接口，获取bilibili直播的弹幕内容，简单实现<br/>

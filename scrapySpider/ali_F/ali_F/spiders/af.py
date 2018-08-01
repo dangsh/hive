@@ -5,10 +5,10 @@ class AfSpider(scrapy.Spider):
     name = 'af'
 
     def start_requests(self):
-with open("goodsid.txt") as f:
-    for i in f.readlines():
-        code = i.replace('\r','').replace('\n','')
-        url = 'https://detail.1688.com/offer/' + code + '.html'
+        with open("goodsid.txt") as f:
+            for i in f.readlines():
+                code = i.replace('\r','').replace('\n','')
+                url = 'https://detail.1688.com/offer/' + code + '.html'
                 try:
                     yield scrapy.Request(url=url , callback=self.parse2)
                 except:
