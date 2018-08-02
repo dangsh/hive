@@ -242,7 +242,7 @@ class HgfSpider(RedisCrawlSpider):
                 try:
                     for i in doc('img').items():
                         src = i.attr('src')
-                        if 'hc360' not in src or 'no_pic' in src:
+                        if 'hc360' not in src or 'no_pic' in src or 'nopic' in src:
                             i.remove()
                             continue
                         if thumb and 'no_pic' in thumb:

@@ -10,23 +10,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="hgf.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/spiders/hgf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2940">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="middlewares.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/middlewares.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="981">
-              <caret line="65" column="50" lean-forward="true" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="50" />
+            <state relative-caret-position="442">
+              <caret line="244" column="83" lean-forward="true" selection-start-line="244" selection-start-column="83" selection-end-line="244" selection-end-column="83" />
               <folding>
-                <element signature="e#168#194#0" expanded="true" />
+                <element signature="e#24#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -48,6 +39,8 @@
       <find>fenbu</find>
       <find>url</find>
       <find>urllib</find>
+      <find>detail</find>
+      <find>src</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -68,10 +61,10 @@
         <option value="$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/myPipeLines/__init__.py" />
         <option value="$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/items.py" />
         <option value="$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/settings.py" />
-        <option value="$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/spiders/hgf.py" />
         <option value="$PROJECT_DIR$/../huicong_goods_geturl/huicong_goods_geturl/myPipeLines/__init__.py" />
         <option value="$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/myPipeLines/mongoPipe.py" />
         <option value="$PROJECT_DIR$/../huicong_goods_geturl/huicong_goods_geturl/settings.py" />
+        <option value="$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/spiders/hgf.py" />
       </list>
     </option>
   </component>
@@ -86,6 +79,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -114,7 +108,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -141,9 +134,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Python27\python2.exe" />
       <option name="WORKING_DIRECTORY" value="D:/pythonPra/tesserocr_test" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="D:/pythonPra/tesserocr_test/t1.py" />
@@ -173,7 +166,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-321" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13489583" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -202,6 +194,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9870">
           <caret line="342" column="23" selection-start-line="342" selection-start-column="23" selection-end-line="342" selection-end-column="23" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -216,9 +211,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1800">
           <caret line="63" column="47" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="47" />
-          <folding>
-            <element signature="e#168#194#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -233,9 +225,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="30" column="8" selection-start-line="30" selection-start-column="10" selection-end-line="46" selection-end-column="22" />
-          <folding>
-            <element signature="e#24#56#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -243,9 +232,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="13" column="28" lean-forward="true" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -267,9 +253,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#24#56#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -425,14 +408,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="6" column="48" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="48" />
-          <folding>
-            <element signature="e#24#56#0" expanded="true" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../huicong_goods_geturl/huicong_goods_geturl/myPipeLines/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/settings.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -448,9 +425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../huicong_goods_geturl/huicong_goods_geturl/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -462,9 +436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
           <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -472,9 +443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding>
-            <element signature="e#24#56#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -482,16 +450,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="981">
           <caret line="65" column="50" lean-forward="true" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="50" />
-          <folding>
-            <element signature="e#168#194#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../xizhi/tools/get_level.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="52" column="34" lean-forward="true" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/spiders/hgf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2940">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="442">
+          <caret line="244" column="83" lean-forward="true" selection-start-line="244" selection-start-column="83" selection-end-line="244" selection-end-column="83" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
