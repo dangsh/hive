@@ -28,23 +28,23 @@ class MongopipClass(object):
         #         self.myCollection2.insert([item["com_data"]])
         #     except:
         #         pass
-        if not item["com_data"]:
-            try:
-                sync_dataflow_push.dataflow_push("hc360_product", item["goods_data"]["source_url"], item["goods_data"])
-            except:
-                print("update goods error1")
-                pass
-        else:
-            try:
-                sync_dataflow_push.dataflow_push("hc360_product", item["goods_data"]["source_url"], item["goods_data"])
-            except:
-                print("update goods error2")
-                pass
-            try:
-                sync_dataflow_push.dataflow_push("hc360_company", item["com_data"]["source_url"], item["com_data"])
-            except:
-                print("update goods error2")
-                pass
+        # if not item["com_data"]:
+        #     try:
+        #         sync_dataflow_push.dataflow_push("hc360_product", item["goods_data"]["source_url"], item["goods_data"])
+        #     except:
+        #         print("update goods error1")
+        #         pass
+        # else:
+        #     try:
+        #         sync_dataflow_push.dataflow_push("hc360_product", item["goods_data"]["source_url"], item["goods_data"])
+        #     except:
+        #         print("update goods error2")
+        #         pass
+        #     try:
+        #         sync_dataflow_push.dataflow_push("hc360_company", item["com_data"]["source_url"], item["com_data"])
+        #     except:
+        #         print("update goods error2")
+        #         pass
 
         return item
 

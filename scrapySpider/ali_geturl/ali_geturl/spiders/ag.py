@@ -30,7 +30,7 @@ class AgSpider(scrapy.Spider):
             self.count += 1
         if response.status == 200:
             # 如果404连续超过 X 个，停止爬虫
-            if self.count >= 2:
+            if self.count >= 20:
                 # 将结果写入文件
                 f = open('save.txt', 'w+')
                 f.write(str(int(stamp) - 25))
