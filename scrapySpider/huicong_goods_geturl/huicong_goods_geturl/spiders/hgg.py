@@ -29,10 +29,10 @@ class HggSpider(scrapy.Spider):
             self.count += 1
         if response.status == 200:
             # 如果404连续超过 X 个，停止爬虫
-            if self.count >= 2:
+            if self.count >= 200:
                 # 将结果写入文件
                 f = open('save.txt', 'w+')
-                f.write(str(int(stamp) - 25))
+                f.write(str(int(stamp) - 205))
                 f.close()
                 # 爬虫关闭，将stamp写入文件
                 raise CloseSpider('强制停止')

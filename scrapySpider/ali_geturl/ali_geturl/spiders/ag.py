@@ -43,3 +43,9 @@ class AgSpider(scrapy.Spider):
             Item = AliGeturlItem()
             Item["url"] = url
             yield Item
+
+# 574931737001
+# 574932137001
+# 574932362001
+# 574932413001
+# 574932598001

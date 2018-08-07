@@ -13,6 +13,8 @@ import urllib
 import pyquery
 from gcpy_utils.upyun import *
 import hashlib
+import urlparse
+
 
 class HgfSpider(RedisCrawlSpider):
     name = 'hgf'
@@ -233,6 +235,10 @@ class HgfSpider(RedisCrawlSpider):
             detail = detail.decode("utf-8")
         except:
             pass
+        if  u'质量保证，欢迎咨询洽谈' in detail:
+            my_doc = pyquery.PyQuery(response.text)
+            my_doc = my_doc("#introduce")
+            detail = my_doc.outer_html()
         if detail:
             try:
                 doc = pyquery.PyQuery(detail)
@@ -254,7 +260,15 @@ class HgfSpider(RedisCrawlSpider):
                         b = src.split(".")
                         tail = b[-1]
                         full_name = src_md5 + "." + tail
-                        pic_byte = urllib2.urlopen("http:" + src).read()
+                        pic_byte = ""
+                        new_src = urlparse.urljoin(response.url,src)
+                        try:
+                            pic_byte = urllib2.urlopen(new_src).read()
+                        except:
+                            pic_byte = None
+                        if not pic_byte:
+                            i.remove()
+                            continue
                         upyun_pic = up_to_upyun("/" + full_name, pic_byte)
                         # print(upyun_pic)
                         i.attr('src', upyun_pic)
@@ -270,6 +284,7 @@ class HgfSpider(RedisCrawlSpider):
                     else:
                         detail = doc.outer_html()
             detail = detail.replace('<div style="overflow:hidden;">', '<div>')
+
         try:
             min_amount = int(
                 response.xpath('//tr[@class="item-cur-tab"]/td/text()').extract()[0].split('-')[0].strip())
