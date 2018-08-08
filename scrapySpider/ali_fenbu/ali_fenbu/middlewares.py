@@ -8,7 +8,7 @@
 from scrapy import signals
 import random
 from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
-from gcpy_utils.proxy import adsl
+# from gcpy_utils.proxy import adsl
 
 class AliFenbuSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,

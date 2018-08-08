@@ -347,7 +347,6 @@ class HgfSpider(RedisCrawlSpider):
             except:
                 pass
         goods_data = {
-            # '_id': url,
             'source_url': response.url,
             'title': title,
             'price': price,
@@ -355,7 +354,6 @@ class HgfSpider(RedisCrawlSpider):
             'send_time': send_time,
             'send_money': send_money,
             'com_name': com_name,
-            # 'buy_sell_num' : buy_sell_num ,
             'com_addr': com_addr,
             'auth': auth,
             'com_url': com_url,
