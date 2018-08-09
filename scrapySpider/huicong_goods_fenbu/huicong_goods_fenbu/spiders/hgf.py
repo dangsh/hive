@@ -447,6 +447,8 @@ class HgfSpider(RedisCrawlSpider):
                 if i['name'] == u'电话1':
                     tel = i.get('value', '')
         conn_peopel_position = content_1.get('position', '')
+        if not comname.replace(" ", ""):
+            comname = u"个人用户"
         com_data = {
             'address': address,
             'product': product,
@@ -651,3 +653,6 @@ class HgfSpider(RedisCrawlSpider):
         Item["com_data"] = com_data
         Item["goods_data"] = goods_data
         yield Item
+
+
+

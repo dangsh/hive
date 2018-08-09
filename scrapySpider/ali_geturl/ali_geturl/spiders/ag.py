@@ -14,7 +14,7 @@ class AgSpider(scrapy.Spider):
         with io.open('save.txt') as f:
             stamp = f.read()
         while True:
-            stamp2 = str(int(stamp) + self.i)
+            stamp2 = str(int(stamp) + self.i*100)
             self.i += 1
             url = 'https://detail.1688.com/offer/' + stamp2 + '.html'
             print(url)
