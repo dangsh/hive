@@ -139,3 +139,5 @@ MySQL 5.7 <br/>
 7. lottery<br/>
     爬了双色球有史以来的中将号码，并且使用pandas处理，matplotlib绘图，<br/>
     找出中奖率最高的号码是 01 08 14 20 22 26 + 12
+8. stock<br/>
+    抓取股票信息，用pandas处理之后存入mysql
