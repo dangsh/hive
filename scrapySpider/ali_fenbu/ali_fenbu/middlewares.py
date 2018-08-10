@@ -63,6 +63,7 @@ class MyproxiesSpiderMiddleware(object):
 
     def process_request(self, request, spider):
         result = adsl.get_proxy_list(True)[0]
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!")
         request.meta["proxy"] = "http://" + result
 class MyUserAgentMiddleware(UserAgentMiddleware):
     '''

@@ -131,8 +131,6 @@ class AfSpider(RedisCrawlSpider):
         except:
             pass
 
-
-
         # goods_data = {
         #     'source_url': response.url,
         #     'title': title ,
@@ -185,16 +183,50 @@ class AfSpider(RedisCrawlSpider):
             'fax': fax ,
             'wechat': wechat ,
         }
+        new_url = com_url.replace("companyinfo.htm" , "contactinfo.htm")
         try:
-            yield scrapy.Request(url="123", meta={"goods_data": goods_data},callback=self.parse2cl)
+            yield scrapy.Request(url=new_url , meta={"goods_data": goods_data} , callback=self.parse2)
         except:
             pass
 
     def parse2(self, response):
         goods_data = response.meta["goods_data"]
+        # com_addr = ""
+        # mobile = ""
+        # telephone = ""
+        # seller = ""
+        # detail = ""
+        # cate_name_1 = ""
+        # cate_name_2 = ""
+        # cate_name_3 = ""
+        #
+        # min_amount = ""
+        # brand = ""
+        # to_area = ""
+        # from_area = ""
+        #
+        # qq = ""
+        # ww = ""
+        # fax = ""
+        # wechat = ""
+        try:
+            goods_data["seller"] = response.xpath('//a[@class="membername"]/text()').extract()[0]
+        except:
+            pass
 
 
+        for i in response.xpath('//div[@class="contcat-desc"]/dl'):
+            row = i.xpath('string(.)')
+            row = row[0].extract().replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '').replace('\xa0','')
+            # print(row)
+            a , b = row.split("：")
+            # print(a)
+            if u'电话' == a:
+                goods_data["telephone"] = i.xpath('dd/text()').extract()[0]
+        
+        # print(goods_data["seller"])
 
-
-
-
+# for i in selector.xpath('//div[@class="contcat-desc"]/dl'):
+#     row = i.xpath('string(.)')
+#     row = row.replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
+#     print(row)
