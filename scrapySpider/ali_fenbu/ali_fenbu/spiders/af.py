@@ -44,7 +44,7 @@ class AfSpider(RedisCrawlSpider):
         ww = ""
         fax = ""
         wechat = ""
-
+        detail_url = ""
         try:
             title = response.xpath('//h1[@class="d-title"]/text()').extract()[0]
         except:
@@ -130,7 +130,10 @@ class AfSpider(RedisCrawlSpider):
             thumb = imgs[2]
         except:
             pass
-
+        try:
+            detail_url = response.xpath('//div[@class="desc-lazyload-container"]/@data-tfs-url').extract()[0]
+        except:
+            pass
         # goods_data = {
         #     'source_url': response.url,
         #     'title': title ,
@@ -185,48 +188,46 @@ class AfSpider(RedisCrawlSpider):
         }
         new_url = com_url.replace("companyinfo.htm" , "contactinfo.htm")
         try:
-            yield scrapy.Request(url=new_url , meta={"goods_data": goods_data} , callback=self.parse2)
+            yield scrapy.Request(url=new_url , meta={"goods_data": goods_data , "detail_url":detail_url} , callback=self.parse2)
         except:
             pass
 
     def parse2(self, response):
         goods_data = response.meta["goods_data"]
-        # com_addr = ""
-        # mobile = ""
-        # telephone = ""
-        # seller = ""
-        # detail = ""
-        # cate_name_1 = ""
-        # cate_name_2 = ""
-        # cate_name_3 = ""
-        #
-        # min_amount = ""
-        # brand = ""
-        # to_area = ""
-        # from_area = ""
-        #
-        # qq = ""
-        # ww = ""
-        # fax = ""
-        # wechat = ""
+        detail_url = response.meta["detail_url"]
         try:
             goods_data["seller"] = response.xpath('//a[@class="membername"]/text()').extract()[0]
         except:
             pass
+        try:
+            for i in response.xpath('//div[@class="contcat-desc"]/dl'):
+                row = i.xpath('string(.)')
+                row = row[0].extract().replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '').replace('\xa0','')
+                # print(row)
+                a , b = row.split("：")
+                # print(a)
+                if u'电话' == a:
+                    goods_data["telephone"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
+                if u'移动电话' == a:
+                    goods_data["mobile"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
+                if u'传真' == a:
+                    goods_data["fax"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
+                if u'地址' == a:
+                    goods_data["com_addr"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
+        except:
+            pass
+        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+        print(detail_url)
+        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+        # try:
+        #     detail_url =
+        # except:
+        #     pass
+        # try:
+        #     yield scrapy.Request(url=new_url , meta={"goods_data": goods_data} , callback=self.parse3)
+        # except:
+        #     pass
 
+    def parse3(self, response):
+        goods_data = response.meta["goods_data"]
 
-        for i in response.xpath('//div[@class="contcat-desc"]/dl'):
-            row = i.xpath('string(.)')
-            row = row[0].extract().replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '').replace('\xa0','')
-            # print(row)
-            a , b = row.split("：")
-            # print(a)
-            if u'电话' == a:
-                goods_data["telephone"] = i.xpath('dd/text()').extract()[0]
-        
-        # print(goods_data["seller"])
-
-# for i in selector.xpath('//div[@class="contcat-desc"]/dl'):
-#     row = i.xpath('string(.)')
-#     row = row.replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
-#     print(row)
