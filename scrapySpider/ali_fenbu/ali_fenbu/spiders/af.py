@@ -134,6 +134,9 @@ class AfSpider(RedisCrawlSpider):
             detail_url = response.xpath('//div[@class="desc-lazyload-container"]/@data-tfs-url').extract()[0]
         except:
             pass
+        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+        print(response.url , detail_url)
+        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
         # goods_data = {
         #     'source_url': response.url,
         #     'title': title ,
@@ -216,9 +219,7 @@ class AfSpider(RedisCrawlSpider):
                     goods_data["com_addr"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
         except:
             pass
-        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-        print(detail_url)
-        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+
         # try:
         #     detail_url =
         # except:
