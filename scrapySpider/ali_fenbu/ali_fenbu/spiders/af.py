@@ -5,6 +5,7 @@ from ali_fenbu.items import AliFenbuItem
 import json
 import datetime
 import re
+import pyquery
 
 class AfSpider(RedisCrawlSpider):
     name = 'af'
@@ -134,9 +135,24 @@ class AfSpider(RedisCrawlSpider):
             detail_url = response.xpath('//div[@class="desc-lazyload-container"]/@data-tfs-url').extract()[0]
         except:
             pass
-        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-        print(response.url , detail_url)
-        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+        if not detail_url:
+            try:
+                detail_url = response.xpath('//div[@id="mod-detail-description"]/@data-mod-config').extract()[0]
+                reg = '"contentUrl":"(.*?)"'
+                detail_url = re.findall(reg, detail_url)[0]
+            except:
+                pass
+
+        # print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+        # print(response.url , detail_url)
+        # print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+        if 'alicdn' not in detail_url:
+            doc = pyquery.PyQuery(response.text)
+            detail = doc("#de-description-detail").outer_html()
+            print(response.url , detail_url , detail)
+            # detail = response.xpath('//div[@id="de-description-detail"]')
+
+
         # goods_data = {
         #     'source_url': response.url,
         #     'title': title ,
@@ -152,83 +168,83 @@ class AfSpider(RedisCrawlSpider):
         #     'max_price': max_price ,
         # }
 
-        goods_data = {
-            'source_url' : response.url ,
-            'title' : title ,
-            'price' : price ,
-            'offer_num' : offer_num ,
-            'send_time' : send_time ,
-            'send_money' : send_money ,
-            'com_name' : com_name ,
-            'com_addr' : com_addr ,
-            'auth': auth ,
-            'com_url' : com_url ,
-            'mobile': mobile ,
-            'telephone': telephone ,
-            'seller': seller ,
-            'attrs_kv' : attrs_kv ,
-            'detail': detail ,
-            'thumb_1' : thumb_1 ,
-            'thumb_2' : thumb_2 ,
-            'thumb' : thumb ,
-            'cate_name_1': cate_name_1 ,
-            'cate_name_2': cate_name_2 ,
-            'cate_name_3': cate_name_3 ,
-            'update_time': datetime.datetime.now().strftime('%Y-%m-%d') ,
-            'com_username': com_username ,
-            'keywords': keywords ,
-            'min_amount': min_amount ,
-            'min_price': min_price ,
-            'max_price': max_price ,
-            'price_unit': price_unit ,
-            'brand': brand ,
-            'to_area': to_area ,
-            'from_area': from_area ,
-            'qq': qq ,
-            'ww': ww ,
-            'fax': fax ,
-            'wechat': wechat ,
-        }
-        new_url = com_url.replace("companyinfo.htm" , "contactinfo.htm")
-        try:
-            yield scrapy.Request(url=new_url , meta={"goods_data": goods_data , "detail_url":detail_url} , callback=self.parse2)
-        except:
-            pass
-
-    def parse2(self, response):
-        goods_data = response.meta["goods_data"]
-        detail_url = response.meta["detail_url"]
-        try:
-            goods_data["seller"] = response.xpath('//a[@class="membername"]/text()').extract()[0]
-        except:
-            pass
-        try:
-            for i in response.xpath('//div[@class="contcat-desc"]/dl'):
-                row = i.xpath('string(.)')
-                row = row[0].extract().replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '').replace('\xa0','')
-                # print(row)
-                a , b = row.split("：")
-                # print(a)
-                if u'电话' == a:
-                    goods_data["telephone"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
-                if u'移动电话' == a:
-                    goods_data["mobile"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
-                if u'传真' == a:
-                    goods_data["fax"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
-                if u'地址' == a:
-                    goods_data["com_addr"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
-        except:
-            pass
-
-        # try:
-        #     detail_url =
-        # except:
-        #     pass
-        # try:
-        #     yield scrapy.Request(url=new_url , meta={"goods_data": goods_data} , callback=self.parse3)
-        # except:
-        #     pass
-
-    def parse3(self, response):
-        goods_data = response.meta["goods_data"]
+    #     goods_data = {
+    #         'source_url' : response.url ,
+    #         'title' : title ,
+    #         'price' : price ,
+    #         'offer_num' : offer_num ,
+    #         'send_time' : send_time ,
+    #         'send_money' : send_money ,
+    #         'com_name' : com_name ,
+    #         'com_addr' : com_addr ,
+    #         'auth': auth ,
+    #         'com_url' : com_url ,
+    #         'mobile': mobile ,
+    #         'telephone': telephone ,
+    #         'seller': seller ,
+    #         'attrs_kv' : attrs_kv ,
+    #         'detail': detail ,
+    #         'thumb_1' : thumb_1 ,
+    #         'thumb_2' : thumb_2 ,
+    #         'thumb' : thumb ,
+    #         'cate_name_1': cate_name_1 ,
+    #         'cate_name_2': cate_name_2 ,
+    #         'cate_name_3': cate_name_3 ,
+    #         'update_time': datetime.datetime.now().strftime('%Y-%m-%d') ,
+    #         'com_username': com_username ,
+    #         'keywords': keywords ,
+    #         'min_amount': min_amount ,
+    #         'min_price': min_price ,
+    #         'max_price': max_price ,
+    #         'price_unit': price_unit ,
+    #         'brand': brand ,
+    #         'to_area': to_area ,
+    #         'from_area': from_area ,
+    #         'qq': qq ,
+    #         'ww': ww ,
+    #         'fax': fax ,
+    #         'wechat': wechat ,
+    #     }
+    #     new_url = com_url.replace("companyinfo.htm" , "contactinfo.htm")
+    #     try:
+    #         yield scrapy.Request(url=new_url , meta={"goods_data": goods_data , "detail_url":detail_url} , callback=self.parse2)
+    #     except:
+    #         pass
+    #
+    # def parse2(self, response):
+    #     goods_data = response.meta["goods_data"]
+    #     detail_url = response.meta["detail_url"]
+    #     try:
+    #         goods_data["seller"] = response.xpath('//a[@class="membername"]/text()').extract()[0]
+    #     except:
+    #         pass
+    #     try:
+    #         for i in response.xpath('//div[@class="contcat-desc"]/dl'):
+    #             row = i.xpath('string(.)')
+    #             row = row[0].extract().replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '').replace('\xa0','')
+    #             # print(row)
+    #             a , b = row.split("：")
+    #             # print(a)
+    #             if u'电话' == a:
+    #                 goods_data["telephone"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
+    #             if u'移动电话' == a:
+    #                 goods_data["mobile"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
+    #             if u'传真' == a:
+    #                 goods_data["fax"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
+    #             if u'地址' == a:
+    #                 goods_data["com_addr"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
+    #     except:
+    #         pass
+    #
+    #     # try:
+    #     #     detail_url =
+    #     # except:
+    #     #     pass
+    #     # try:
+    #     #     yield scrapy.Request(url=new_url , meta={"goods_data": goods_data} , callback=self.parse3)
+    #     # except:
+    #     #     pass
+    #
+    # def parse3(self, response):
+    #     goods_data = response.meta["goods_data"]
 
