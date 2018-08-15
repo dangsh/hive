@@ -33,7 +33,7 @@ SCHEDULER_PERSIST = True
 SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.SpiderPriorityQueue'
 ITEM_PIPELINES = {
     # 'scrapy_redis.pipelines.RedisPipeline':400,
-    # 'ali_fenbu.myPipeLines.mongoPipe.MongopipClass':300,
+    'ali_fenbu.myPipeLines.mongoPipe.MongopipClass':300,
 }
 
 # 指定redis主机

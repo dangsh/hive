@@ -6,6 +6,13 @@ import json
 import datetime
 import re
 import pyquery
+from pymongo import MongoClient
+import requests
+import urllib2
+import urllib
+import hashlib
+import urlparse
+from gcpy_utils.upyun import *
 
 class AfSpider(RedisCrawlSpider):
     name = 'af'
@@ -149,7 +156,34 @@ class AfSpider(RedisCrawlSpider):
                 detail = doc("#de-description-detail").outer_html()
             except:
                 pass
+        goods_id = ""
+        try:
+            reg = " 'catid':'(.*?)',"
+            goods_id = re.findall(reg , response.text)[0]
+        except:
+            pass
+        if goods_id:
+            conn = MongoClient('mongodb://192.168.14.90:27017/')
+            db = conn.ali
+            data = db.cate.find_one({'_id':int(goods_id)})
+            try:
+                if data["level"] == 3:
+                    cate_name_1 = data["cate1_name"]
+                    cate_name_2 = data["cate2_name"]
+                    cate_name_3 = data["cate3_name"]
+            except:
+                pass
+        if not cate_name_1:
+            #请求接口得到分类
+            rsp = requests.post('http://192.168.14.1:8000/pre_api/' , data={'title':title})
+            rsp = json.loads(rsp.text)["data"]
+            cate_name_1 = rsp[0]
+            cate_name_2 = rsp[1]
+            cate_name_3 = rsp[2]
 
+        turn_off = ""
+        if u'商品已下架' in response.text:
+            turn_off = "off"
         # goods_data = {
         #     'source_url': response.url,
         #     'title': title ,
@@ -203,10 +237,11 @@ class AfSpider(RedisCrawlSpider):
             'wechat': wechat ,
         }
         new_url = com_url.replace("companyinfo.htm" , "contactinfo.htm")
-        try:
-            yield scrapy.Request(url=new_url , meta={"goods_data": goods_data , "detail_url":detail_url} , callback=self.parse2)
-        except:
-            pass
+        if not turn_off=="off":
+            try:
+                yield scrapy.Request(url=new_url , meta={"goods_data": goods_data , "detail_url":detail_url} , callback=self.parse2)
+            except:
+                pass
 
     def parse2(self, response):
         goods_data = response.meta["goods_data"]
@@ -233,62 +268,64 @@ class AfSpider(RedisCrawlSpider):
         except:
             pass
 
-        # if goods_data["thumb"]:
-        #     try:
-        #         hl = hashlib.md5()
-        #         hl.update(thumb.encode(encoding='utf-8'))
-        #         src_md5 = hl.hexdigest()  # md5加密的文件名
-        #         # 取出图片后缀
-        #         b = thumb.split(".")
-        #         tail = b[-1]
-        #         full_name = src_md5 + "." + tail
-        #         pic_byte = urllib2.urlopen("http:" + thumb).read()
-        #         thumb = up_to_upyun("/" + full_name, pic_byte)
-        #     except:
-        #         pass
-        # if goods_data["thumb_1"]:
-        #     try:
-        #         hl = hashlib.md5()
-        #         hl.update(thumb_1.encode(encoding='utf-8'))
-        #         src_md5 = hl.hexdigest()  # md5加密的文件名
-        #         # 取出图片后缀
-        #         b = thumb_1.split(".")
-        #         tail = b[-1]
-        #         full_name = src_md5 + "." + tail
-        #         pic_byte = urllib2.urlopen("http:" + thumb_1).read()
-        #         thumb_1 = up_to_upyun("/" + full_name, pic_byte)
-        #     except:
-        #         pass
-        # if goods_data["thumb_2"]:
-        #     try:
-        #         hl = hashlib.md5()
-        #         hl.update(thumb_2.encode(encoding='utf-8'))
-        #         src_md5 = hl.hexdigest()  # md5加密的文件名
-        #         # 取出图片后缀
-        #         b = thumb_2.split(".")
-        #         tail = b[-1]
-        #         full_name = src_md5 + "." + tail
-        #         pic_byte = urllib2.urlopen("http:" + thumb_2).read()
-        #         thumb_2 = up_to_upyun("/" + full_name, pic_byte)
-        #     except:
-        #         pass
+        if goods_data["thumb"]:
+            try:
+                hl = hashlib.md5()
+                hl.update(goods_data["thumb"].encode(encoding='utf-8'))
+                src_md5 = hl.hexdigest()  # md5加密的文件名
+                # 取出图片后缀
+                b = goods_data["thumb"].split(".")
+                tail = b[-1]
+                full_name = src_md5 + "." + tail
+                pic_byte = urllib2.urlopen(goods_data["thumb"]).read()
+                goods_data["thumb"] = up_to_upyun("/" + full_name, pic_byte)
+            except:
+                pass
+        if goods_data["thumb_1"]:
+            try:
+                hl = hashlib.md5()
+                hl.update(goods_data["thumb_1"].encode(encoding='utf-8'))
+                src_md5 = hl.hexdigest()  # md5加密的文件名
+                # 取出图片后缀
+                b = goods_data["thumb_1"].split(".")
+                tail = b[-1]
+                full_name = src_md5 + "." + tail
+                pic_byte = urllib2.urlopen(goods_data["thumb_1"]).read()
+                goods_data["thumb_1"] = up_to_upyun("/" + full_name, pic_byte)
+            except:
+                pass
+        if goods_data["thumb_2"]:
+            try:
+                hl = hashlib.md5()
+                hl.update(goods_data["thumb_2"].encode(encoding='utf-8'))
+                src_md5 = hl.hexdigest()  # md5加密的文件名
+                # 取出图片后缀
+                b = goods_data["thumb_2"].split(".")
+                tail = b[-1]
+                full_name = src_md5 + "." + tail
+                pic_byte = urllib2.urlopen(goods_data["thumb_2"]).read()
+                goods_data["thumb_2"] = up_to_upyun("/" + full_name, pic_byte)
+            except:
+                pass
+
 
         if detail_url:
             try:
                 yield scrapy.Request(url=detail_url , meta={"goods_data": goods_data} , callback=self.parse3)
             except:
                 pass
-        # else:
-        #     Item = AliFenbuItem()
-        #     Item["goods_data"] = goods_data
-        #     yield Item
+        else:
+
+            Item = AliFenbuItem()
+            Item["goods_data"] = goods_data
+            yield Item
 
 
     def parse3(self, response):
         goods_data = response.meta["goods_data"]
         data = response.text
         goods_data["detail"] = data[:-3].split('":"')[1]
-        # Item = AliFenbuItem()
-        # Item["goods_data"] = goods_data
-        # yield Item
+        Item = AliFenbuItem()
+        Item["goods_data"] = goods_data
+        yield Item
 
