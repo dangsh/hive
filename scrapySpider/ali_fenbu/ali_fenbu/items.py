@@ -13,4 +13,5 @@ class AliFenbuItem(scrapy.Item):
     # name = scrapy.Field()
     url = scrapy.Field()
     goods_data = scrapy.Field()
+    com_data = scrapy.Field()
     pass

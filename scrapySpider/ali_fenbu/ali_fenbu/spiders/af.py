@@ -308,24 +308,349 @@ class AfSpider(RedisCrawlSpider):
             except:
                 pass
 
+        com_address = goods_data["com_addr"]
+        com_product = ''
+        com_comname = ''
+        com_com_auth = ''
+        com_contact = goods_data["seller"]
+        com_conn_peopel_sex = ''
+        com_fax = goods_data["fax"]
+        com_mobile = goods_data["mobile"]
+        com_tel = goods_data["telephone"]
+        com_conn_peopel_position = ''
+        com_source_url = goods_data["com_url"]
+        com_comname_short = ''
+        com_comtype = ''
+        com_com_addr1 = ''
+        com_ceo = ''
+        com_provinces_and_cities = ''
+        com_regyear = ''
+        com_regcapital = ''
+        com_employ = ''
+        com_main_industry = ''
+        com_main_addr = ''
+        com_user_auth = ''
+        com_new_login = ''
+        com_wechat = ''
+        com_comdesc = ''
+        com_com_pic = ''
+        com_com_pic_upyun = ''
+        com_buy_goods = ''
+        com_rdnum = ''
+        com_busmode = ''
+        com_period = ''
+        com_survey = ''
+        com_regist = ''
+        com_com_status = ''
+        com_bank_type = ''
+        com_bank_num = ''
+        com_bank_people = ''
+        com_brand_name = ''
+        com_customer = ''
+        com_annulsale = ''
+        com_annulexport = ''
+        com_annulimport = ''
+        com_business = ''
+        com_com_area = ''
+        com_monthly_production = ''
+        com_OEM = ''
+        com_zip = ''
+        com_com_tel = ''
+        com_email = ''
+        com_website = ''
+        com_aministration_area = ''
+        com_com_addr2 = ''
+        com_qc = ''
+        com_com_location = ''
+        com_com_reg_addr = ''
+        com_business_num = ''
+        com_tax_num = ''
+        com_management_system = ''
+        com_conn_peopel_department = ''
+
+        com_data = {
+            'address': com_address,
+            'product': com_product,
+            'comname': com_comname,
+            'com_auth': com_com_auth,
+            'contact': com_contact,
+            'conn_peopel_sex': com_conn_peopel_sex,
+            'fax': com_fax,
+            'mobile': com_mobile,
+            'tel': com_tel,
+            'conn_peopel_position': com_conn_peopel_position,
+            'source_url': com_source_url,
+            'comname_short': com_comname_short,
+            'comtype': com_comtype,
+            'com_addr1': com_com_addr1,
+            'ceo': com_ceo,
+            'provinces_and_cities': com_provinces_and_cities,
+            'regyear': com_regyear,
+            'regcapital': com_regcapital,
+            'employ': com_employ,
+            'main_industry': com_main_industry,
+            'main_addr': com_main_addr,
+            'user_auth': com_user_auth,
+            'new_login': com_new_login,
+            'wechat': com_wechat,
+            'comdesc': com_comdesc,
+            'com_pic': com_com_pic,
+            'com_pic_upyun': com_com_pic_upyun,
+            'buy_goods': com_buy_goods,
+            'rdnum': com_rdnum,
+            'busmode': com_busmode,
+            'period': com_period,
+            'survey': com_survey,
+            'regist': com_regist,
+            'com_status': com_com_status,
+            'bank_type': com_bank_type,
+            'bank_num': com_bank_num,
+            'bank_people': com_bank_people,
+            'brand_name': com_brand_name,
+            'customer': com_customer,
+            'annulsale': com_annulsale,
+            'annulexport': com_annulexport,
+            'annulimport': com_annulimport,
+            'business': com_business,
+            'com_area': com_com_area,
+            'monthly_production': com_monthly_production,
+            'OEM': com_OEM,
+            'zip': com_zip,
+            'com_tel': com_com_tel,
+            'email': com_email,
+            'website': com_website,
+            'aministration_area': com_aministration_area,
+            'com_addr2': com_com_addr2,
+            'qc': com_qc,
+            'com_location': com_com_location,
+            'com_reg_addr': com_com_reg_addr,
+            'business_num': com_business_num,
+            'tax_num': com_tax_num,
+            'management_system': com_management_system,
+            'conn_peopel_department': com_conn_peopel_department,
+        }
+
+
 
         if detail_url:
             try:
-                yield scrapy.Request(url=detail_url , meta={"goods_data": goods_data} , callback=self.parse3)
+                yield scrapy.Request(url=detail_url , meta={"goods_data": goods_data , "com_data" : com_data} , callback=self.parse3)
             except:
                 pass
         else:
+            if goods_data["detail"]:
+                try:
+                    doc = pyquery.PyQuery(goods_data["detail"])
+                except:
+                    pass
+                try:
+                    for i in doc('img').items():
+                        src = i.attr('src')
+                        if '?' in src:
+                            src = src.split('?')[0]
+                        hl = hashlib.md5()
+                        hl.update(src.encode(encoding='utf-8'))
+                        src_md5 = hl.hexdigest()  # md5加密的文件名
+                        # 取出图片后缀
+                        b = src.split(".")
+                        tail = b[-1]
+                        full_name = src_md5 + "." + tail
+                        pic_byte = ""
+                        new_src = src
 
-            Item = AliFenbuItem()
-            Item["goods_data"] = goods_data
-            yield Item
+                        try:
+                            pic_byte = urllib2.urlopen(new_src).read()
+                        except:
+                            pic_byte = None
+                        if not pic_byte:
+                            i.remove()
+                            continue
+                        upyun_pic = up_to_upyun("/" + full_name, pic_byte)
+                        # print(upyun_pic)
+                        i.attr('src', upyun_pic)
+                except:
+                    pass
+                try:
+                    for i in doc('a').items():
+                        if 'detail.1688.com' in i.attr('href'):
+                            i.attr('href', '')
+                    for i in doc('map').items():
+                        i.remove()
+                except:
+                    pass
+                goods_data["detail"] = doc.outer_html()
+            try:
+                yield scrapy.Request(url=goods_data["com_url"] , meta={"goods_data": goods_data , "com_data" : com_data} , callback=self.parse_company)
+            except:
+                pass
+
+
 
 
     def parse3(self, response):
         goods_data = response.meta["goods_data"]
+        com_data = response.meta["com_data"]
         data = response.text
-        goods_data["detail"] = data[:-3].split('":"')[1]
-        Item = AliFenbuItem()
-        Item["goods_data"] = goods_data
-        yield Item
+        try:
+            goods_data["detail"] = data[:-3].split('":"')[1]
+        except:
+            pass
+        if goods_data["detail"]:
+            try:
+                doc = pyquery.PyQuery(goods_data["detail"])
+            except:
+                pass
+            try:
+                for i in doc('img').items():
+                    src = i.attr('src')
+                    if '?' in src:
+                        src = src.split('?')[0]
+                    if '"' in src:
+                        src = src.replace('"' , '').replace('\\' , '')
+                    hl = hashlib.md5()
+                    hl.update(src.encode(encoding='utf-8'))
+                    src_md5 = hl.hexdigest()  # md5加密的文件名
+                    # 取出图片后缀
+                    b = src.split(".")
+                    tail = b[-1]
+                    full_name = src_md5 + "." + tail
+                    pic_byte = ""
+                    new_src = src
+                    try:
+                        pic_byte = urllib2.urlopen(new_src).read()
+                    except:
+                        pic_byte = None
+                    if not pic_byte:
+                        i.remove()
+                        continue
+                    upyun_pic = up_to_upyun("/" + full_name, pic_byte)
+                    # print(upyun_pic)
+                    i.attr('src', upyun_pic)
+            except:
+                pass
+            try:
+                for i in doc('a').items():
+                    if 'detail.1688.com' in i.attr('href'):
+                        i.attr('href', '')
+                for i in doc('map').items():
+                    i.remove()
+            except:
+                pass
+            goods_data["detail"] = doc.outer_html()
+        try:
+            yield scrapy.Request(url=goods_data["com_url"], meta={"goods_data": goods_data , "com_data":com_data},callback=self.parse_company2)
+        except:
+            pass
 
+    def parse_company(self, response):
+        goods_data = response.meta["goods_data"]
+        com_data = response.meta["com_data"]
+        data = response.xpath('//span[@class="tb-value-data"]/text()').extract()
+        com_data["regyear"] = data[0]
+        com_data["regcapital"] = data[1]
+        com_data["com_reg_addr"] = data[3]
+        data_list = []
+        data_dict = {}
+        for i in response.xpath('//div[@id="J_CompanyDetailInfoList"]/div/table/tr/td'):
+            data = i.xpath('text()').extract()[0]
+            data_list.append(data)
+        for i in range(0 , len(data_list) , 2):
+            data_dict[data_list[i]] = data_list[i+1]
+        # print(data_dict)
+        try:
+            com_data["regcapital"] = data_dict[u"注册资金"]
+        except:
+            pass
+        try:
+            com_data["busmode"] = data_dict[u"经营模式"]
+        except:
+            pass
+        try:
+            com_data["product"] = data_dict[u"主营产品或服务"]
+        except:
+            pass
+        try:
+            com_data["management_system"] = data_dict[u"管理体系认证"]
+        except:
+            pass
+        try:
+            com_data["brand_name"] = data_dict[u"品牌名称"]
+        except:
+            pass
+        try:
+            com_data["com_area"] = data_dict[u"厂房面积"]
+        except:
+            pass
+        try:
+            com_data["employ"] = data_dict[u"员工人数"]
+        except:
+            pass
+        try:
+            com_data["monthly_production"] = data_dict[u"月产量"]
+        except:
+            pass
+        try:
+            com_data["annulsale"] = data_dict[u"年营业额"]
+        except:
+            pass
+        try:
+            com_data["annulexport"] = data_dict[u"年出口额"]
+        except:
+            pass
+        print(com_data)
+    def parse_company2(self, response):
+        goods_data = response.meta["goods_data"]
+        com_data = response.meta["com_data"]
+        data = response.xpath('//span[@class="tb-value-data"]/text()').extract()
+        com_data["regyear"] = data[0]
+        com_data["regcapital"] = data[1]
+        com_data["com_reg_addr"] = data[3]
+        data_list = []
+        data_dict = {}
+        for i in response.xpath('//div[@id="J_CompanyDetailInfoList"]/div/table/tr/td'):
+            data = i.xpath('text()').extract()[0]
+            data_list.append(data)
+        for i in range(0, len(data_list), 2):
+            data_dict[data_list[i]] = data_list[i + 1]
+        # print(data_dict)
+        try:
+            com_data["regcapital"] = data_dict[u"注册资金"]
+        except:
+            pass
+        try:
+            com_data["busmode"] = data_dict[u"经营模式"]
+        except:
+            pass
+        try:
+            com_data["product"] = data_dict[u"主营产品或服务"]
+        except:
+            pass
+        try:
+            com_data["management_system"] = data_dict[u"管理体系认证"]
+        except:
+            pass
+        try:
+            com_data["brand_name"] = data_dict[u"品牌名称"]
+        except:
+            pass
+        try:
+            com_data["com_area"] = data_dict[u"厂房面积"]
+        except:
+            pass
+        try:
+            com_data["employ"] = data_dict[u"员工人数"]
+        except:
+            pass
+        try:
+            com_data["monthly_production"] = data_dict[u"月产量"]
+        except:
+            pass
+        try:
+            com_data["annulsale"] = data_dict[u"年营业额"]
+        except:
+            pass
+        try:
+            com_data["annulexport"] = data_dict[u"年出口额"]
+        except:
+            pass
+        print(com_data)
