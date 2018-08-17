@@ -14,8 +14,8 @@
       <file leaf-file-name="af.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/spiders/af.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="312" column="42" lean-forward="true" selection-start-line="312" selection-start-column="42" selection-end-line="312" selection-end-column="42" />
+            <state relative-caret-position="517">
+              <caret line="542" column="38" lean-forward="true" selection-start-line="542" selection-start-column="38" selection-end-line="542" selection-end-column="38" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -72,7 +72,6 @@
       <find>introduce</find>
       <find>url</find>
       <find>GetStockList</find>
-      <find>comname</find>
       <find>thumb</find>
       <find>company_username</find>
       <find>com_user</find>
@@ -89,7 +88,15 @@
       <find>busmod</find>
       <find>fax</find>
       <find>source</find>
+      <find>comdesc</find>
+      <find>pyquery</find>
+      <find>description</find>
+      <find>des</find>
+      <find>replace</find>
+      <find>desc</find>
       <find>com_name</find>
+      <find>com_data[&quot;comname&quot;]</find>
+      <find>comname</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -116,7 +123,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1605" />
     <option name="y" value="-172" />
     <option name="width" value="1380" />
@@ -211,7 +218,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-321" width="1936" height="1056" extended-state="6" />
+    <frame x="1358" y="-321" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1234375" />
@@ -601,6 +608,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../../dowload_img/s1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -611,17 +625,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/spiders/af.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="312" column="42" lean-forward="true" selection-start-line="312" selection-start-column="42" selection-end-line="312" selection-end-column="42" />
+        <state relative-caret-position="517">
+          <caret line="542" column="38" lean-forward="true" selection-start-line="542" selection-start-column="38" selection-end-line="542" selection-end-column="38" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>

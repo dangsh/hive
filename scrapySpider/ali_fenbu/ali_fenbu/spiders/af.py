@@ -317,7 +317,7 @@ class AfSpider(RedisCrawlSpider):
         com_tel = goods_data["telephone"]
         com_conn_peopel_position = ''
         com_source_url = goods_data["com_url"]
-        com_comname_short = ''
+        com_comname_short = goods_data["com_name"]
         com_comtype = ''
         com_com_addr1 = ''
         com_ceo = ''
@@ -536,71 +536,11 @@ class AfSpider(RedisCrawlSpider):
                 pass
             goods_data["detail"] = doc.outer_html()
         try:
-            yield scrapy.Request(url=goods_data["com_url"], meta={"goods_data": goods_data , "com_data":com_data},callback=self.parse_company2)
+            yield scrapy.Request(url=goods_data["com_url"], meta={"goods_data": goods_data , "com_data":com_data},callback=self.parse_company)
         except:
             pass
 
     def parse_company(self, response):
-        goods_data = response.meta["goods_data"]
-        com_data = response.meta["com_data"]
-        data = response.xpath('//span[@class="tb-value-data"]/text()').extract()
-        com_data["regyear"] = data[0]
-        com_data["regcapital"] = data[1]
-        com_data["com_reg_addr"] = data[3]
-        data_list = []
-        data_dict = {}
-        for i in response.xpath('//div[@id="J_CompanyDetailInfoList"]/div/table/tr/td'):
-            data = i.xpath('text()').extract()[0]
-            data_list.append(data)
-        for i in range(0 , len(data_list) , 2):
-            data_dict[data_list[i]] = data_list[i+1]
-        # print(data_dict)
-        try:
-            com_data["regcapital"] = data_dict[u"注册资金"]
-        except:
-            pass
-        try:
-            com_data["busmode"] = data_dict[u"经营模式"]
-        except:
-            pass
-        try:
-            com_data["product"] = data_dict[u"主营产品或服务"]
-        except:
-            pass
-        try:
-            com_data["management_system"] = data_dict[u"管理体系认证"]
-        except:
-            pass
-        try:
-            com_data["brand_name"] = data_dict[u"品牌名称"]
-        except:
-            pass
-        try:
-            com_data["com_area"] = data_dict[u"厂房面积"]
-        except:
-            pass
-        try:
-            com_data["employ"] = data_dict[u"员工人数"]
-        except:
-            pass
-        try:
-            com_data["monthly_production"] = data_dict[u"月产量"]
-        except:
-            pass
-        try:
-            com_data["annulsale"] = data_dict[u"年营业额"]
-        except:
-            pass
-        try:
-            com_data["annulexport"] = data_dict[u"年出口额"]
-        except:
-            pass
-        Item = AliFenbuItem()
-        Item["goods_data"] = goods_data
-        Item["com_data"] = com_data
-        yield Item
-
-    def parse_company2(self, response):
         goods_data = response.meta["goods_data"]
         com_data = response.meta["com_data"]
         data = response.xpath('//span[@class="tb-value-data"]/text()').extract()
@@ -655,9 +595,19 @@ class AfSpider(RedisCrawlSpider):
             com_data["annulexport"] = data_dict[u"年出口额"]
         except:
             pass
-
-
-        test_com_url = 'http://spiderhub.gongchang.com/write_to_online/data_show_onerow?secret=gc7232275&dataset=hc360_company&hkey=' + com_data["source_url"]
+        try:
+            com_data["comdesc"] = response.xpath('//p[@class="detail-info"]/span/text()').extract()[0]
+        except:
+            pass
+        if not com_data["comname"]:
+            try:
+                a = response.xpath('//span[@class="name-text"]/text()').extract()[0]
+                com_data["comname"] = a.replace('\r', '').replace('\n', '').replace('\t', '').replace(' ', '')
+                com_data["comname_short"] = com_data["comname"]
+            except:
+                pass
+        test_com_url = 'http://spiderhub.gongchang.com/write_to_online/data_show_onerow?secret=gc7232275&dataset=hc360_company&hkey=' + \
+                       com_data["source_url"]
         response = requests.get(test_com_url)
         # print(response.text)
         response = json.loads(response.text)
@@ -673,3 +623,4 @@ class AfSpider(RedisCrawlSpider):
             Item["goods_data"] = goods_data
             Item["com_data"] = ""
             yield Item
+
