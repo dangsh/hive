@@ -253,18 +253,16 @@ class AfSpider(RedisCrawlSpider):
         try:
             for i in response.xpath('//div[@class="contcat-desc"]/dl'):
                 row = i.xpath('string(.)')
-                row = row[0].extract().replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '').replace('\xa0','')
-                # print(row)
-                a , b = row.split("：")
-                # print(a)
+                row = row[0].extract().replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '').replace(u'\xa0','')
+                a , b = row.split(u"：")
                 if u'电话' == a:
-                    goods_data["telephone"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
-                if u'移动电话' == a:
-                    goods_data["mobile"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
+                    goods_data["telephone"] = b
+                if u'移动电话' == a and u'登录'not in b:
+                    goods_data["mobile"] = b
                 if u'传真' == a:
-                    goods_data["fax"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
+                    goods_data["fax"] = b
                 if u'地址' == a:
-                    goods_data["com_addr"] = i.xpath('dd/text()').extract()[0].replace('\r', '').replace('\n', '').replace('\t','').replace(' ', '')
+                    goods_data["com_addr"] = b
         except:
             pass
 
@@ -310,7 +308,7 @@ class AfSpider(RedisCrawlSpider):
 
         com_address = goods_data["com_addr"]
         com_product = ''
-        com_comname = ''
+        com_comname = goods_data["com_name"]
         com_com_auth = ''
         com_contact = goods_data["seller"]
         com_conn_peopel_sex = ''
@@ -597,7 +595,11 @@ class AfSpider(RedisCrawlSpider):
             com_data["annulexport"] = data_dict[u"年出口额"]
         except:
             pass
-        print(com_data)
+        Item = AliFenbuItem()
+        Item["goods_data"] = goods_data
+        Item["com_data"] = com_data
+        yield Item
+
     def parse_company2(self, response):
         goods_data = response.meta["goods_data"]
         com_data = response.meta["com_data"]
@@ -653,4 +655,21 @@ class AfSpider(RedisCrawlSpider):
             com_data["annulexport"] = data_dict[u"年出口额"]
         except:
             pass
-        print(com_data)
+
+
+        test_com_url = 'http://spiderhub.gongchang.com/write_to_online/data_show_onerow?secret=gc7232275&dataset=hc360_company&hkey=' + com_data["source_url"]
+        response = requests.get(test_com_url)
+        # print(response.text)
+        response = json.loads(response.text)
+        # False则该企业未被爬取，True则该企业已被爬取
+        print(com_data["source_url"], response["status"])
+        if response["status"] != True:
+            Item = AliFenbuItem()
+            Item["goods_data"] = goods_data
+            Item["com_data"] = com_data
+            yield Item
+        else:
+            Item = AliFenbuItem()
+            Item["goods_data"] = goods_data
+            Item["com_data"] = ""
+            yield Item
