@@ -25,17 +25,17 @@ class HggSpider(scrapy.Spider):
     def parse2(self, response):
         stamp = response.meta["stamp"]
         url = response.url
+        # 如果404连续超过 X 个，停止爬虫
+        if self.count >= 100:
+            # 将结果写入文件
+            f = open('save.txt', 'w+')
+            f.write(str(int(stamp) - 140))
+            f.close()
+            # 爬虫关闭，将stamp写入文件
+            raise CloseSpider('强制停止')
         if response.status == 404:
             self.count += 1
         if response.status == 200:
-            # 如果404连续超过 X 个，停止爬虫
-            if self.count >= 1000:
-                # 将结果写入文件
-                f = open('save.txt', 'w+')
-                f.write(str(int(stamp) - 1400))
-                f.close()
-                # 爬虫关闭，将stamp写入文件
-                raise CloseSpider('强制停止')
             # 有一个200，则将count重置
             self.count = 0
             # 将url放入redis中

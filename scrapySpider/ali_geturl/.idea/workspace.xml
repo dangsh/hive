@@ -14,8 +14,8 @@
       <file leaf-file-name="af.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/spiders/af.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="542" column="38" lean-forward="true" selection-start-line="542" selection-start-column="38" selection-end-line="542" selection-end-column="38" />
+            <state relative-caret-position="540">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="24" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -35,7 +35,7 @@
       <file leaf-file-name="mongoPipe.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/myPipeLines/mongoPipe.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="60">
               <caret line="4" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="e#24#56#0" expanded="true" />
@@ -47,8 +47,8 @@
       <file leaf-file-name="s1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../../dowload_img/s1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+            <state relative-caret-position="291">
+              <caret line="43" column="16" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -117,13 +117,13 @@
         <option value="$PROJECT_DIR$/../ali_fenbu/b.html" />
         <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/settings.py" />
         <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/items.py" />
-        <option value="$PROJECT_DIR$/../../../dowload_img/s1.py" />
         <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/myPipeLines/mongoPipe.py" />
         <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/spiders/af.py" />
+        <option value="$PROJECT_DIR$/../../../dowload_img/s1.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1605" />
     <option name="y" value="-172" />
     <option name="width" value="1380" />
@@ -218,7 +218,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-321" width="1936" height="1056" extended-state="7" />
+    <frame x="1358" y="-321" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1234375" />
@@ -600,7 +600,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/myPipeLines/mongoPipe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="60">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#24#56#0" expanded="true" />
@@ -617,8 +617,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../dowload_img/s1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        <state relative-caret-position="291">
+          <caret line="43" column="16" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -627,8 +627,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/spiders/af.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="542" column="38" lean-forward="true" selection-start-line="542" selection-start-column="38" selection-end-line="542" selection-end-column="38" />
+        <state relative-caret-position="540">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="24" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>
