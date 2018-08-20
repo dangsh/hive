@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../ali_fenbu/.idea/ali_fenbu.iml" filepath="$PROJECT_DIR$/../ali_fenbu/.idea/ali_fenbu.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ali_geturl.iml" filepath="$PROJECT_DIR$/.idea/ali_geturl.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../dowload_img/.idea/dowload_img.iml" filepath="$PROJECT_DIR$/../../../dowload_img/.idea/dowload_img.iml" />
       <module fileurl="file://$PROJECT_DIR$/../huicong_goods_fenbu/.idea/huicong_goods_fenbu.iml" filepath="$PROJECT_DIR$/../huicong_goods_fenbu/.idea/huicong_goods_fenbu.iml" />
     </modules>
   </component>

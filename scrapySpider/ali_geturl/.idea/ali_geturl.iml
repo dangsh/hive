@@ -6,7 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ali_fenbu" />
     <orderEntry type="module" module-name="huicong_goods_fenbu" />
-    <orderEntry type="module" module-name="dowload_img" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="Twisted Trial" />
