@@ -11,14 +11,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="af.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="af.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/spiders/af.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="623" column="39" lean-forward="true" selection-start-line="623" selection-start-column="39" selection-end-line="623" selection-end-column="39" />
+            <state relative-caret-position="1141">
+              <caret line="627" column="43" lean-forward="true" selection-start-line="627" selection-start-column="43" selection-end-line="627" selection-end-column="43" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="middlewares.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/middlewares.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="78" column="49" lean-forward="true" selection-start-line="78" selection-start-column="49" selection-end-line="78" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="741">
+              <caret line="51" column="21" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -87,6 +105,7 @@
         <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/myPipeLines/mongoPipe.py" />
         <option value="$PROJECT_DIR$/../../../dowload_img/s1.py" />
         <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/spiders/af.py" />
+        <option value="$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/settings.py" />
       </list>
     </option>
   </component>
@@ -122,18 +141,12 @@
             </path>
             <path>
               <item name="ali_geturl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ali_fenbu" type="462c0819:PsiDirectoryNode" />
+              <item name="huicong_goods_fenbu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ali_geturl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ali_fenbu" type="462c0819:PsiDirectoryNode" />
-              <item name="ali_fenbu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ali_geturl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ali_fenbu" type="462c0819:PsiDirectoryNode" />
-              <item name="ali_fenbu" type="462c0819:PsiDirectoryNode" />
-              <item name="spiders" type="462c0819:PsiDirectoryNode" />
+              <item name="huicong_goods_fenbu" type="462c0819:PsiDirectoryNode" />
+              <item name="huicong_goods_fenbu" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -197,7 +210,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-321" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1234375" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -248,9 +260,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#24#56#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -275,9 +284,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#24#56#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -481,13 +487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ali_geturl/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ali_geturl/middlewares.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2070">
@@ -528,19 +527,7 @@
         <state relative-caret-position="-789" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-699" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../DBN.py" />
-    <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/middlewares.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../ganji_spider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -580,9 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#24#56#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -590,16 +574,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ali_geturl/myPipeLines/mongoPipe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="12" selection-end-column="19" />
+        <state relative-caret-position="291">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding>
             <element signature="e#24#56#0" expanded="true" />
           </folding>
@@ -608,11 +589,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/spiders/af.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="623" column="39" lean-forward="true" selection-start-line="623" selection-start-column="39" selection-end-line="623" selection-end-column="39" />
+        <state relative-caret-position="1141">
+          <caret line="627" column="43" lean-forward="true" selection-start-line="627" selection-start-column="43" selection-end-line="627" selection-end-column="43" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/middlewares.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="78" column="49" lean-forward="true" selection-start-line="78" selection-start-column="49" selection-end-line="78" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ali_geturl/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1299">
+          <caret line="48" column="44" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="51" column="21" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
         </state>
       </provider>
     </entry>
