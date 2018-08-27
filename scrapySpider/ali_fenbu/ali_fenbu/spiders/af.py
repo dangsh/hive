@@ -439,6 +439,9 @@ class AfSpider(RedisCrawlSpider):
             if goods_data["detail"]:
                 try:
                     doc = pyquery.PyQuery(goods_data["detail"])
+                    for i in doc('*').items():
+                        if i.attr('background'):
+                            i.remove()
                 except:
                     pass
                 try:
@@ -455,7 +458,6 @@ class AfSpider(RedisCrawlSpider):
                         full_name = src_md5 + "." + tail
                         pic_byte = ""
                         new_src = src
-
                         try:
                             pic_byte = urllib2.urlopen(new_src).read()
                         except:
@@ -489,6 +491,7 @@ class AfSpider(RedisCrawlSpider):
         goods_data = response.meta["goods_data"]
         com_data = response.meta["com_data"]
         data = response.text
+        data = data.replace('\\','')
         try:
             goods_data["detail"] = data[:-3].split('":"')[1]
         except:
@@ -496,6 +499,9 @@ class AfSpider(RedisCrawlSpider):
         if goods_data["detail"]:
             try:
                 doc = pyquery.PyQuery(goods_data["detail"])
+                for i in doc('*').items():
+                    if i.attr('background'):
+                        i.remove()
             except:
                 pass
             try:

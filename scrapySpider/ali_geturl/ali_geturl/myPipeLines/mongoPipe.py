@@ -13,7 +13,7 @@ class MongopipClass(object):
         return item
 
 
-# class MongopipClass(object):
+# class MongopipClass(object):：
 #
 #     def __init__(self):
 #         client = MongoClient("192.168.14.90" , 27017)
