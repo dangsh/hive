@@ -176,10 +176,13 @@ class AfSpider(RedisCrawlSpider):
         if not cate_name_1:
             #请求接口得到分类
             rsp = requests.post('http://192.168.14.1:8000/pre_api/' , data={'title':title})
-            rsp = json.loads(rsp.text)["data"]
-            cate_name_1 = rsp[0]
-            cate_name_2 = rsp[1]
-            cate_name_3 = rsp[2]
+            try:
+                rsp = json.loads(rsp.text)["data"]
+                cate_name_1 = rsp[0]
+                cate_name_2 = rsp[1]
+                cate_name_3 = rsp[2]
+            except:
+                pass
 
         turn_off = ""
         if u'商品已下架' in response.text:
