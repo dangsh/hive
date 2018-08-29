@@ -11,14 +11,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="af.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="af.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/spiders/af.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="177" column="81" selection-start-line="177" selection-start-column="70" selection-end-line="177" selection-end-column="81" />
+            <state relative-caret-position="9111">
+              <caret line="563" column="26" lean-forward="true" selection-start-line="563" selection-start-column="26" selection-end-line="563" selection-end-column="26" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="741">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
             </state>
           </provider>
         </entry>
@@ -35,8 +44,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>thumb</find>
-      <find>company_username</find>
       <find>com_user</find>
       <find>keywords</find>
       <find>com_username</find>
@@ -65,6 +72,8 @@
       <find>background</find>
       <find>requests</find>
       <find>import</find>
+      <find>\</find>
+      <find>False</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -82,7 +91,6 @@
         <option value="$PROJECT_DIR$/../../../DBN.py" />
         <option value="$PROJECT_DIR$/../../../ganji_spider.py" />
         <option value="$PROJECT_DIR$/../ali_fenbu/b.html" />
-        <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/settings.py" />
         <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/items.py" />
         <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/myPipeLines/mongoPipe.py" />
         <option value="$PROJECT_DIR$/../../../dowload_img/s1.py" />
@@ -92,10 +100,11 @@
         <option value="$PROJECT_DIR$/../huicong_goods_fenbu/a.html" />
         <option value="$PROJECT_DIR$/../huicong_goods_fenbu/c.html" />
         <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/spiders/af.py" />
+        <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/settings.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1605" />
     <option name="y" value="-172" />
     <option name="width" value="1380" />
@@ -124,6 +133,15 @@
               <item name="ali_fenbu" type="462c0819:PsiDirectoryNode" />
               <item name="ali_fenbu" type="462c0819:PsiDirectoryNode" />
               <item name="spiders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ali_geturl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="huicong_goods_fenbu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ali_geturl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="huicong_goods_fenbu" type="462c0819:PsiDirectoryNode" />
+              <item name="huicong_goods_fenbu" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -454,13 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1078210304/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
@@ -494,13 +505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1299">
           <caret line="48" column="44" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="47" column="35" lean-forward="true" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -558,11 +562,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/spiders/af.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="177" column="81" selection-start-line="177" selection-start-column="70" selection-end-line="177" selection-end-column="81" />
+        <state relative-caret-position="9111">
+          <caret line="563" column="26" lean-forward="true" selection-start-line="563" selection-start-column="26" selection-end-line="563" selection-end-column="26" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="49" selection-start-line="49" selection-end-line="51" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>

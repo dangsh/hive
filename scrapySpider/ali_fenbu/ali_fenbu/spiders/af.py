@@ -563,11 +563,14 @@ class AfSpider(RedisCrawlSpider):
             com_data["com_reg_addr"] = data[3]
             data_list = []
             data_dict = {}
-            for i in response.xpath('//div[@id="J_CompanyDetailInfoList"]/div/table/tr/td'):
-                data = i.xpath('text()').extract()[0]
-                data_list.append(data)
-            for i in range(0, len(data_list), 2):
-                data_dict[data_list[i]] = data_list[i + 1]
+            try:
+                for i in response.xpath('//div[@id="J_CompanyDetailInfoList"]/div/table/tr/td'):
+                    data = i.xpath('text()').extract()[0]
+                    data_list.append(data)
+                for i in range(0, len(data_list), 2):
+                    data_dict[data_list[i]] = data_list[i + 1]
+            except:
+                pass
             # print(data_dict)
             try:
                 com_data["regcapital"] = data_dict[u"注册资金"]
@@ -620,7 +623,7 @@ class AfSpider(RedisCrawlSpider):
                 com_data["comname_short"] = com_data["comname"]
             except:
                 pass
-        test_com_url = 'http://spiderhub.gongchang.com/write_to_online/data_show_onerow?secret=gc7232275&dataset=hc360_company&hkey=' + \
+        test_com_url = 'http://spiderhub.gongchang.com/write_to_online/data_show_onerow?secret=gc7232275&dataset=1688_company&hkey=' + \
                        com_data["source_url"]
         response = requests.get(test_com_url)
         # print(response.text)
