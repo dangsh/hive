@@ -14,12 +14,54 @@ import pyquery
 from gcpy_utils.upyun import *
 import hashlib
 import urlparse
-
+import base64
 
 class HgfSpider(RedisCrawlSpider):
     name = 'hgf'
     redis_key = 'goods_url'
+    _app = None
+    _redis_conn = redis.Redis('192.168.14.40', 6379, 6)
 
+    def up_to_upyun(self , key, content):
+        '''上传图片到又拍云
+        参数说明：
+        key      保存到又拍云的路径 比如 /test/my.jpg
+        content  文件的内容
+        返回值：
+        返回一个路径：
+        比如：//imgse.cn.gcimg.net/test/my.jpg
+        '''
+        key = str(key)
+        gmt = datetime.datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT')
+        gmt = str(gmt)
+        request = urllib2.Request("https://v1.api.upyun.com/gcseoimg%s" % key)
+        request.add_header("Date", gmt)
+        request.add_header('Authorization', 'Basic %s' % (str(base64.b64encode(":".join(self._redis_conn.get("upyun-config")
+                                                                                        .split("|"))))))
+        request.add_header("Content-Length", '%s' % len(content))
+        request.add_data(content)
+        urllib2.urlopen(request)
+        return "//imgse.cn.gcimg.net" + key
+
+    def my_up_upyun(self , name, byte, retry_time):
+        upyun_pic = ''
+        for j in range(retry_time):
+            try:
+                upyun_pic = self.up_to_upyun(name, byte)
+                break
+            except Exception as e:
+                print "exception:", str(e)
+        return upyun_pic
+
+    def get_pic_byte(self , src, retry_time):
+        pic_byte = ''
+        for k in range(retry_time):
+            try:
+                pic_byte = urllib2.urlopen(src).read()
+                break
+            except:
+                pass
+        return pic_byte
     def parse(self, response):
         print(response.url)
         title = ""
@@ -244,47 +286,53 @@ class HgfSpider(RedisCrawlSpider):
                 doc = pyquery.PyQuery(detail)
             except:
                 pass
-            else:
+            for i in doc('img').items():
+                src = i.attr('src')
                 try:
-                    for i in doc('img').items():
-                        src = i.attr('src')
-                        if 'hc360' not in src or 'no_pic' in src or 'nopic' in src:
-                            i.remove()
-                            continue
-                        if thumb and 'no_pic' in thumb:
-                            thumb = src
-                        hl = hashlib.md5()
-                        hl.update(src.encode(encoding='utf-8'))
-                        src_md5 = hl.hexdigest()  # md5加密的文件名
-                        # 取出图片后缀
-                        b = src.split(".")
-                        tail = b[-1]
-                        full_name = src_md5 + "." + tail
-                        pic_byte = ""
-                        new_src = urlparse.urljoin(response.url,src)
-                        try:
-                            pic_byte = urllib2.urlopen(new_src).read()
-                        except:
-                            pic_byte = None
-                        if not pic_byte:
-                            i.remove()
-                            continue
-                        upyun_pic = up_to_upyun("/" + full_name, pic_byte)
-                        # print(upyun_pic)
-                        i.attr('src', upyun_pic)
+                    if 'hc360' not in src or 'no_pic' in src or 'nopic' in src:
+                        i.remove()
+                        continue
                 except:
                     pass
-                else:
-                    try:
-                        for i in doc('a').items():
-                            if 'b2b.hc360.com/supplyself/' in i.attr('href'):
-                                i.replace_with(pyquery.PyQuery(i.text()))
-                    except:
-                        pass
-                    else:
-                        detail = doc.outer_html()
-            detail = detail.replace('<div style="overflow:hidden;">', '<div>')
+                try:
+                    if thumb and 'no_pic' in thumb:
+                        thumb = src
+                    if thumb and 'nopic' in thumb:
+                        thumb = src
+                except:
+                    pass
+                hl = hashlib.md5()
+                hl.update(src.encode(encoding='utf-8'))
+                src_md5 = hl.hexdigest()  # md5加密的文件名
+                # 取出图片后缀
+                b = src.split(".")
+                tail = b[-1]
+                full_name = src_md5 + "." + tail
+                new_src = urlparse.urljoin(response.url,src)
+                pic_byte = self.get_pic_byte(new_src, 10)
+                if not pic_byte:
+                    i.remove()
+                    continue
+                upyun_pic = self.my_up_upyun("/" + full_name, pic_byte, 10)
+                if 'hc360' in upyun_pic:
+                    i.remove()
+                    continue
+                i.attr('src', upyun_pic)
+            else:
+                try:
+                    for i in doc('a').items():
+                        if 'b2b.hc360.com/supplyself/' in i.attr('href'):
+                            i.replace_with(pyquery.PyQuery(i.text()))
+                except:
+                    pass
 
+            # detail = detail + 'QQQQQQQQQQQQQQQQQQQQQ'
+            for i in doc('img').items():
+                src = i.attr('src')
+                if 'hc360' in src or '//'==src:
+                    i.remove()
+            detail = doc.outer_html()
+            detail = detail.replace('<div style="overflow:hidden;">', '<div>')
         try:
             min_amount = int(
                 response.xpath('//tr[@class="item-cur-tab"]/td/text()').extract()[0].split('-')[0].strip())
@@ -308,44 +356,46 @@ class HgfSpider(RedisCrawlSpider):
                 pass
 
         if thumb:
-            try:
-                hl = hashlib.md5()
-                hl.update(thumb.encode(encoding='utf-8'))
-                src_md5 = hl.hexdigest()  # md5加密的文件名
-                # 取出图片后缀
-                b = thumb.split(".")
-                tail = b[-1]
-                full_name = src_md5 + "." + tail
-                pic_byte = urllib2.urlopen("http:" + thumb).read()
-                thumb = up_to_upyun("/" + full_name, pic_byte)
-            except:
-                pass
+            hl = hashlib.md5()
+            hl.update(thumb.encode(encoding='utf-8'))
+            src_md5 = hl.hexdigest()  # md5加密的文件名
+            # 取出图片后缀
+            b = thumb.split(".")
+            tail = b[-1]
+            full_name = src_md5 + "." + tail
+            new_src = urlparse.urljoin(response.url, thumb)
+            pic_byte = self.get_pic_byte(new_src , 10)
+            thumb = self.my_up_upyun("/" + full_name, pic_byte , 10)
+        if 'hc360' in thumb:
+            thumb = ''
         if thumb_1:
-            try:
-                hl = hashlib.md5()
-                hl.update(thumb_1.encode(encoding='utf-8'))
-                src_md5 = hl.hexdigest()  # md5加密的文件名
-                # 取出图片后缀
-                b = thumb_1.split(".")
-                tail = b[-1]
-                full_name = src_md5 + "." + tail
-                pic_byte = urllib2.urlopen("http:" + thumb_1).read()
-                thumb_1 = up_to_upyun("/" + full_name, pic_byte)
-            except:
-                pass
+            hl = hashlib.md5()
+            hl.update(thumb_1.encode(encoding='utf-8'))
+            src_md5 = hl.hexdigest()  # md5加密的文件名
+            # 取出图片后缀
+            b = thumb_1.split(".")
+            tail = b[-1]
+            full_name = src_md5 + "." + tail
+            new_src = urlparse.urljoin(response.url, thumb_1)
+            pic_byte = self.get_pic_byte(new_src, 10)
+            thumb_1 = self.my_up_upyun("/" + full_name, pic_byte, 10)
+            if 'hc360' in thumb_1:
+                thumb_1 = ''
         if thumb_2:
-            try:
-                hl = hashlib.md5()
-                hl.update(thumb_2.encode(encoding='utf-8'))
-                src_md5 = hl.hexdigest()  # md5加密的文件名
-                # 取出图片后缀
-                b = thumb_2.split(".")
-                tail = b[-1]
-                full_name = src_md5 + "." + tail
-                pic_byte = urllib2.urlopen("http:" + thumb_2).read()
-                thumb_2 = up_to_upyun("/" + full_name, pic_byte)
-            except:
-                pass
+            hl = hashlib.md5()
+            hl.update(thumb_2.encode(encoding='utf-8'))
+            src_md5 = hl.hexdigest()  # md5加密的文件名
+            # 取出图片后缀
+            b = thumb_2.split(".")
+            tail = b[-1]
+            full_name = src_md5 + "." + tail
+            new_src = urlparse.urljoin(response.url, thumb_2)
+            pic_byte = self.get_pic_byte(new_src, 10)
+            thumb_2 = self.my_up_upyun("/" + full_name, pic_byte, 10)
+            if 'hc360' in thumb_2:
+                thumb_2 = ''
+
+
         goods_data = {
             'source_url': response.url,
             'title': title,
@@ -547,8 +597,11 @@ class HgfSpider(RedisCrawlSpider):
                 b = com_pic.split(".")
                 tail = b[-1]
                 full_name = src_md5 + "." + tail
-                pic_byte = urllib2.urlopen("http:" + com_pic).read()
-                com_pic_upyun = up_to_upyun("/" + full_name, pic_byte)
+                new_src = urlparse.urljoin(response.url, com_pic)
+                pic_byte = self.get_pic_byte(new_src, 10)
+                com_pic_upyun = self.my_up_upyun("/" + full_name, pic_byte, 10)
+        if 'hc360' in com_pic_upyun:
+            com_pic_upyun = ''
         detail_info = content_2.get('detailInfo', {})
         if detail_info:
             if not com_data["address"]:
@@ -648,11 +701,8 @@ class HgfSpider(RedisCrawlSpider):
         com_data["source_url"] = 'http://' + com_word + '.wx.hc360.com/shop/show.html'
         # com_data["_id"] = 'http://'+ com_word +'.wx.hc360.com/shop/show.html'
 
-        # print(com_data)
-        Item = HuicongGoodsFenbuItem()
-        Item["com_data"] = com_data
-        Item["goods_data"] = goods_data
-        yield Item
-
-
-
+        if goods_data["detail"]:
+            Item = HuicongGoodsFenbuItem()
+            Item["com_data"] = com_data
+            Item["goods_data"] = goods_data
+            yield Item
