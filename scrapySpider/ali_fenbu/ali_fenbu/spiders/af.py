@@ -13,10 +13,32 @@ import urllib
 import hashlib
 import urlparse
 from gcpy_utils.upyun import *
+from gcpy_utils.spider_utils.async_image_push import image_push
 
 class AfSpider(RedisCrawlSpider):
     name = 'af'
     redis_key = 'ali_url'
+
+    def my_up_upyun(self , name, byte, retry_time):
+        upyun_pic = ''
+        for j in range(retry_time):
+            try:
+                upyun_pic = up_to_upyun(name, byte)
+                break
+            except Exception as e:
+                print "exception:", str(e)
+
+        return upyun_pic
+
+    def get_pic_byte(self , src, retry_time):
+        pic_byte = ''
+        for k in range(retry_time):
+            try:
+                pic_byte = urllib2.urlopen(src).read()
+                break
+            except:
+                print "download exception:" , str(e)
+        return pic_byte
 
     def parse(self, response):
         title = ""
@@ -271,43 +293,55 @@ class AfSpider(RedisCrawlSpider):
 
         if goods_data["thumb"]:
             try:
-                hl = hashlib.md5()
-                hl.update(goods_data["thumb"].encode(encoding='utf-8'))
-                src_md5 = hl.hexdigest()  # md5加密的文件名
-                # 取出图片后缀
-                b = goods_data["thumb"].split(".")
-                tail = b[-1]
-                full_name = src_md5 + "." + tail
-                pic_byte = urllib2.urlopen(goods_data["thumb"]).read()
-                goods_data["thumb"] = up_to_upyun("/" + full_name, pic_byte)
+                # hl = hashlib.md5()
+                # hl.update(goods_data["thumb"].encode(encoding='utf-8'))
+                # src_md5 = hl.hexdigest()  # md5加密的文件名
+                # # 取出图片后缀
+                # b = goods_data["thumb"].split(".")
+                # tail = b[-1]
+                # full_name = src_md5 + "." + tail
+                # new_src = urlparse.urljoin(response.url, goods_data["thumb"])
+                # pic_byte = self.get_pic_byte(new_src , 10)
+                # goods_data["thumb"] = self.my_up_upyun("/" + full_name, pic_byte , 10)
+                goods_data["thumb"] = image_push(response.url , goods_data["thumb"])
             except:
                 pass
         if goods_data["thumb_1"]:
             try:
-                hl = hashlib.md5()
-                hl.update(goods_data["thumb_1"].encode(encoding='utf-8'))
-                src_md5 = hl.hexdigest()  # md5加密的文件名
-                # 取出图片后缀
-                b = goods_data["thumb_1"].split(".")
-                tail = b[-1]
-                full_name = src_md5 + "." + tail
-                pic_byte = urllib2.urlopen(goods_data["thumb_1"]).read()
-                goods_data["thumb_1"] = up_to_upyun("/" + full_name, pic_byte)
+                # hl = hashlib.md5()
+                # hl.update(goods_data["thumb_1"].encode(encoding='utf-8'))
+                # src_md5 = hl.hexdigest()  # md5加密的文件名
+                # # 取出图片后缀
+                # b = goods_data["thumb_1"].split(".")
+                # tail = b[-1]
+                # full_name = src_md5 + "." + tail
+                # new_src = urlparse.urljoin(response.url, goods_data["thumb_1"])
+                # pic_byte = self.get_pic_byte(new_src , 10)
+                # goods_data["thumb_1"] = self.my_up_upyun("/" + full_name, pic_byte , 10)
+                goods_data["thumb_1"] = image_push(response.url, goods_data["thumb_1"])
             except:
                 pass
         if goods_data["thumb_2"]:
             try:
-                hl = hashlib.md5()
-                hl.update(goods_data["thumb_2"].encode(encoding='utf-8'))
-                src_md5 = hl.hexdigest()  # md5加密的文件名
-                # 取出图片后缀
-                b = goods_data["thumb_2"].split(".")
-                tail = b[-1]
-                full_name = src_md5 + "." + tail
-                pic_byte = urllib2.urlopen(goods_data["thumb_2"]).read()
-                goods_data["thumb_2"] = up_to_upyun("/" + full_name, pic_byte)
+                # hl = hashlib.md5()
+                # hl.update(goods_data["thumb_2"].encode(encoding='utf-8'))
+                # src_md5 = hl.hexdigest()  # md5加密的文件名
+                # # 取出图片后缀
+                # b = goods_data["thumb_2"].split(".")
+                # tail = b[-1]
+                # full_name = src_md5 + "." + tail
+                # new_src = urlparse.urljoin(response.url, goods_data["thumb_2"])
+                # pic_byte = self.get_pic_byte(new_src , 10)
+                # goods_data["thumb_2"] = self.my_up_upyun("/" + full_name, pic_byte , 10)
+                goods_data["thumb_2"] = image_push(response.url, goods_data["thumb_2"])
             except:
                 pass
+        if 'alicdn' in goods_data["thumb"]:
+            goods_data["thumb"] = ''
+        if 'alicdn' in goods_data["thumb_1"]:
+            goods_data["thumb_1"] = ''
+        if 'alicdn' in goods_data["thumb_2"]:
+            goods_data["thumb_2"] = ''
 
         com_address = goods_data["com_addr"]
         com_product = ''
@@ -450,26 +484,28 @@ class AfSpider(RedisCrawlSpider):
                 try:
                     for i in doc('img').items():
                         src = i.attr('src')
-                        if '?' in src:
-                            src = src.split('?')[0]
-                        hl = hashlib.md5()
-                        hl.update(src.encode(encoding='utf-8'))
-                        src_md5 = hl.hexdigest()  # md5加密的文件名
-                        # 取出图片后缀
-                        b = src.split(".")
-                        tail = b[-1]
-                        full_name = src_md5 + "." + tail
-                        pic_byte = ""
-                        new_src = src
-                        try:
-                            pic_byte = urllib2.urlopen(new_src).read()
-                        except:
-                            pic_byte = None
-                        if not pic_byte:
+                        if not src:
                             i.remove()
-                            continue
-                        upyun_pic = up_to_upyun("/" + full_name, pic_byte)
-                        # print(upyun_pic)
+                        try:
+                            if '?' in src:
+                                src = src.split('?')[0]
+                        except:
+                            pass
+                        # # hl = hashlib.md5()
+                        # # hl.update(src.encode(encoding='utf-8'))
+                        # # src_md5 = hl.hexdigest()  # md5加密的文件名
+                        # # # 取出图片后缀
+                        # # b = src.split(".")
+                        # # tail = b[-1]
+                        # # full_name = src_md5 + "." + tail
+                        # # pic_byte = ""
+                        # # new_src = src
+                        # # pic_byte = self.get_pic_byte(new_src, 10)
+                        # # if not pic_byte:
+                        # #     i.remove()
+                        # #     continue
+                        # upyun_pic = self.my_up_upyun("/" + full_name, pic_byte, 10)
+                        upyun_pic = image_push(response.url, src)
                         i.attr('src', upyun_pic)
                 except:
                     pass
@@ -482,6 +518,8 @@ class AfSpider(RedisCrawlSpider):
                 except:
                     pass
                 goods_data["detail"] = doc.outer_html()
+                if 'alicdn' in goods_data["detail"]:
+                    goods_data["detail"] = ''
             try:
                 yield scrapy.Request(url=goods_data["com_url"] , meta={"goods_data": goods_data , "com_data" : com_data} , callback=self.parse_company)
             except:
@@ -510,37 +548,46 @@ class AfSpider(RedisCrawlSpider):
             try:
                 for i in doc('img').items():
                     src = i.attr('src')
-                    if '?' in src:
-                        src = src.split('?')[0]
-                    if '"' in src:
-                        src = src.replace('"' , '').replace('\\' , '')
-                    hl = hashlib.md5()
-                    hl.update(src.encode(encoding='utf-8'))
-                    src_md5 = hl.hexdigest()  # md5加密的文件名
-                    # 取出图片后缀
-                    b = src.split(".")
-                    tail = b[-1]
-                    full_name = src_md5 + "." + tail
-                    pic_byte = ""
-                    new_src = src
-                    try:
-                        pic_byte = urllib2.urlopen(new_src).read()
-                    except:
-                        pic_byte = None
-                    if not pic_byte:
+                    if not src:
                         i.remove()
-                        continue
-                    upyun_pic = up_to_upyun("/" + full_name, pic_byte)
-                    # print(upyun_pic)
+                    try:
+                        if '?' in src:
+                            src = src.split('?')[0]
+                        if '"' in src:
+                            src = src.replace('"' , '').replace('\\' , '')
+                    except:
+                        pass
+                    # hl = hashlib.md5()
+                    # hl.update(src.encode(encoding='utf-8'))
+                    # src_md5 = hl.hexdigest()  # md5加密的文件名
+                    # # 取出图片后缀
+                    # b = src.split(".")
+                    # tail = b[-1]
+                    # full_name = src_md5 + "." + tail
+                    # pic_byte = ""
+                    # new_src = src
+                    # pic_byte = self.get_pic_byte(new_src, 10)
+                    # if not pic_byte:
+                    #     i.remove()
+                    #     continue
+                    # upyun_pic = self.my_up_upyun("/" + full_name, pic_byte, 10)
+                    upyun_pic = image_push(response.url, src)
                     i.attr('src', upyun_pic)
             except:
                 pass
+
             try:
                 for i in doc('a').items():
                     if 'detail.1688.com' in i.attr('href'):
                         i.attr('href', '')
                 for i in doc('map').items():
                     i.remove()
+            except:
+                pass
+            try:
+                for i in doc('a').items():
+                    if 'alicdn' in i.attr('href'):
+                        i.remove()
             except:
                 pass
             goods_data["detail"] = doc.outer_html()
@@ -558,9 +605,18 @@ class AfSpider(RedisCrawlSpider):
         except:
             pass
         if data:
-            com_data["regyear"] = data[0]
-            com_data["regcapital"] = data[1]
-            com_data["com_reg_addr"] = data[3]
+            try:
+                com_data["regyear"] = data[0]
+            except:
+                pass
+            try:
+                com_data["regcapital"] = data[1]
+            except:
+                pass
+            try:
+                com_data["com_reg_addr"] = data[3]
+            except:
+                pass
             data_list = []
             data_dict = {}
             try:
