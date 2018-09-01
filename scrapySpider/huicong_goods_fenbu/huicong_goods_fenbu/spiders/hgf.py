@@ -289,8 +289,11 @@ class HgfSpider(RedisCrawlSpider):
                 pass
             print "start up upyun detail"
             for i in doc('img').items():
-                if i.attr('data-ke-src'):
-                    i.attr('data-ke-src', '')
+                try:
+                    if i.attr('data-ke-src'):
+                        i.attr('data-ke-src', '')
+                except:
+                    pass
                 src = i.attr('src')
                 try:
                     if 'hc360' not in src or 'no_pic' in src or 'nopic' in src:
@@ -318,8 +321,11 @@ class HgfSpider(RedisCrawlSpider):
                 #     i.remove()
                 #     continue
                 # upyun_pic = self.my_up_upyun("/" + full_name, pic_byte, 10)
-                upyun_pic = image_push(response.url , src)
-                if 'hc360' in upyun_pic:
+                try:
+                    upyun_pic = image_push(response.url , src)
+                except:
+                    upyun_pic = ''
+                if upyun_pic and 'hc360' in upyun_pic:
                     i.remove()
                     continue
                 i.attr('src', upyun_pic)
@@ -335,29 +341,29 @@ class HgfSpider(RedisCrawlSpider):
 
             try:
                 for i in doc('img').items():
-                    src = i.attr('src')
-                    if 'hc360' in src or '//'==src:
-                        i.remove()
-                    if i.attr('data-ke-src'):
-                        # i.attr('data-ke-src', '')
-                        i.remove_attr('data-ke-src')
-                    if i.attr('data-mce-src'):
-                        # i.attr('data-mce-src', '')
-                        i.remove_attr('data-mce-src')
-                    if i.attr('data-cke-saved-src'):
-                        # i.attr('data-mce-src', '')
-                        i.remove_attr('data-cke-saved-src')
+                    if i.attr('src'):
+                        src = i.attr('src')
+                        if 'hc360' in src or '//'==src:
+                            i.remove()
+                        if i.attr('data-ke-src'):
+                            i.remove_attr('data-ke-src')
+                        if i.attr('data-mce-src'):
+                            i.remove_attr('data-mce-src')
+                        if i.attr('data-cke-saved-src'):
+                            i.remove_attr('data-cke-saved-src')
             except:
                 pass
             try:
                 for i in doc('*').items():
-                    if i.attr('src'):
-                        if 'hc360' in i.attr('src'):
-                            i.attr('src', '')
+                    if i.attr('src') and 'hc360' in i.attr('src'):
+                        i.attr('src', '')
             except:
                 pass
             detail = doc.outer_html()
-            detail = detail.replace('<div style="overflow:hidden;">', '<div>')
+            try:
+                detail = detail.replace('<div style="overflow:hidden;">', '<div>')
+            except:
+                pass
         try:
             min_amount = int(
                 response.xpath('//tr[@class="item-cur-tab"]/td/text()').extract()[0].split('-')[0].strip())
@@ -491,10 +497,11 @@ class HgfSpider(RedisCrawlSpider):
             except:
                 pass
         else:
-            Item = HuicongGoodsFenbuItem()
-            Item["goods_data"] = goods_data
-            Item["com_data"] = ""
-            yield Item
+            if goods_data["detail"]:
+                Item = HuicongGoodsFenbuItem()
+                Item["goods_data"] = goods_data
+                Item["com_data"] = ""
+                yield Item
 
     def parse_company(self, response):
         goods_data = response.meta["goods_data"]
