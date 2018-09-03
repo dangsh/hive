@@ -8,7 +8,7 @@
 from scrapy import signals
 import random
 from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
-# from gcpy_utils.proxy import adsl
+from gcpy_utils.proxy import adsl
 
 class AliFenbuSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
@@ -63,7 +63,6 @@ class MyproxiesSpiderMiddleware(object):
 
     def process_request(self, request, spider):
         result = adsl.get_proxy_list(True)[0]
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!")
         request.meta["proxy"] = "http://" + result
 class MyUserAgentMiddleware(UserAgentMiddleware):
     '''
