@@ -38,7 +38,7 @@ MY_USER_AGENT = [
 
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware':300,
-    # 'huicong_goods_fenbu.middlewares.MyproxiesSpiderMiddleware':100,
+    'huicong_goods_fenbu.middlewares.MyproxiesSpiderMiddleware':100,
     'huicong_goods_fenbu.middlewares.MyUserAgentMiddleware': 400,
 }
 # 指定mongo

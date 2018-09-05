@@ -13,6 +13,7 @@ import urllib
 import pyquery
 from gcpy_utils.upyun import *
 from gcpy_utils.spider_utils.async_image_push import image_push
+import pymysql
 
 class HgfSpider(RedisCrawlSpider):
     name = 'hgf'
@@ -392,12 +393,29 @@ class HgfSpider(RedisCrawlSpider):
         reg = 'http://(.*?).b2b.hc360.com'
         com_word = re.findall(reg, com_url)[0]
         print("start test com")
-        test_com_url = 'http://spiderhub.gongchang.com/write_to_online/data_show_onerow?secret=gc7232275&dataset=hc360_company&hkey=http://' + com_word + '.wx.hc360.com/shop/show.html'
-        response = requests.get(test_com_url)
-        response = json.loads(response.text)
-        # False则该企业未被爬取，True则该企业已被爬取
-        print(com_url, response["status"])
-        if response["status"] != True:
+        test_com_url = 'http://' + com_word + '.wx.hc360.com/shop/show.html'
+        conn = pymysql.connect(
+            host='192.168.14.90',
+            port=3306,
+            user='root',
+            passwd='123456',
+            db='hc360',
+            charset='utf8'
+        )
+        cursor = conn.cursor()
+        cursor.execute("select * from com_tmp where url = '{}'".format(test_com_url))
+        conn.commit()
+        result = cursor.fetchone()
+        if not result:
+            # 企业没有爬过
+            try:
+                cursor.execute("insert into com_url (url) values ('{}')".format(test_com_url))
+                conn.commit()
+            except:
+                pass
+
+            cursor.close()
+            conn.close()
             # 爬取该企业的信息,并将企业信息放入Item 的 com_data中，与goods_data 一起交给mongoPipe处理
             url_1 = "http://detail.b2b.hc360.com/detail/turbine/template/moblie,vmoblie,getcontact_us.html?username="
             try:
@@ -405,6 +423,9 @@ class HgfSpider(RedisCrawlSpider):
             except:
                 pass
         else:
+            cursor.close()
+            conn.close()
+            # 企业爬过了
             if goods_data["detail"]:
                 Item = HuicongGoodsFenbuItem()
                 Item["goods_data"] = goods_data

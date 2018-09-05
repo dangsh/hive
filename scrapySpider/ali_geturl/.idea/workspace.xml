@@ -14,10 +14,22 @@
       <file leaf-file-name="hgf.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/spiders/hgf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="309" column="26" lean-forward="true" selection-start-line="309" selection-start-column="26" selection-end-line="309" selection-end-column="26" />
+            <state relative-caret-position="586">
+              <caret line="418" column="34" selection-start-line="418" selection-start-column="34" selection-end-line="418" selection-end-column="34" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mongoPipe.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/myPipeLines/mongoPipe.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-90">
+              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+              <folding>
+                <element signature="e#24#56#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -26,8 +38,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="921">
-              <caret line="41" column="65" lean-forward="true" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
+            <state relative-caret-position="201">
+              <caret line="32" column="63" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -44,10 +56,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>des</find>
-      <find>replace</find>
-      <find>desc</find>
-      <find>com_name</find>
       <find>com_data[&quot;comname&quot;]</find>
       <find>comname</find>
       <find>detail_url</find>
@@ -72,8 +80,12 @@
       <find>detail =</find>
       <find>yield</find>
       <find>Item()</find>
-      <find>urllib2</find>
       <find>detail</find>
+      <find>datetime</find>
+      <find>urllib2</find>
+      <find>redis</find>
+      <find>companyinfo</find>
+      <find>com</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -98,9 +110,9 @@
         <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/myPipeLines/mongoPipe.py" />
         <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/settings.py" />
         <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/middlewares.py" />
-        <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/spiders/af.py" />
         <option value="$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/myPipeLines/mongoPipe.py" />
         <option value="$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/settings.py" />
+        <option value="$PROJECT_DIR$/../ali_fenbu/ali_fenbu/spiders/af.py" />
         <option value="$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/spiders/hgf.py" />
       </list>
     </option>
@@ -116,10 +128,24 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
+            <path>
+              <item name="ali_geturl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ali_fenbu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ali_geturl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ali_fenbu" type="462c0819:PsiDirectoryNode" />
+              <item name="ali_fenbu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ali_geturl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ali_fenbu" type="462c0819:PsiDirectoryNode" />
+              <item name="ali_fenbu" type="462c0819:PsiDirectoryNode" />
+              <item name="spiders" type="462c0819:PsiDirectoryNode" />
+            </path>
             <path>
               <item name="ali_geturl" type="b2602c69:ProjectViewProjectNode" />
               <item name="huicong_goods_fenbu" type="462c0819:PsiDirectoryNode" />
@@ -145,6 +171,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -529,19 +556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1920">
           <caret line="64" column="45" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
-          <folding>
-            <element signature="e#168#194#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/spiders/af.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20850">
-          <caret line="695" column="43" lean-forward="true" selection-start-line="695" selection-start-column="43" selection-end-line="695" selection-end-column="43" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -552,10 +566,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../ali_fenbu/ali_fenbu/spiders/af.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2653">
+          <caret line="468" lean-forward="true" selection-start-line="468" selection-end-line="468" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/myPipeLines/mongoPipe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        <state relative-caret-position="-90">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
           <folding>
             <element signature="e#24#56#0" expanded="true" />
           </folding>
@@ -564,15 +588,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="921">
-          <caret line="41" column="65" lean-forward="true" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
+        <state relative-caret-position="201">
+          <caret line="32" column="63" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../huicong_goods_fenbu/huicong_goods_fenbu/spiders/hgf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="309" column="26" lean-forward="true" selection-start-line="309" selection-start-column="26" selection-end-line="309" selection-end-column="26" />
+        <state relative-caret-position="586">
+          <caret line="418" column="34" selection-start-line="418" selection-start-column="34" selection-end-line="418" selection-end-column="34" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>
