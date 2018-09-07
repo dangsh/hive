@@ -236,6 +236,12 @@ class HgfSpider(RedisCrawlSpider):
                 pass
             print "start up upyun detail"
             try:
+                for i in doc('a').items():
+                    if i.attr('href') and 'hc360' in i.attr('href'):
+                        i.remove()
+            except:
+                pass
+            try:
                 for i in doc('img').items():
                     try:
                         if i.attr('data-ke-src'):
@@ -267,12 +273,7 @@ class HgfSpider(RedisCrawlSpider):
                     i.attr('src', upyun_pic)
             except:
                 pass
-            try:
-                for i in doc('a').items():
-                    if i.attr('href') and 'hc360' in i.attr('href'):
-                        i.remove()
-            except:
-                pass
+
             try:
                 for i in doc('img').items():
                     if i.attr('src'):
