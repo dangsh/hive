@@ -1,0 +1,124 @@
+[INFO  - 2018-09-10T08:27:15.127Z] GhostDriver - Main - running on port 59831
+[INFO  - 2018-09-10T08:27:18.464Z] Session [548f59a0-b4d3-11e8-8833-d5f08294b873] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2018-09-10T08:27:18.464Z] Session [548f59a0-b4d3-11e8-8833-d5f08294b873] - page.customHeaders:  - {}
+[INFO  - 2018-09-10T08:27:18.464Z] Session [548f59a0-b4d3-11e8-8833-d5f08294b873] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2018-09-10T08:27:18.464Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 548f59a0-b4d3-11e8-8833-d5f08294b873
+[ERROR - 2018-09-10T08:27:19.331Z] Session [548f59a0-b4d3-11e8-8833-d5f08294b873] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'ArrayBuffer.isView(e)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-09-10T08:27:19.331Z] Session [548f59a0-b4d3-11e8-8833-d5f08294b873] - page.onError - stack:
+  d (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  a (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  h (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  forEach (:0)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  s (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-09-10T08:27:19.369Z] Session [548f59a0-b4d3-11e8-8833-d5f08294b873] - page.onError - msg: TypeError: undefined is not an object (evaluating 'x8p.gp1x.fW0x')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-09-10T08:27:19.369Z] Session [548f59a0-b4d3-11e8-8833-d5f08294b873] - page.onError - stack:
+  ctU5Z (https://s3.music.126.net/web/s/pt_frame_index_10e715dcc8b26684c299a97112b3a6d5.js?10e715dcc8b26684c299a97112b3a6d5:17)
+  cC9t (https://s3.music.126.net/web/s/pt_frame_index_10e715dcc8b26684c299a97112b3a6d5.js?10e715dcc8b26684c299a97112b3a6d5:17)
+  gj0x (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:1)
+  B8t (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:18)
+  bK9B (https://s3.music.126.net/web/s/pt_frame_index_10e715dcc8b26684c299a97112b3a6d5.js?10e715dcc8b26684c299a97112b3a6d5:62)
+  cC9t (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:100)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:1)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:1)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:1)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:1)
+  gj0x (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:1)
+  (anonymous function) (https://s3.music.126.net/web/s/pt_frame_index_10e715dcc8b26684c299a97112b3a6d5.js?10e715dcc8b26684c299a97112b3a6d5:62)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-09-10T08:27:19.461Z] Session [548f59a0-b4d3-11e8-8833-d5f08294b873] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'ArrayBuffer.isView(e)')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-09-10T08:27:19.461Z] Session [548f59a0-b4d3-11e8-8833-d5f08294b873] - page.onError - stack:
+  d (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  a (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  h (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  forEach (:0)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  u (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  s (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+  (anonymous function) (https://s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb:132)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-09-10T08:27:19.504Z] Session [548f59a0-b4d3-11e8-8833-d5f08294b873] - page.onError - msg: TypeError: undefined is not an object (evaluating 'b8h')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-09-10T08:27:19.504Z] Session [548f59a0-b4d3-11e8-8833-d5f08294b873] - page.onError - stack:
+  (anonymous function) (https://s3.music.126.net/web/s/pt_artist_index_d5c8a79dbf07a67f14f774a5fdabd697.js?d5c8a79dbf07a67f14f774a5fdabd697:11)
+
+  phantomjs://platform/console++.js:263 in error

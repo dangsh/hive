@@ -7,6 +7,7 @@
     <orderEntry type="module" module-name="ali_fenbu" />
     <orderEntry type="module" module-name="huicong_goods_fenbu" />
     <orderEntry type="module" module-name="pra" />
+    <orderEntry type="module" module-name="music" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="Twisted Trial" />

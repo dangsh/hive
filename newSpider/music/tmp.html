@@ -1,0 +1,1805 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<meta name="baidu-site-verification" content="cNhJHKEzsD">
+<meta property="qc:admins" content="27354635321361636375">
+<link rel="canonical" href="https://music.163.com/artist?id=12495660">
+<meta name="applicable-device" content="pc">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://music.163.com/m/artist?id=12495660">
+<meta name="mobile-agent" content="format=html5;url=https://music.163.com/m/artist?id=12495660">
+<title>桑丘索 - 歌手 - 网易云音乐</title>
+<meta name="keywords" content="桑丘索">
+<meta name="description" content="从小热爱音乐，渴望有一天能写出经典。 音乐作为一个梦想，失望过，但未曾放弃过。">
+<meta property="og:title" content="桑丘索 - 歌手 - 网易云音乐">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="http://p3.music.126.net/_8VIKauXzEzK1Y6M15TYZA==/109951162971794677.jpg">
+<meta property="og:url" content="https://music.163.com/artist?id=12495660">
+<script type="text/javascript" async="" src="//wr.da.netease.com/ga.js"></script><script type="application/ld+json">
+{
+"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+"@id": "http://music.163.com/artist?id=12495660",
+"appid": "1582028769404989",
+"title": "桑丘索",
+"images": ["http://p3.music.126.net/_8VIKauXzEzK1Y6M15TYZA==/109951162971794677.jpg"],
+"description": "从小热爱音乐，渴望有一天能写出经典。 音乐作为一个梦想，失望过，但未曾放弃过。",
+"pubDate": "2017-07-10T16:03:38"
+}
+</script>
+<script type="text/javascript">
+var GDownloadLink="";
+var GDevice = "phone";
+var GFrom="";
+var GClient="";
+var GPlatform="other";
+var GRef = '';
+var GInApp = false;
+var GMobile = false;
+var GAbroad = false;
+var GUser={};
+var GAllowRejectComment = false;
+var GEnc = true;
+var GEnvType = "online";
+var GWebpSupport = "1";
+window.NEJ_CONF = {p_csrf:{cookie:'__csrf',param:'csrf_token'}};
+GUtil = {
+getBase:function(){
+return location.protocol+'//'+location.hostname;
+},
+getPathAndHash:function(_url){//获取URL path 之后的所有内容,并将/#/替换成/m/使之成为path的一部分
+if(!_url) return '';
+var _reg0 = /^https?:\/\/.*?\//i,
+_reg1 = /\/?#\/?/i;
+return _url.replace(_reg0,'/').replace(_reg1,'/m/');
+},
+composeRefer:function(_url,_ref){//对所有的页面请求都加上ref参数表示被嵌套的来源
+if(!_ref) return _url;
+var _hi = _url.indexOf('#'),
+_si = _url.indexOf('?');
+if(_si>0&&(_si<_hi||_hi<0)){
+return _url.substring(0,_si+1)+'ref='+_ref+'&'+_url.substring(_si+1);
+}else if(_hi>0&&(_si<0||_si>_hi)){
+return _url.substring(0,_hi)+'?ref='+_ref+_url.substring(_hi);
+}else{
+return _url+'?ref='+_ref;
+}
+}
+};(function(){
+var _ua = window.navigator.userAgent,
+_isMobile = /(mobile|mobi|wap|iphone)/i.test(_ua),
+_isAndroid = /android/i.test(_ua),
+_isIpad = /(ipad)/i.test(_ua),
+_igList = [/^\/xiami$/,/^\/live$/],//不需要以单页面打开的列表，比如某些活动页面
+_pn = location.pathname,
+_idx = _pn.lastIndexOf('/'),
+_pReg = /\s*(\w+)\s*=\s*(\d+)\s*/,
+_redirect2mobile = function() {
+var _type,_murl,
+_id = 0,
+_hash = location.hash,
+_mReg = /^#\/?m?\/(share|song|playlist|djradio|dj|program|album|mv|artist|topic|radio|zysf|drqp|qp|activity|store|user|event|video|discover\/toplist)(\/(\d+))?/,
+_base = location.protocol+'//'+location.hostname,
+_sindex = _hash.lastIndexOf('?'),
+_search = _sindex>-1?_hash.substring(_sindex+1):'',
+_match = _mReg.exec(_hash);
+// 无hash || 不匹配 || 匹配但是商品之外不带参数 || 匹配且是排行榜
+if (!_hash.length || !_match || (_match[1] != 'store' && !_search) || /share|discover\/toplist/.test(_match[1])) {
+// 有hash && (没有参数 || 排行榜)
+if ((!_search || /share|discover\/toplist/.test(_match[1])) && _hash.length) {
+location.href = _base + '/' + _hash.replace('#', 'm');
+} else {
+location.href = _base + '/m/';
+}
+return;
+}
+_type = _match[1];
+_id = _match[3];
+if (_type == 'dj') _type = 'program';
+if (_type == 'store') {
+_murl = /^#\/store\/(product|concert)\/detail/.test(_hash) ? _hash.replace('#/store', '/store/m') : '/store/m/product/index';
+} else {
+_murl = '/' + _type + '?' + (_id ? 'id=' + _id + '&': '') + _search;
+}
+location.href = _base + _murl;
+};
+if(_isMobile || _isAndroid || _isIpad){
+_redirect2mobile();
+return;
+}
+if(!_pn||_pn=='/') return;
+for(var i in _igList){
+if(_igList[i].test(_pn)) return;
+}
+if(top==self){
+location.href = '/#'+GUtil.getPathAndHash(location.href);
+return;
+}
+//搜索引擎过来的内容页连接
+if(top==self&&/^\/static\/(song|playlist|album|artist)/i.test(_pn)){
+location.href = '/#'+_pn.substring(0,_idx).replace('/static/','/')+'?id='+_pn.substring(_idx+1);
+}
+})();
+(function(){
+var _addEvent = function(_node,_type,_cb){
+if(_node.addEventListener){
+_node.addEventListener(_type,_cb);
+}else if(_node.attachEvent){
+_node.attachEvent('on'+_type,_cb);
+}
+},
+_onAnchorClick = function(_event){//截获所有<a>标签的点击事件，自定义页面的跳转
+_event = _event||window.event;
+var _el = _event.target||_event.srcElement,
+_base = location.protocol+'//'+location.host;
+while(_el&&_el!=document){
+if(_el.tagName&&_el.tagName.toLowerCase()=='a'){
+//fix ie6下有时javascript:;不能阻止默认事件的bug.
+if(_el.href.indexOf('javascript:')>=0){
+!!_event.preventDefault
+? _event.preventDefault()
+: _event.returnValue = !1;
+return;
+}
+if(_event.button==2) return;//ff 右键会触发click事件
+//商城有独立地顶栏了，排除掉。但会员、数字专辑、单曲的商品、订单页仍保持主站frame，
+//这些url往往是通过/vip2, /payfee这样的地址跳转的，也没有问题，如果真的有，URL用#配置就好了
+var _path = _el.href.replace(/^https?:\/\/.*?\//i, '/').split(/[?#]/)[0];
+if(_path.indexOf('/store/')==0) return;
+if(_path.indexOf('/m/at/')==0) return;
+if(_path.indexOf('/prime/m/')==0) return; // 会员移动端页面
+if(_path.indexOf('/oauth2/')==0) return; // 授权页面
+if(_path.indexOf('/m/oauth2/')==0) return; // 授权页面
+if(_path.indexOf('/octave/m/')==0) return; // 数字专辑移动端购买
+if(_path.indexOf('/v/m/album')==0) return; // 数字专辑赠送相关
+//新窗口打开的链接、云音乐单页面形式的链接、站外的链接不做拦截处理。
+if(_el.target=='_blank'
+||_el.target=='blank'
+||_isNotSameHost(_el.href)
+||_el.href==_base
+||_el.href.indexOf(_base+'/#')>=0) return;
+!!_event.preventDefault
+? _event.preventDefault()
+: _event.returnValue = !1;
+location.dispatch2(_el.href);
+break;
+}else{
+_el = _el.parentNode;
+}
+}
+},
+_isNotSameHost = function(_href){
+var _same = true;
+if(_href.charAt(0)!='/'){
+var _index = _href.indexOf('//'+location.hostname);
+if(_index > 0){
+var _index2 = _href.indexOf('?');
+if(_index2 > 0 && _index2 < _index){
+_same = false;
+}
+}else{
+_same = false;
+}
+}
+return !_same;
+};
+_addEvent(document,'click',_onAnchorClick);
+//扩展一个js中直接使用的页面跳转的方法，以拦截js中的页面跳转行为
+location.dispatch2 = function(_url,_replace){
+var delegate = false;
+try{
+delegate = !!top.GDispatcher;
+}catch(e){
+delegate = false;
+}
+if(delegate){
+top.GDispatcher.dispatch(_url,_replace);
+}else{
+_url = GUtil.composeRefer(_url,GRef);
+//邮箱音乐盒中，每次链接的跳转都要将proxy.html的地址合并到hash中
+if(GRef&&GRef=='mail'){
+var _hindex,_sindex,
+_reg = /(https?:\/\/.+\/proxy.html)/,
+_hreg = /#(.*?)$/,
+_href = decodeURIComponent(location.href);
+if(!_reg.test(decodeURIComponent(_url))&&_reg.test(_href)){
+_hindex = _url.indexOf('#');
+_sindex = _url.lastIndexOf('?');
+if(_hindex>0){
+_url = _url+(_sindex>_hindex?'&':'?')+'proxy='+encodeURIComponent(RegExp.$1);
+}else{
+_url = _url+'#proxy='+encodeURIComponent(RegExp.$1);
+}
+}
+}
+if(_replace){
+location.replace(_url);
+}else{
+location.href = _url;
+}
+}
+};
+})();(function(){
+if(window.addEventListener){
+window.addEventListener('scroll', onScroll)
+}else{
+window.attachEvent('onscroll', onScroll)
+}
+try{
+top.scrollTopbar(0);
+}catch(e){
+}
+function onScroll(){
+try{
+top.scrollTopbar(Math.max(document.body.scrollTop, document.documentElement.scrollTop));
+}catch(e){
+//ignore
+}
+};
+})();</script>
+<base href="//music.163.com/" target="_top">
+<link rel="shortcut icon" href="//s1.music.126.net/style/favicon.ico?v20180823">
+<link href="//s2.music.126.net/web/s/core_c464156eac837ff361441d7da9704d6d.css?c464156eac837ff361441d7da9704d6d" type="text/css" rel="stylesheet"><link href="//s2.music.126.net/web/s/pt_frame_5d04cf4bb51391164efd9d7fec6f9bdc.css?5d04cf4bb51391164efd9d7fec6f9bdc" type="text/css" rel="stylesheet">
+<meta property="og:type" content="link">
+<meta property="og:title" content="分享歌手：桑丘索">
+<meta property="og:image" content="http://p4.music.126.net/yOoU0K_E56WhvyHjwRfxig==/109951162971795112.jpg">
+<meta property="og:url" content="/artist?id=12495660">
+<meta property="og:abstract" content="从小热爱音乐，渴望有一天能写出经典。 音乐作为一个梦想，失望过，但未曾放弃过。">
+<meta property="og:contentid" content="mainInfo">
+<script type="text/javascript" charset="UTF-8" async="" src="https://acstatic-dun.126.net/2.3.1_ce5a6dcf/watchman.min.js"></script><script src="https://rec.g.163.com/kaolaadclick/api/dsp/show.s?uuid=623f8746fb2b4aa49034df122db1ea72_1&amp;posid=netease_music_detail_logo200x220_1&amp;timestamp=1536567782800&amp;prod=adbid"></script></head>
+<body>
+<div data-module="discover" data-sub="other" id="g_top" class="m-top">&nbsp;</div>
+<div id="g_nav" class="m-subnav">&nbsp;</div>
+<script>
+try{
+top.matchNav("discover", "other");
+}catch(e){
+}
+</script>
+<div class="g-bd4 f-cb">
+<div class="g-mn4">
+<div class="g-mn4c">
+<div class="g-wrap6">
+<div class="n-artist f-cb">
+<div class="btm">
+<h2 id="artist-name" data-rid="12495660" class="sname f-thide sname-max" title="桑丘索 - ">桑丘索</h2>
+<h3 id="artist-alias" class="salias f-thide" title="桑丘索 - ">
+</h3>
+</div>
+<img src="http://p3.music.126.net/_8VIKauXzEzK1Y6M15TYZA==/109951162971794677.jpg?param=640y300">
+<div class="mask f-alpha"></div>
+<a id="artist-home" href="/user/home?id=308817251" class="btn-rz f-tid">Ta的个人主页</a>
+<a id="artist-sub" href="javascript:void(0)" class="btnfav f-tid">收藏</a>
+</div>
+<ul id="m_tabs" class="m-tabs f-cb">
+<li class="fst"><a href="/artist?id=12495660" class="z-slt"><em>热门作品</em></a></li>
+<li><a href="/artist/album?id=12495660"><em>所有专辑</em></a></li>
+<li><a href="/artist/mv?id=12495660"><em>相关MV</em></a></li>
+<li><a href="/artist/desc?id=12495660"><em>艺人介绍</em></a></li>
+</ul>
+<div id="j-load" class="u-load s-fc4" style="margin-top:100px;"><i class="icn"></i> 加载中...</div>
+<div id="artist-top50" class="n-top50 f-hide">
+<div class="m-info">
+<div id="content-operation" class="btns f-cb" data-rid="12495660" data-type="2">
+<a data-res-action="play" data-res-id="12495660" data-res-type="2" href="javascript:;" class="u-btn2 u-btn2-2 u-btni-addply f-fl" hidefocus="true" title="播放"><i><em class="ply"></em>播放</i></a>
+<a data-res-action="addto" data-res-id="12495660" data-res-type="2" href="javascript:;" class="u-btni u-btni-add" hidefocus="true" title="添加到播放列表"></a>
+<a data-res-id="12495660" data-res-type="2" data-res-action="fav" href="javascript:;" class="u-btni u-btni-fav" hidefocus="true" data-res-name="桑丘索"><i>收藏热门50</i></a>
+<div class="f-fr">
+<div class="u-btn2 u-btn2-1 sltbtn">
+<i><em class="sltbtn-txt">演唱作品</em><em class="u-icn u-icn-38 u-icn-arr"></em></i>
+<ul class="filter j-slt">
+<li class="choose z-select" data-res-type="1" data-res-action="choose" data-res-value="演唱作品">演唱作品</li>
+<li class="choose" data-res-type="2" data-res-action="choose" data-res-value="作词作品">作词作品</li>
+<li class="choose" data-res-type="3" data-res-action="choose" data-res-value="作曲作品">作曲作品</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="hotsong-list">
+<div class="f-cb">
+<div id="song-list-pre-cache" data-key="track_artist_top-12495660" data-simple="0" data-pvnamed="0">
+<div class="u-load s-fc4"><i class="icn"></i> 加载中...</div>
+<ul class="f-hide"><li><a href="/song?id=494770933">河南大学校歌（吉他版）（Cover 河南大学）</a></li><li><a href="/song?id=1307440707">安阳（VST版）</a></li><li><a href="/song?id=489343314">这样就好</a></li><li><a href="/song?id=489449379">无题</a></li><li><a href="/song?id=489742737">感谢陪伴</a></li><li><a href="/song?id=490537513">安阳</a></li><li><a href="/song?id=490924532">Intro</a></li><li><a href="/song?id=492386272">天边夕阳</a></li><li><a href="/song?id=500663156">Outro</a></li><li><a href="/song?id=493547603">The&nbsp;Night&nbsp;of&nbsp;Choice</a></li><li><a href="/song?id=500673305">Can&nbsp;you&nbsp;enjoy&nbsp;the&nbsp;moon&nbsp;with&nbsp;me?</a></li><li><a href="/song?id=521205094">未完待续</a></li></ul>
+<textarea id="song-list-pre-data" style="display:none;">[{"status":0,"score":80.0,"copyrightId":0,"mvid":5917320,"transNames":null,"commentThreadId":"R_SO_4_494770933","privilege":{"id":494770933,"fee":0,"payed":0,"st":0,"pl":320000,"dl":320000,"sp":7,"cp":1,"subp":1,"cs":false,"maxbr":999000,"fl":320000,"toast":false,"flag":2,"preSell":false},"djid":0,"album":{"id":35859552,"name":"古典河大","picUrl":"http://p3.music.126.net/iOiXtGrHLjKk-4R4XNltZw==/109951162990870825.jpg","pic_str":"109951162990870825","pic":109951162990870825},"artists":[{"id":12495660,"name":"桑丘索"}],"alias":[],"ftype":0,"no":1,"publishTime":0,"fee":0,"type":0,"duration":140000,"name":"河南大学校歌（吉他版）（Cover 河南大学）","id":494770933},{"status":0,"score":65.0,"copyrightId":0,"mvid":0,"transNames":null,"commentThreadId":"R_SO_4_1307440707","privilege":{"id":1307440707,"fee":0,"payed":0,"st":0,"pl":320000,"dl":320000,"sp":7,"cp":1,"subp":1,"cs":false,"maxbr":999000,"fl":320000,"toast":false,"flag":2,"preSell":false},"djid":0,"album":{"id":72959823,"name":"安阳(VST版)","picUrl":"http://p3.music.126.net/4Fab_O7Ns_93vEl6ajPJlQ==/109951163534120320.jpg","pic_str":"109951163534120320","pic":109951163534120320},"artists":[{"id":12495660,"name":"桑丘索"}],"alias":[],"ftype":0,"no":1,"publishTime":0,"fee":0,"type":0,"duration":258923,"name":"安阳（VST版）","id":1307440707},{"status":0,"score":5.0,"copyrightId":0,"mvid":0,"transNames":null,"commentThreadId":"R_SO_4_489343314","privilege":{"id":489343314,"fee":0,"payed":0,"st":0,"pl":320000,"dl":320000,"sp":7,"cp":1,"subp":1,"cs":false,"maxbr":999000,"fl":320000,"toast":false,"flag":2,"preSell":false},"djid":0,"album":{"id":35718469,"name":"无题","picUrl":"http://p4.music.126.net/dWyhKVDB5VUbQvoP4rdWcQ==/109951163087008861.jpg","pic_str":"109951163087008861","pic":109951163087008861},"artists":[{"id":12495660,"name":"桑丘索"}],"alias":[],"ftype":0,"no":3,"publishTime":0,"fee":0,"type":0,"duration":312818,"name":"这样就好","id":489343314},{"status":0,"score":5.0,"copyrightId":0,"mvid":0,"transNames":null,"commentThreadId":"R_SO_4_489449379","privilege":{"id":489449379,"fee":0,"payed":0,"st":0,"pl":320000,"dl":320000,"sp":7,"cp":1,"subp":1,"cs":false,"maxbr":999000,"fl":320000,"toast":false,"flag":2,"preSell":false},"djid":0,"album":{"id":35718469,"name":"无题","picUrl":"http://p3.music.126.net/dWyhKVDB5VUbQvoP4rdWcQ==/109951163087008861.jpg","pic_str":"109951163087008861","pic":109951163087008861},"artists":[{"id":12495660,"name":"桑丘索"}],"alias":[],"ftype":0,"no":2,"publishTime":0,"fee":0,"type":0,"duration":174000,"name":"无题","id":489449379},{"status":0,"score":5.0,"copyrightId":0,"mvid":0,"transNames":null,"commentThreadId":"R_SO_4_489742737","privilege":{"id":489742737,"fee":0,"payed":0,"st":0,"pl":320000,"dl":320000,"sp":7,"cp":1,"subp":1,"cs":false,"maxbr":999000,"fl":320000,"toast":false,"flag":0,"preSell":false},"djid":0,"album":{"id":35718469,"name":"无题","picUrl":"http://p3.music.126.net/dWyhKVDB5VUbQvoP4rdWcQ==/109951163087008861.jpg","pic_str":"109951163087008861","pic":109951163087008861},"artists":[{"id":12495660,"name":"桑丘索"}],"alias":[],"ftype":0,"no":4,"publishTime":0,"fee":0,"type":0,"duration":303038,"name":"感谢陪伴","id":489742737},{"status":0,"score":5.0,"copyrightId":0,"mvid":0,"transNames":null,"commentThreadId":"R_SO_4_490537513","privilege":{"id":490537513,"fee":0,"payed":0,"st":0,"pl":320000,"dl":320000,"sp":7,"cp":1,"subp":1,"cs":false,"maxbr":999000,"fl":320000,"toast":false,"flag":2,"preSell":false},"djid":0,"album":{"id":35718469,"name":"无题","picUrl":"http://p3.music.126.net/dWyhKVDB5VUbQvoP4rdWcQ==/109951163087008861.jpg","pic_str":"109951163087008861","pic":109951163087008861},"artists":[{"id":12495660,"name":"桑丘索"}],"alias":[],"ftype":0,"no":5,"publishTime":0,"fee":0,"type":0,"duration":231000,"name":"安阳","id":490537513},{"status":0,"score":5.0,"copyrightId":0,"mvid":0,"transNames":null,"commentThreadId":"R_SO_4_490924532","privilege":{"id":490924532,"fee":0,"payed":0,"st":0,"pl":320000,"dl":320000,"sp":7,"cp":1,"subp":1,"cs":false,"maxbr":999000,"fl":320000,"toast":false,"flag":0,"preSell":false},"djid":0,"album":{"id":35718469,"name":"无题","picUrl":"http://p4.music.126.net/dWyhKVDB5VUbQvoP4rdWcQ==/109951163087008861.jpg","pic_str":"109951163087008861","pic":109951163087008861},"artists":[{"id":12495660,"name":"桑丘索"}],"alias":[],"ftype":0,"no":1,"publishTime":0,"fee":0,"type":0,"duration":103000,"name":"Intro","id":490924532},{"status":0,"score":5.0,"copyrightId":0,"mvid":0,"transNames":null,"commentThreadId":"R_SO_4_492386272","privilege":{"id":492386272,"fee":0,"payed":0,"st":0,"pl":320000,"dl":320000,"sp":7,"cp":1,"subp":1,"cs":false,"maxbr":999000,"fl":320000,"toast":false,"flag":0,"preSell":false},"djid":0,"album":{"id":35718469,"name":"无题","picUrl":"http://p4.music.126.net/dWyhKVDB5VUbQvoP4rdWcQ==/109951163087008861.jpg","pic_str":"109951163087008861","pic":109951163087008861},"artists":[{"id":12495660,"name":"桑丘索"}],"alias":[],"ftype":0,"no":6,"publishTime":0,"fee":0,"type":0,"duration":256000,"name":"天边夕阳","id":492386272},{"status":0,"score":5.0,"copyrightId":0,"mvid":0,"transNames":null,"commentThreadId":"R_SO_4_500663156","privilege":{"id":500663156,"fee":0,"payed":0,"st":0,"pl":320000,"dl":320000,"sp":7,"cp":1,"subp":1,"cs":false,"maxbr":999000,"fl":320000,"toast":false,"flag":0,"preSell":false},"djid":0,"album":{"id":35718469,"name":"无题","picUrl":"http://p4.music.126.net/dWyhKVDB5VUbQvoP4rdWcQ==/109951163087008861.jpg","pic_str":"109951163087008861","pic":109951163087008861},"artists":[{"id":12495660,"name":"桑丘索"}],"alias":[],"ftype":0,"no":7,"publishTime":0,"fee":0,"type":0,"duration":98000,"name":"Outro","id":500663156},{"status":0,"score":5.0,"copyrightId":0,"mvid":0,"transNames":null,"commentThreadId":"R_SO_4_493547603","privilege":{"id":493547603,"fee":0,"payed":0,"st":0,"pl":320000,"dl":320000,"sp":7,"cp":1,"subp":1,"cs":false,"maxbr":999000,"fl":320000,"toast":false,"flag":0,"preSell":false},"djid":0,"album":{"id":35825911,"name":"Triangle Lake","picUrl":"http://p4.music.126.net/TNd9S3EeksrTDG4VRXiOAw==/109951163071538316.jpg","pic_str":"109951163071538316","pic":109951163071538316},"artists":[{"id":12495660,"name":"桑丘索"}],"alias":[],"ftype":0,"no":1,"publishTime":0,"fee":0,"type":0,"duration":247111,"name":"The&nbsp;Night&nbsp;of&nbsp;Choice","id":493547603},{"status":0,"score":5.0,"copyrightId":0,"mvid":0,"transNames":null,"commentThreadId":"R_SO_4_500673305","privilege":{"id":500673305,"fee":0,"payed":0,"st":0,"pl":320000,"dl":320000,"sp":7,"cp":1,"subp":1,"cs":false,"maxbr":999000,"fl":320000,"toast":false,"flag":0,"preSell":false},"djid":0,"album":{"id":35825911,"name":"Triangle Lake","picUrl":"http://p4.music.126.net/TNd9S3EeksrTDG4VRXiOAw==/109951163071538316.jpg","pic_str":"109951163071538316","pic":109951163071538316},"artists":[{"id":12495660,"name":"桑丘索"}],"alias":[],"ftype":0,"no":2,"publishTime":0,"fee":0,"type":0,"duration":192000,"name":"Can&nbsp;you&nbsp;enjoy&nbsp;the&nbsp;moon&nbsp;with&nbsp;me?","id":500673305},{"status":0,"score":5.0,"copyrightId":0,"mvid":5917309,"transNames":null,"commentThreadId":"R_SO_4_521205094","privilege":{"id":521205094,"fee":0,"payed":0,"st":0,"pl":320000,"dl":320000,"sp":7,"cp":1,"subp":1,"cs":false,"maxbr":999000,"fl":320000,"toast":false,"flag":2,"preSell":false},"djid":0,"album":{"id":36865127,"name":"未完待续","picUrl":"http://p4.music.126.net/XtwKUlGDxuf6bKE5tt8tng==/109951163071569596.jpg","pic_str":"109951163071569596","pic":109951163071569596},"artists":[{"id":12495660,"name":"桑丘索"}],"alias":[],"ftype":0,"no":1,"publishTime":0,"fee":0,"type":0,"duration":245193,"name":"未完待续","id":521205094}]</textarea>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="g-sd4">
+<div class="g-wrap7">
+<div id="j-music-ad" class="m-sidead f-hide" data-has-music-ad="0">
+<div class="j-flag f-hide"></div>
+<div class="f-hide j-flag">
+<ins class="adsbydm" inner-prod="adbid" inner-width="200" inner-height="220" inner-src="https://iad.g.163.com/wa/ad?site=netease&amp;affiliate=music&amp;cat=detail&amp;type=logo200x220&amp;location=1" check-src="https://iad.g.163.com/wa/ad_check?site=netease&amp;affiliate=music&amp;cat=detail&amp;type=logo200x220&amp;location=1"><div><iframe id="623f8746fb2b4aa49034df122db1ea72" width="200" height="220" prod="adbid" frameborder="0" scrolling="no" border="0" src="https://iad.g.163.com/wa/ad?site=netease&amp;affiliate=music&amp;cat=detail&amp;type=logo200x220&amp;location=1&amp;uuid=623f8746fb2b4aa49034df122db1ea72"></iframe></div></ins>
+</div>
+</div>
+<h3 class="u-hd3">
+<span class="f-fl">热门歌手</span>
+</h3>
+<ul class="m-hdlist f-cb" id="rec-similar-artists">
+<li data-res-id="5781" data-res-type="2" data-res-action="log" data-res-data="recommendclick|0||artist-artist-recommend|12495660">
+<div class="hd">
+<a href="/artist?id=5781" title="薛之谦">
+<img src="http://p4.music.126.net/ULlwJ2drOfYv-f6-_7jGGQ==/3250156379592966.jpg?param=50y50">
+</a>
+</div>
+<p>
+<a href="/artist?id=5781" title="薛之谦" class="nm nm-icn f-ib f-thide">薛之谦</a>
+</p>
+</li>
+<li data-res-id="2116" data-res-type="2" data-res-action="log" data-res-data="recommendclick|1||artist-artist-recommend|12495660">
+<div class="hd">
+<a href="/artist?id=2116" title="陈奕迅">
+<img src="http://p3.music.126.net/_d1scu7z_1dmd0Zgv9mTLA==/19165587183900212.jpg?param=50y50">
+</a>
+</div>
+<p>
+<a href="/artist?id=2116" title="陈奕迅" class="nm nm-icn f-ib f-thide">陈奕迅</a>
+</p>
+</li>
+<li data-res-id="3684" data-res-type="2" data-res-action="log" data-res-data="recommendclick|2||artist-artist-recommend|12495660">
+<div class="hd">
+<a href="/artist?id=3684" title="林俊杰">
+<img src="http://p3.music.126.net/cnGpIQ6rQCKVrDyVVSpzeg==/3263350518850877.jpg?param=50y50">
+</a>
+</div>
+<p>
+<a href="/artist?id=3684" title="林俊杰" class="nm nm-icn f-ib f-thide">林俊杰</a>
+</p>
+</li>
+<li data-res-id="3685" data-res-type="2" data-res-action="log" data-res-data="recommendclick|3||artist-artist-recommend|12495660">
+<div class="hd">
+<a href="/artist?id=3685" title="林宥嘉">
+<img src="http://p3.music.126.net/DeH1T1OKwTL2bIg3l8L21A==/109951163186203713.jpg?param=50y50">
+</a>
+</div>
+<p>
+<a href="/artist?id=3685" title="林宥嘉" class="nm nm-icn f-ib f-thide">林宥嘉</a>
+</p>
+</li>
+<li data-res-id="4292" data-res-type="2" data-res-action="log" data-res-data="recommendclick|4||artist-artist-recommend|12495660">
+<div class="hd">
+<a href="/artist?id=4292" title="李荣浩">
+<img src="http://p4.music.126.net/RQ8pNp66CqAsieGtSaj_5g==/109951163398568078.jpg?param=50y50">
+</a>
+</div>
+<p>
+<a href="/artist?id=4292" title="李荣浩" class="nm nm-icn f-ib f-thide">李荣浩</a>
+</p>
+</li>
+<li data-res-id="861777" data-res-type="2" data-res-action="log" data-res-data="recommendclick|5||artist-artist-recommend|12495660">
+<div class="hd">
+<a href="/artist?id=861777" title="华晨宇">
+<img src="http://p4.music.126.net/-2o0OyBFtfCCoBqL1Q-TjA==/109951163078599089.jpg?param=50y50">
+</a>
+</div>
+<p>
+<a href="/artist?id=861777" title="华晨宇" class="nm nm-icn f-ib f-thide">华晨宇</a>
+</p>
+</li>
+</ul>
+<div class="m-multi">
+<h3 class="u-hd3">
+<span class="f-fl">网易云音乐多端下载</span>
+</h3>
+<ul class="bg f-cb">
+<li><a data-res-action="bilog" data-log-action="downloadapp" data-log-json="{&quot;type&quot;:&quot;iPhone&quot;,&quot;source&quot;:&quot;detail&quot;}" href="https://itunes.apple.com/cn/app/id590338362" class="ios" hidefocus="true" target="_blank">iPhone</a></li>
+<li><a data-res-action="bilog" data-log-action="downloadapp" data-log-json="{&quot;type&quot;:&quot;pc&quot;,&quot;source&quot;:&quot;detail&quot;}" href="https://music.163.com/api/pc/download/latest" class="pc" hidefocus="true" target="_blank">PC</a></li>
+<li><a data-res-action="bilog" data-log-action="downloadapp" data-log-json="{&quot;type&quot;:&quot;android&quot;,&quot;source&quot;:&quot;detail&quot;}" href="https://music.163.com/api/android/download/latest2" class="aos" hidefocus="true" target="_blank">Android</a></li>
+</ul>
+<p class="s-fc4">同步歌单，随时畅听320k好音乐</p>
+</div>
+</div>
+</div>
+</div>
+<div class="g-ft ">
+<div class="m-ft">
+<div class="wrap f-cb">
+<div class="copy">
+<p class="link">
+<a href="//music.163.com/about" target="_blank" class="item s-fc4">关于网易</a><span class="line">|</span>
+<a href="//help.mail.163.com/service.html" target="_blank" class="item s-fc4">客户服务</a><span class="line">|</span>
+<a href="//music.163.com/html/web2/service.html" target="_blank" class="item s-fc4">服务条款</a><span class="line">|</span>
+<a href="//sitemap.163.com/" target="_blank" class="item s-fc4">网站导航</a><span class="line">|</span>
+<a id="g_feedback" href="#" class="s-fc4" onclick="nm.x.feedback();return false;" hidefocus="true">意见反馈</a>
+</p>
+<p class="right s-fc3">
+<span class="sep span">网易公司版权所有©1997-2018</span><span class="span">杭州乐读科技有限公司运营：</span><a href="http://p1.music.126.net/MkOOdJqWZdBx05Ias2W3UA==/109951163298654917.png" target="_blank" class="alink s-fc3">浙网文[2018]3506-263号</a>
+</p>
+<p class="contact s-fc3">
+<span class="sep span">违法和不良信息举报电话：0571-89853516</span>
+<span class="span">举报邮箱：</span><a class="alink" href="mailto:cloudmusicservice@163.com">cloudmusicservice@163.com</a>
+</p>
+</div>
+<ul class="enter f-fr">
+<li class="unit">
+<a class="logo logonew logo-musician f-tid" href="//music.163.com/recruit" target="_blank"></a>
+<span class="tt tt-musician"></span>
+</li>
+<li class="unit">
+<a class="logo logonew logo-topic f-tid" href="//music.163.com/topic/recruit" target="_blank"></a>
+<span class="tt tt-topic"></span>
+</li>
+<li class="unit">
+<a class="logo logonew logo-midea f-tid" href="//music.163.com/topic/selfmedia" target="_blank"></a>
+<span class="tt tt-midea"></span>
+</li>
+<li class="unit">
+<a class="logo logonew logo-reward f-tid" href="//music.163.com/web/reward" target="_blank"></a>
+<span class="tt tt-reward"></span>
+</li>
+<li class="unit">
+<a class="logo logonew logo-cash f-tid" href="//music.163.com/uservideo#/plan" target="_blank"></a>
+<span class="tt tt-cash"></span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<a title="回到顶部" class="m-back" href="#" id="g_backtop" hidefocus="true" style="display:none;">回到顶部</a>
+<div id="template-box" style="display:none;"> <textarea name="ntp" id="m-wgt-selector" style="display:none;">&lt;div class="u-slt f-pr"&gt;&lt;span class="curr f-thide"&gt;&lt;/span&gt;&lt;i class="btn"&gt;&lt;/i&gt;&lt;ul&gt;&lt;/ul&gt;&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-selector-list" style="display:none;">{list data as x}&lt;li class="f-thide"&gt;&lt;a href="#" data-value="${x.v}" title="${x.t}"&gt;${x.t}&lt;/a&gt;&lt;/li&gt;{/list}
+</textarea>
+<textarea name="ntp" id="m-wgt-create" style="display:none;">&lt;div class="lyct m-crgd f-cb f-tc"&gt;
+&lt;p&gt;歌单名：&lt;input type="text" class="u-txt j-flag"&gt;&lt;/p&gt;
+&lt;div class="u-err f-vhide j-flag"&gt;&lt;i class="u-icn u-icn-25"&gt;&lt;/i&gt;错误提示&lt;/div&gt;
+&lt;p class="tip s-fc4"&gt;可通过“收藏”将音乐添加到新歌单中&lt;/p&gt;
+&lt;div class="btn"&gt;
+&lt;a href="javascript:;" class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true"&gt;&lt;i&gt;新 建&lt;/i&gt;&lt;/a&gt;
+&lt;a href="javascript:;" class="u-btn2 u-btn2-1 u-btn2-w2 j-flag" hidefocus="true"&gt;&lt;i&gt;取 消&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="m-wgt-comment" style="display:none;">&lt;div class="u-title u-title-1"&gt;
+&lt;h3&gt;&lt;span class="f-ff2"&gt;评论&lt;/span&gt;&lt;/h3&gt;&lt;span class="sub s-fc3"&gt;共&lt;span class="j-flag"&gt;0&lt;/span&gt;条评论&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="m-cmmt"&gt;
+&lt;div class="iptarea"&gt;
+&lt;div class="head"&gt;&lt;img src="http://s4.music.126.net/style/web2/img/default/default_avatar.jpg?param=50y50"&gt;&lt;/div&gt;
+&lt;div class="j-flag"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cmmts j-flag"&gt;&lt;/div&gt;
+&lt;div class="j-flag"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="m-wgt-comment2" style="display:none;">&lt;div class="m-dynamic"&gt;
+&lt;div class="dbox dbox-cmt"&gt;
+&lt;span class="darr"&gt;&lt;i class="bd"&gt;◆&lt;/i&gt;&lt;i class="bg"&gt;◆&lt;/i&gt;&lt;/span&gt;
+&lt;div class="m-cmmt m-cmmt-s"&gt;
+&lt;div class="iptarea j-flag"&gt;
+&lt;/div&gt;
+&lt;div class="cmmts"&gt;
+&lt;div class="j-flag"&gt;&lt;/div&gt;
+&lt;div class="dmore dmore-cmt f-cb"&gt;
+&lt;div class="dhas s-fc3"&gt;后面还有&lt;span class="j-flag"&gt;0&lt;/span&gt;条评论，&lt;a data-type="viewmore" class="s-fc3 f-ff1" href="javascript:void(0)"&gt;查看更多&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;a data-type="cc" class="dtoggle" href="javascript:void(0)"&gt;收起&lt;i data-type="cc" class="u-icn u-icn-61"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="m-wgt-comment3" style="display:none;">&lt;div class="dcmt"&gt;
+&lt;p&gt;&lt;span class="f-fw1"&gt;评论&lt;/span&gt; (&lt;span class="j-flag"&gt;&lt;/span&gt;)&lt;/p&gt;
+&lt;div class="m-cmmt m-cmmt-s"&gt;
+&lt;div class="iptarea j-flag"&gt;
+&lt;/div&gt;
+&lt;div class="cmmts j-flag"&gt;
+&lt;/div&gt;
+&lt;div class="j-flag"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-comment-item" style="display:none;"> {list beg..end as y}
+{var x=xlist[y]}
+{if !!x}
+&lt;div id="${x.commentId|seed}" class="itm" data-id="${x.commentId}"&gt;
+&lt;div class="head"&gt;
+&lt;a href="/user/home?id=${x.user.userId}"&gt;&lt;img src="${x.user.avatarUrl}?param=50y50"&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="cntwrap"&gt;
+&lt;div class=""&gt;
+&lt;div class="cnt f-brk"&gt;
+&lt;a href="/user/home?id=${x.user.userId}" class="s-fc7"&gt;${escape(x.user.nickname)}&lt;/a&gt;
+${getAuthIcon(x.user)}
+{if x.user.vipRights}
+{if x.user.vipRights.associator &amp;&amp; x.user.vipRights.associator.rights}
+&lt;img src="//p1.music.126.net/0iFYdNRbeKXnmhgIHFYVNg==/109951163309832497.png"
+class="brand-tag brand-vip" /&gt;
+{elseif x.user.vipRights.musicPackage &amp;&amp; x.user.vipRights.musicPackage.rights}
+&lt;img src="//p1.music.126.net/G2KYG9JjrGGP5grSaXOZaw==/109951163309837705.png"
+class="brand-tag brand-package" /&gt;
+{/if}
+{/if}
+{if !!x.beRepliedUser}
+&nbsp;回复&nbsp;&lt;a href="/user/home?id=${x.beRepliedUser.userId}" class="s-fc7"&gt;${escape(x.beRepliedUser.nickname)}&lt;/a&gt;
+${getAuthIcon(x.beRepliedUser)}
+{if x.beRepliedUser.vipRights}
+{if x.beRepliedUser.vipRights.associator &amp;&amp; x.beRepliedUser.vipRights.associator.rights}
+&lt;img src="//p1.music.126.net/0iFYdNRbeKXnmhgIHFYVNg==/109951163309832497.png"
+class="brand-tag brand-vip" /&gt;
+{elseif x.beRepliedUser.vipRights.musicPackage &amp;&amp; x.beRepliedUser.vipRights.musicPackage.rights}
+&lt;img src="//p1.music.126.net/G2KYG9JjrGGP5grSaXOZaw==/109951163309837705.png"
+class="brand-tag brand-package" /&gt;
+{/if}
+{/if}
+{/if}
+：${getRichText(escape(x.content),'s-fc7')}
+{if !!x.expressionUrl}
+&lt;div class="u-expression"&gt;&lt;img src="${x.expressionUrl}?param=70y70"&gt;&lt;/img&gt;&lt;/div&gt;
+{/if}
+&lt;/div&gt;
+&lt;/div&gt;
+{if x.beReplied&amp;&amp;x.beReplied.length}
+{var replied = x.beReplied[0]}
+&lt;div class="que f-brk f-pr s-fc3"&gt;
+&lt;span class="darr"&gt;&lt;i class="bd"&gt;◆&lt;/i&gt;&lt;i class="bg"&gt;◆&lt;/i&gt;&lt;/span&gt;
+{if (replied &amp;&amp; replied.status!=-5) &amp;&amp; (replied.content || replied.expressionUrl)}
+&lt;a class="s-fc7" href="/user/home?id=${replied.user.userId}"&gt;${replied.user.nickname}${getAuthIcon(replied.user)}&lt;/a&gt;
+{if replied.user.vipRights}
+{if replied.user.vipRights.associator &amp;&amp; replied.user.vipRights.associator.rights}
+&lt;img src="//p1.music.126.net/0iFYdNRbeKXnmhgIHFYVNg==/109951163309832497.png"
+class="brand-tag brand-vip" /&gt;
+{elseif replied.user.vipRights.musicPackage &amp;&amp; replied.user.vipRights.musicPackage.rights}
+&lt;img src="//p1.music.126.net/G2KYG9JjrGGP5grSaXOZaw==/109951163309837705.png"
+class="brand-tag brand-package" /&gt;
+{/if}
+{/if}
+：${getRichText(escape(replied.content),'s-fc7')}
+{if !!replied.expressionUrl}
+&lt;div class="u-expression"&gt;&lt;img src="${replied.expressionUrl}?param=70y70"&gt;&lt;/img&gt;&lt;/div&gt;
+{/if}
+{else}
+该评论已删除
+{/if}
+&lt;/div&gt;
+{/if}
+&lt;div class="rp"&gt;
+&lt;div class="time s-fc4"&gt;${timeformat(x.time)}&lt;/div&gt;
+{if x.topCommentId}&lt;span class="top"&gt;音乐人置顶&lt;/span&gt;{/if}
+{if canTop()&amp;&amp;GUser&amp;&amp;GUser.userId&amp;&amp;(GUser.userId==x.user.userId)}
+&lt;span class="dlt"&gt;{if x.topCommentId}&lt;a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-tid="${x.topCommentId}" data-type="canceltop"&gt;解除置顶&lt;/a&gt;{else}&lt;a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="gotop"&gt;置顶评论&lt;/a&gt;{/if}&lt;span class="sep"&gt;|&lt;/span&gt;&lt;/span&gt;
+{/if}
+{if GUser&amp;&amp;GUser.userId&amp;&amp;(GUser.userId==x.user.userId||GUser.userId==resUserId)}
+&lt;span class="dlt"&gt;&lt;a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" {if x.topCommentId}data-tid="${x.topCommentId}" {/if}data-type="delete"&gt;删除&lt;/a&gt;&lt;span class="sep"&gt;|&lt;/span&gt;&lt;/span&gt;
+{/if}
+{if GAllowRejectComment}
+{if hot||!x.isRemoveHotComment}
+&lt;span class="dlt"&gt;&lt;a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="reject"&gt;移除精彩评论&lt;/a&gt;&lt;span class="sep"&gt;|&lt;/span&gt;&lt;/span&gt;
+{else}
+&lt;span class="s-fc3"&gt;已移除精彩评论&lt;/span&gt;&lt;span class="sep"&gt;|&lt;/span&gt;
+{/if}
+{/if}
+{if !x.topCommentId}&lt;a data-id="${x.commentId}" data-type="{if !x.liked}like{else}unlike{/if}" href="javascript:void(0)"&gt;&lt;i class="zan u-icn2 u-icn2-{if x.liked}13{else}12{/if}"&gt;&lt;/i&gt;{if x.likedCount} (${getPlayCount(x.likedCount)}){/if}&lt;/a&gt;
+&lt;span class="sep"&gt;|&lt;/span&gt;{/if}
+&lt;a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="reply"&gt;回复&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+{/if}
+{/list}
+</textarea>
+<textarea name="jst" id="m-wgt-comment-item-2" style="display:none;"> {list beg..end as y}
+{var x=xlist[y]}
+&lt;div class="itm" data-id="${x.commentId}"&gt;
+&lt;div class="head"&gt;
+&lt;a href="/user/home?id=${x.user.userId}"&gt;&lt;img src="${x.user.avatarUrl}?param=50y50"&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="cntwrap"&gt;
+&lt;div class="cnt2 f-brk"&gt;
+&lt;a href="/user/home?id=${x.user.userId}" class="s-fc7"&gt;${escape(x.user.nickname)}&lt;/a&gt;
+${getAuthIcon(x.user)}
+{if x.user.vipRights}
+{if x.user.vipRights.associator &amp;&amp; x.user.vipRights.associator.rights}
+&lt;img src="//p1.music.126.net/0iFYdNRbeKXnmhgIHFYVNg==/109951163309832497.png"
+class="brand-tag brand-vip" /&gt;
+{elseif x.user.vipRights.musicPackage &amp;&amp; x.user.vipRights.musicPackage.rights}
+&lt;img src="//p1.music.126.net/G2KYG9JjrGGP5grSaXOZaw==/109951163309837705.png"
+class="brand-tag brand-package" /&gt;
+{/if}
+{/if}
+{if !!x.beRepliedUser}
+&nbsp;回复&nbsp;&lt;a href="/user/home?id=${x.beRepliedUser.userId}" class="s-fc7"&gt;${escape(x.beRepliedUser.nickname)}&lt;/a&gt;
+${getAuthIcon(x.beRepliedUser)}
+{if x.beRepliedUser.vipRights}
+{if x.beRepliedUser.vipRights.associator &amp;&amp; x.beRepliedUser.vipRights.associator.rights}
+&lt;img src="//p1.music.126.net/0iFYdNRbeKXnmhgIHFYVNg==/109951163309832497.png"
+class="brand-tag brand-vip" /&gt;
+{elseif x.beRepliedUser.vipRights.musicPackage &amp;&amp; x.beRepliedUser.vipRights.musicPackage.rights}
+&lt;img src="//p1.music.126.net/G2KYG9JjrGGP5grSaXOZaw==/109951163309837705.png"
+class="brand-tag brand-package" /&gt;
+{/if}
+{/if}
+{/if}
+：${getRichText(escape(x.content),'s-fc7')}
+{if !!x.expressionUrl}
+&lt;div class="u-expression"&gt;&lt;img src="${x.expressionUrl}?param=70y70"&gt;&lt;/img&gt;&lt;/div&gt;
+{/if}
+&lt;/div&gt;
+{if x.beReplied&amp;&amp;x.beReplied.length}
+{var replied = x.beReplied[0]}
+&lt;div class="que f-brk f-pr s-fc3"&gt;
+&lt;span class="darr"&gt;&lt;i class="bd"&gt;◆&lt;/i&gt;&lt;i class="bg"&gt;◆&lt;/i&gt;&lt;/span&gt;
+{if replied&amp;&amp;replied.content}
+&lt;a class="s-fc7" href="/user/home?id=${replied.user.userId}"&gt;${replied.user.nickname}${getAuthIcon(replied.user)}&lt;/a&gt;
+{if replied.user.vipRights}
+{if replied.user.vipRights.associator &amp;&amp; replied.user.vipRights.associator.rights}
+&lt;img src="//p1.music.126.net/0iFYdNRbeKXnmhgIHFYVNg==/109951163309832497.png"
+class="brand-tag brand-vip" /&gt;
+{elseif replied.user.vipRights.musicPackage &amp;&amp; replied.user.vipRights.musicPackage.rights}
+&lt;img src="//p1.music.126.net/G2KYG9JjrGGP5grSaXOZaw==/109951163309837705.png"
+class="brand-tag brand-package" /&gt;
+{/if}
+{/if}
+：${getRichText(escape(replied.content),'s-fc7')}
+{else}
+该评论已删除
+{/if}
+&lt;/div&gt;
+{/if}
+&lt;div class="rp"&gt;
+&lt;div class="time s-fc4"&gt;${timeformat(x.time)}&lt;/div&gt;
+{if GUser&amp;&amp;GUser.userId&amp;&amp;(GUser.userId==x.user.userId||GUser.userId==resUserId)}
+&lt;span class="dlt"&gt;
+&lt;a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="delete"&gt;删除&lt;/a&gt;&lt;span class="sep"&gt;|&lt;/span&gt;
+&lt;/span&gt;
+{/if}
+&lt;a data-id="${x.commentId}" data-type="{if !x.liked}like{else}unlike{/if}" href="javascript:void(0)"&gt;&lt;i class="zan u-icn2 u-icn2-{if x.liked}13{else}12{/if}"&gt;&lt;/i&gt;{if x.likedCount} (${getPlayCount(x.likedCount)}){/if}&lt;/a&gt;
+&lt;span class="sep"&gt;|&lt;/span&gt;
+&lt;a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="reply"&gt;回复&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+{/list}
+</textarea>
+<textarea name="jst" id="m-wgt-input-1" style="display:none;"> &lt;div class="m-cmmtipt f-cb f-pr"&gt;
+&lt;div class="u-txtwrap holder-parent f-pr"&gt;
+&lt;textarea class="u-txt area j-flag" data-type="" placeholder="${placeholder}"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="btns f-cb f-pr"&gt;
+&lt;i class="icn u-icn u-icn-36 j-flag"&gt;&lt;/i&gt;&lt;i class="icn u-icn u-icn-41 j-flag"&gt;&lt;/i&gt;
+&lt;a href="javascript:void(0)" class="btn u-btn u-btn-1 j-flag"&gt;评论&lt;/a&gt;
+&lt;span class="zs s-fc4 j-flag"&gt;110/120&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="corr u-arr"&gt;&lt;em class="arrline"&gt;◆&lt;/em&gt;&lt;span class="arrclr"&gt;◆&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-input-2" style="display:none;"> &lt;div class="rept m-quk m-quk-1 f-pr"&gt;
+&lt;div class="iner"&gt;
+&lt;div class="corr u-arr u-arr-1"&gt;&lt;em class="arrline"&gt;◆&lt;/em&gt;&lt;span class="arrclr"&gt;◆&lt;/span&gt;&lt;/div&gt;
+&lt;div class="m-cmmtipt m-cmmtipt-1 f-cb f-pr"&gt;
+&lt;div class="u-txtwrap holder-parent f-pr j-wrap"&gt;
+&lt;textarea class="u-txt area j-flag" placeholder="${placeholder}"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="btns f-cb f-pr"&gt;
+&lt;i class="icn u-icn u-icn-36 j-flag"&gt;&lt;/i&gt;&lt;i class="icn u-icn u-icn-41 j-flag"&gt;&lt;/i&gt;
+&lt;a href="javascript:void(0)" class="btn u-btn u-btn-1 j-flag"&gt;回复&lt;/a&gt;
+&lt;span class="zs s-fc4 j-flag"&gt;110/120&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-input-3" style="display:none;"> &lt;div class="m-cmmtipt f-cb f-pr"&gt;
+&lt;div class="u-txtwrap holder-parent f-pr"&gt;
+&lt;textarea class="u-txt area j-flag" placeholder="${placeholder}"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="btns f-cb f-pr"&gt;
+&lt;i class="icn u-icn u-icn-36 j-flag"&gt;&lt;/i&gt;&lt;i class="icn u-icn u-icn-41 j-flag"&gt;&lt;/i&gt;
+&lt;a class="btn u-btn u-btn-1 j-flag" href="javascript:void(0)"&gt;回复&lt;/a&gt;
+&lt;span class="zs s-fc4 j-flag"&gt;110/120&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-input-4" style="display:none;"> &lt;div class="m-cmmtipt f-cb f-pr"&gt;
+&lt;div class="u-txtwrap f-pr"&gt;
+&lt;textarea class="u-txt area j-flag"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="btns f-cb f-pr"&gt;
+&lt;i class="icn u-icn u-icn-36 j-flag"&gt;&lt;/i&gt;&lt;i class="icn u-icn u-icn-41 j-flag" style="display:none;"&gt;&lt;/i&gt;
+&lt;a class="f-fr u-btn u-btn-1 j-flag" href="javascript:void(0)"&gt;发送&lt;/a&gt;&lt;span class="zs s-fc4 j-flag"&gt;110/120&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-input-5" style="display:none;"> &lt;div class="m-cmmtipt f-cb f-pr"&gt;
+&lt;div class="u-txtwrap holder-parent f-pr"&gt;
+&lt;textarea class="u-txt area j-flag" placeholder="${placeholder}"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="btns f-cb f-pr"&gt;
+&lt;i class="icn u-icn u-icn-36 j-flag"&gt;&lt;/i&gt;&lt;i class="icn u-icn u-icn-41 j-flag"&gt;&lt;/i&gt;
+&lt;a class="btn u-btn u-btn-1 j-flag" href="javascript:void(0)"&gt;评论&lt;/a&gt;
+&lt;span class="zs s-fc4 j-flag"&gt;110/120&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-input-6" style="display:none;"> &lt;div class="m-cmmtipt f-cb f-pr"&gt;
+&lt;div class="u-txtwrap holder-parent f-pr"&gt;
+&lt;textarea class="u-txt area j-flag" placeholder="${placeholder}"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="btns f-cb f-pr"&gt;
+&lt;i class="icn u-icn u-icn-36 j-flag"&gt;&lt;/i&gt;&lt;i class="icn u-icn u-icn-41 j-flag"&gt;&lt;/i&gt;
+&lt;a class="btn u-btn u-btn-1 j-flag" href="javascript:void(0)"&gt;发送&lt;/a&gt;
+&lt;span class="zs s-fc4 j-flag"&gt;110/120&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="m-wgt-subscribe" style="display:none;">&lt;div class="lyct lyct-1 m-favgd f-cb"&gt;
+&lt;div class="tit j-flag"&gt;&lt;i class="u-icn u-icn-33"&gt;&lt;/i&gt;新歌单&lt;/div&gt;
+&lt;div class="j-flag"&gt;
+&lt;div class="u-load s-fc4"&gt;&lt;i class="icn"&gt;&lt;/i&gt; 加载中...&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-subscribe-item" style="display:none;">&lt;ul&gt;
+{list beg..end as y}
+{var x=xlist[y]}
+&lt;li data-id="${x.id}" class="xtag {if x.trackCount+size&gt;10000}dis{/if}"&gt;
+&lt;div class="item f-cb"&gt;
+&lt;div class="left"&gt;
+&lt;a href="javascript:void(0)" class="avatar" target="_blank"&gt;
+&lt;img alt="" src="${x.coverImgUrl}?param=40y40"&gt;
+{if x.highQuality}&lt;i class="u-jp u-icn2 u-icn2-jp5"&gt;&lt;/i&gt;{/if}
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;p class="name f-thide"&gt;&lt;a class="s-fc0" href="javascript:void(0)" target="_blank"&gt;${escape(cutStr(x.name,40))}&lt;/a&gt;&lt;/p&gt;
+&lt;p class="s-fc3"&gt;${x.trackCount}首&lt;/p&gt;
+{if x.trackCount+size&gt;10000}&lt;p class="limit"&gt;歌单已满&lt;/p&gt;{/if}
+&lt;/div&gt;
+&lt;/li&gt;
+{/list}
+&lt;/ul&gt;
+</textarea>
+<textarea name="ntp" id="m-wgt-forward" style="display:none;">&lt;div class="lyct lyct-1 f-cb"&gt;
+&lt;div class="m-lyshare"&gt;
+&lt;div class="u-txtwrap f-pr"&gt;
+&lt;label style="display: block;" class="j-flag"&gt;说点什么&lt;/label&gt;
+&lt;textarea class="u-txt area j-flag" text = &gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="oper f-cb j-flag"&gt;
+&lt;div class="face f-fl f-pr"&gt;
+&lt;i class="u-icn u-icn-36 f-fl j-flag"&gt;&lt;/i&gt;
+&lt;i class="u-icn u-icn-41 j-flag"&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;span class="zs f-fr s-fc3 j-flag"&gt;140&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="btnwrap"&gt;
+&lt;a class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true" href="#"&gt;&lt;i&gt;转发&lt;/i&gt;&lt;/a&gt;
+&lt;a class="u-btn2 u-btn2-1 u-btn2-w2 j-flag" hidefocus="true" href="#"&gt;&lt;i&gt;取消&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="j-flag u-err"&gt;&lt;i class="u-icn u-icn-25"&gt;&lt;/i&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="m-import-ok" style="display:none;">&lt;div class="lyct f-cb f-tc"&gt;
+&lt;p class="f-fs3 f-ff2"&gt;&lt;i class="u-icn u-icn-76"&gt;&lt;/i&gt;&nbsp;&nbsp;歌曲同步完成&lt;/p&gt;
+&lt;div class="lybtn"&gt;
+&lt;a href="javascript:;" class="u-btn2 u-btn2-2 j-flag" hidefocus="true"&gt;&lt;i&gt;查看我的音乐&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-atlist" style="display:none;"> &lt;div class="u-atlist"&gt;
+{if suggests.length == 0}
+&lt;p&gt;轻敲空格完成输入&lt;/p&gt;
+{else}
+&lt;p&gt;选择最近@的人或直接输入&lt;/p&gt;
+{/if}
+&lt;div class="lst"&gt;
+{list suggests as suggest}
+&lt;a href="javascript:;" data-index=${suggest_index} class="f-thide j-sgt"&gt;${suggest.nickname}&lt;/a&gt;
+{/list}
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-receiverInput" style="display:none;"> &lt;div class="ct f-pr"&gt;
+&lt;div class="u-txtwrap f-pr"&gt;
+&lt;div class="u-txt txtwrap j-flag"&gt;
+{if receiver}
+&lt;div class="blk s-fc3 j-receiver"&gt;${receiver.nickname}&lt;a href="#" class="cls" title="删除"&gt;×&lt;/a&gt;&lt;/div&gt;
+{/if}
+&lt;span class="holder-parent j-flag" style="float:left"&gt;
+&lt;input type="text" class="txt j-flag" /&gt;
+&lt;label class="holder j-flag"&gt;选择或输入好友昵称&lt;/label&gt;
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul class="full j-flag" style="_height:182px;display:none"&gt;
+{list users as user}
+&lt;li class="j-item" data-userId=${user.userId} data-username=${user.nickname} data-index=${user_index}&gt;&lt;a href="#"&gt;&lt;img src=${user.avatarUrl}&gt;${user.nickname}&lt;/a&gt;&lt;/li&gt;
+{/list}
+&lt;/ul&gt;
+&lt;div class="j-flag" style="position:absolute;left: -1000px;width:auto;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-receiverList" style="display:none;"> {list users as user}
+&lt;li class="j-item" data-userId=${user.userId} data-username=${user.nickname} data-index=${user_index}&gt;&lt;a href="#"&gt;&lt;img src=${user.avatarUrl}&gt;${user.nickname}&lt;/a&gt;&lt;/li&gt;
+{/list}
+</textarea>
+<textarea name="ntp" id="m-wgt-sharewin" style="display:none;">&lt;div class="lyct lyct-1 f-cb"&gt;
+&lt;div class="m-lyshare"&gt;
+&lt;ul class="m-tabs1 j-flag"&gt;
+&lt;li&gt;&lt;a href="#"&gt;&lt;em&gt;分享给大家&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#"&gt;&lt;em&gt;私信分享&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="u-err j-flag" style="display:none"&gt;最多选择10位好友&lt;/div&gt;
+&lt;div class="j-flag"&gt;&lt;/div&gt;
+&lt;div class="j-slogan"&gt;&lt;/div&gt;
+&lt;div class="u-txtwrap f-pr"&gt;
+&lt;textarea class="u-txt area j-flag" placeholder="说点什么吧" data-action="txt"&gt;&lt;/textarea&gt;
+&lt;div class="info f-pr j-flag" data-action="search"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="oper f-cb"&gt;
+&lt;div class="face f-fl f-pr"&gt;
+&lt;i class="u-icn u-icn-36 f-fl j-flag" data-action="emot"&gt;&lt;/i&gt;
+&lt;i class="u-icn u-icn-41 f-fl j-flag" data-action="at"&gt;&lt;/i&gt;
+&lt;i class="u-icn u-icn-97 j-flag f-pr" data-action="upload" data-default&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;span class="f-fr s-fc4 j-flag"&gt;140/140&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="f-cb j-flag"&gt;&lt;/div&gt;
+&lt;div class="f-cb"&gt;
+&lt;div class="btnwrap f-fl"&gt;
+&lt;a class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true" href="javascript:;" data-action="share"&gt;&lt;i&gt;分享&lt;/i&gt;&lt;/a&gt;
+&lt;a class="u-btn2 u-btn2-1 u-btn2-w2 j-flag" hidefocus="true" href="javascript:;" data-action="close"&gt;&lt;i&gt;取消&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="f-cb j-flag f-fr"&gt;
+&lt;div class="share f-fr"&gt;
+&lt;span class="f-fl s-fc3"&gt;同时分享到：&lt;/span&gt;
+&lt;ul class="u-logo u-logo-s f-cb"&gt;
+&lt;li&gt;&lt;a class="u-slg u-slg-sn j-t" data-action="sns" data-type="2" hidefocus="true" href="//music.163.com/api/sns/authorize?snsType=2&amp;clientType=web2&amp;callbackType=Binding&amp;forcelogin=true" title="新浪微博"&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="u-slg u-slg-db j-t" data-action="sns" data-type="3" hidefocus="true" href="//music.163.com/api/sns/authorize?snsType=3&amp;clientType=web2&amp;callbackType=Binding&amp;forcelogin=true" title="豆瓣网"&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="u-err j-flag"&gt;&lt;i class="u-icn u-icn-25"&gt;&lt;/i&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-search-suggest" style="display:none;">{macro listArtists(artists)}
+{list artists as art}
+${art.name|mark}&nbsp;
+{/list}
+{/macro}
+&lt;div class="m-schlist"&gt;
+&lt;p class="note s-fc3"&gt;&lt;a class="s-fc3 xtag" href="/search/#/?s=${keyword}&amp;type=1002"&gt;搜“${keyword|cutStr}” 相关用户&lt;/a&gt; &gt;&lt;/p&gt;
+&lt;div class="rap"&gt;
+{list result.order as index}
+{var lst=result[index]}
+{if !!lst&amp;&amp;!!lst.length}
+&lt;div class="itm f-cb"&gt;
+{if index=="songs"}
+&lt;h3 class="hd"&gt;&lt;i class="icn u-icn u-icn-26"&gt;&lt;/i&gt;&lt;em class="f-fl"&gt;单曲&lt;/em&gt;&lt;/h3&gt;
+&lt;ul class="{if index_index%2!=0}odd{/if} f-cb"&gt;
+{list lst as song}
+&lt;li&gt;&lt;a class="s-fc0 f-thide xtag" href="/song?id=${song.id}"&gt;${song.name|mark}-${listArtists(song.artists)}&lt;/a&gt;&lt;/li&gt;
+{/list}
+&lt;/ul&gt;
+{elseif index=="artists"}
+&lt;h3 class="hd"&gt;&lt;i class="icn u-icn u-icn-27"&gt;&lt;/i&gt;&lt;em class="f-fl"&gt;歌手&lt;/em&gt;&lt;/h3&gt;
+&lt;ul class="{if index_index%2!=0}odd{/if} f-cb"&gt;
+{list lst as artist}
+&lt;li&gt;&lt;a class="s-fc0 f-thide xtag" href="/artist?id=${artist.id}"&gt;${artist.name|mark}&lt;/a&gt;&lt;/li&gt;
+{/list}
+&lt;/ul&gt;
+{elseif index=="albums"}
+&lt;h3 class="hd"&gt;&lt;i class="icn u-icn u-icn-28"&gt;&lt;/i&gt;&lt;em class="f-fl"&gt;专辑&lt;/em&gt;&lt;/h3&gt;
+&lt;ul class="{if index_index%2!=0}odd{/if} f-cb"&gt;
+{list lst as album}
+&lt;li&gt;&lt;a class="s-fc0 f-thide xtag" href="/album?id=${album.id}"&gt;${album.name|mark}{if album.artist}-${album.artist.name|mark}{/if}&lt;/a&gt;&lt;/li&gt;
+{/list}
+&lt;/ul&gt;
+{elseif index=="playlists"}
+&lt;h3 class="hd"&gt;&lt;i class="icn u-icn u-icn-29"&gt;&lt;/i&gt;&lt;em class="f-fl"&gt;歌单&lt;/em&gt;&lt;/h3&gt;
+&lt;ul class="{if index_index%2!=0}odd{/if} f-cb"&gt;
+{list lst as playlist}
+&lt;li&gt;&lt;a class="s-fc0 f-thide xtag" href="/playlist?id=${playlist.id}"&gt;${playlist.name|mark}&lt;/a&gt;&lt;/li&gt;
+{/list}
+&lt;/ul&gt;
+{elseif index=="mvs"}
+&lt;h3 class="hd"&gt;&lt;i class="icn u-icn u-icn-96"&gt;&lt;/i&gt;&lt;em class="f-fl"&gt;视频&lt;/em&gt;&lt;/h3&gt;
+&lt;ul class="{if index_index%2!=0}odd{/if} f-cb"&gt;
+{list lst as mv}
+&lt;li&gt;&lt;a class="s-fc0 f-thide xtag" href="/mv?id=${mv.id}"&gt;MV:${mv.name|mark}{if mv.artistName}-${mv.artistName|mark}{/if}&lt;/a&gt;&lt;/li&gt;
+{/list}
+&lt;/ul&gt;
+{/if}
+&lt;/div&gt;
+{/if}
+{/list}
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-xwgt-share-infobar" style="display:none;">&lt;i class="highlight"&gt;&lt;/i&gt;&lt;div class="text f-fl f-fs1"&gt;&lt;p class="f-thide"&gt;${info|escape}&lt;/p&gt;&lt;/div&gt;
+{if canChange}&lt;i class="f-fr icn u-icn2 u-icn2-arr"&gt;&lt;/i&gt;{/if}
+</textarea>
+<textarea name="jst" id="m-xwgt-share-videobar" style="display:none;">&lt;div class="text"&gt;
+&lt;div class="cvr f-fl f-pr" style="background-image:url(${picUrl}?imageView&amp;thumbnail=107x60),url(${picUrl}?imageView&amp;thumbnail=107y60&amp;blur=30x15)"&gt;
+&lt;/div&gt;
+&lt;h3 class="f-thide f-fs1"&gt;${title}&lt;/h3&gt;
+&lt;i class="f-fr icn u-icn2 u-icn2-arr"&gt;&lt;/i&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="m-xwgt-share-upload" style="display:none;"> &lt;div class="f-pr choose f-cb"&gt;
+&lt;ul class="pics f-pr f-cb j-flag"&gt;&lt;li class="f-pr add j-flag u-icn2 u-icn2-addimg" title="添加新图片"&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;div class="f-pa tip s-fc6 j-flag"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-xwgt-share-upload-preview" style="display:none;"> &lt;li class="pic f-pr{if fail} z-fail{/if}"&gt;
+{if !fail}
+&lt;i class="f-img icn"&gt;&lt;/i&gt;
+{else}
+&lt;div class="mask f-blk f-pa"&gt;&lt;/div&gt;&lt;div class="f-blk f-pa error"&gt;${fail}&lt;/div&gt;
+{/if}
+&lt;span class="del f-pa u-icn2 u-icn2-delimg" title="删除"&gt;&lt;/span&gt;
+&lt;/li&gt;
+</textarea>
+<textarea name="jst" id="m-xwgt-share-upload-preview-img" style="display:none;">{if !fail}
+&lt;img class="f-img" src="${url}?imageView&amp;thumbnail=80y80" draggable=false&gt;
+{else}
+&lt;div class="mask f-blk f-pa"&gt;&lt;/div&gt;&lt;div class="f-blk f-pa error"&gt;${fail}&lt;/div&gt;
+{/if}
+</textarea>
+<textarea name="ntp" id="ntp-alert" style="display:none;">&lt;div class="lyct f-cb f-tc"&gt;
+&lt;p class="f-fs1"&gt;
+&lt;i class="u-icn u-icn-89 j-flag"&gt;&lt;/i&gt;
+&lt;span class="f-fw1"&gt;&nbsp;&nbsp;&nbsp;&lt;span class="j-flag"&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/p&gt;
+&lt;p class="mesg j-flag"&gt;&nbsp;&lt;/p&gt;
+&lt;div class="lybtn"&gt;
+&lt;a href="javascript:;" class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true"&gt;&lt;i&gt;知道了&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="m-layer-commwin" style="display:none;">&lt;div class="lyct f-tc"&gt;
+&lt;p class="j-t"&gt;&lt;i class="u-icn u-icn-90"&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;p class="j-t msg1"&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="j-t lsbtn f-tc"&gt;
+&lt;a href="javascript:;" class="u-btn2 u-btn2-2 u-btn2-w2" hidefocus="true"&gt;&lt;i&gt;上传节目&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="m-layer-delwin" style="display:none;">&lt;div class="lyct lyct-1 f-cb"&gt;
+&lt;div class="n-log2 n-log2-4"&gt;
+&lt;p class="js-tip u-tip-2"&gt;&lt;/p&gt;
+&lt;div class="lybtn f-tc"&gt;
+&lt;a href="javascript:;" class="u-btn2 u-btn2-2" hidefocus="true" data-action="ok"&gt;&lt;i&gt;删除&lt;/i&gt;&lt;/a&gt;
+&lt;a href="javascript:;" class="u-btn2 u-btn2-1" hidefocus="true" data-action="cancel"&gt;&lt;i&gt;取消&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-layer-commwin-btn" style="display:none;">{list buttons as item}
+&lt;a hidefocus="true" class="u-btn2 ${item.klass} {if item.style}${item.style}{else}u-btn2-w2{/if}" href="#" {if !!item.action}data-action="${item.action}"{/if}&gt;&lt;i&gt;${item.text}&lt;/i&gt;&lt;/a&gt;
+{/list}
+</textarea>
+<textarea name="ntp" id="m-layer-outershare" style="display:none;">&lt;div class="lyct lyct-1"&gt;
+&lt;ul class="n-outshr f-cb"&gt;
+&lt;li&gt;
+&lt;a href="#" data-action="wxfrd" class="logo wxfrd"&gt;&lt;/a&gt;
+&lt;a href="#" data-action="wxfrd" class="wd"&gt;微信&lt;/a&gt;
+&lt;/li&gt;
+&lt;!--
+&lt;li&gt;
+&lt;a href="#" data-action="wxevt" class="logo wxevt"&gt;&lt;/a&gt;
+&lt;a href="#" data-action="wxevt" class="wd"&gt;微信朋友圈&lt;/a&gt;
+&lt;/li&gt;
+--&gt;
+&lt;li&gt;
+&lt;a href="#" data-action="yxfrd" class="logo yxfrd"&gt;&lt;/a&gt;
+&lt;a href="#" data-action="yxfrd" class="wd"&gt;易信&lt;/a&gt;
+&lt;/li&gt;
+&lt;!--
+&lt;li&gt;
+&lt;a href="#" data-action="yxevt" class="logo yxevt"&gt;&lt;/a&gt;
+&lt;a href="#" data-action="yxevt" class="wd"&gt;易信朋友圈&lt;/a&gt;
+&lt;/li&gt;
+--&gt;
+&lt;li&gt;
+&lt;a href="#" data-action="qzone" class="logo qzone"&gt;&lt;/a&gt;
+&lt;a href="#" data-action="qzone" class="wd"&gt;QQ空间&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#" data-action="lofte" class="logo lofte"&gt;&lt;/a&gt;
+&lt;a href="#" data-action="lofte" class="wd"&gt;LOFTER&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="m-layer-tip" style="display:none;">&lt;div class="lyct f-cb f-tc"&gt;
+&lt;div class="f-fs1 j-flag"&gt;message&lt;/div&gt;
+&lt;div class="lybtn"&gt;
+&lt;a hidefocus="true" class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" href="javascript:;"&gt;&lt;i&gt;知道了&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="m-outshare-layer" style="display:none;">&lt;div class="lyct lyct-1 f-cb"&gt;
+&lt;ul class="m-shareto f-cb j-flag"&gt;
+&lt;li class="fst" data-action="sn" data-type="2"&gt;
+&lt;a href="#" class="logo logo-sn"&gt;&lt;/a&gt;
+&lt;a href="#" class="wd s-fc3"&gt;新浪微博&lt;/a&gt;
+&lt;/li&gt;
+&lt;li data-action="tx" data-type="6" style="display:none;"&gt;
+&lt;a href="#" class="logo logo-tc"&gt;&lt;/a&gt;
+&lt;a href="#" class="wd s-fc3"&gt;腾讯微博&lt;/a&gt;
+&lt;/li&gt;
+&lt;li data-action="db" data-type="3"&gt;
+&lt;a href="#" class="logo logo-db"&gt;&lt;/a&gt;
+&lt;a href="#" class="wd s-fc3"&gt;豆瓣&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="m-sharesingle-layer" style="display:none;">&lt;div class="lyct lyct-1 f-cb"&gt;
+&lt;div class="m-lyshare"&gt;
+&lt;div class="u-txtwrap f-pr"&gt;
+&lt;textarea data-action="txt" class="u-txt area j-flag"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="oper f-cb"&gt;
+&lt;div class="face f-fl f-pr j-flag"&gt;
+&lt;i data-action="emt" class="u-icn u-icn-36 f-fl"&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;span class="zs f-fr s-fc3 j-flag"&gt;140&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="btnwrap"&gt;
+&lt;a data-action="ok" class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true" href="#"&gt;&lt;i&gt;分享&lt;/i&gt;&lt;/a&gt;
+&lt;a data-action="cc" class="u-btn2 u-btn2-1 u-btn2-w2" hidefocus="true" href="#"&gt;&lt;i&gt;取消&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="u-err f-hide j-flag"&gt;&lt;i class="u-icn u-icn-25"&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-popup-info" style="display:none;">&lt;div class="lyct f-tc"&gt;
+&lt;div class="f-cb m-tipinfo"&gt;
+&lt;i class="u-icn2 u-icn2-11 f-fl"&gt;&lt;/i&gt;
+&lt;div class="f-fr f-pr f-fs1 tip"&gt;${tip}&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="lsbtn f-tc"&gt;
+&lt;a data-action="ok" href="javascript:void(0)" class="u-btn2 u-btn2-2 u-btn2-2-h {if oktext.length&lt;=2}u-btn2-w2{/if}" hidefocus="true"&gt;&lt;i&gt;${oktext}&lt;/i&gt;&lt;/a&gt;
+&lt;a data-action="cc" href="javascript:void(0)" hidefocus="true" class="u-btn2 u-btn2-1 u-btn2-1-h {if cctext.length&lt;=2}u-btn2-w2{/if}"&gt;&lt;i&gt;${cctext}&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-popup-song-buy" style="display:none;">&lt;div class="lyct m-songpay f-tc"&gt;
+&lt;div class="f-cb m-tipinfo"&gt;
+&lt;i class="u-icn2 u-icn2-11 f-fl"&gt;&lt;/i&gt;
+&lt;div class="f-fr f-pr f-fs1 tip"&gt;${tip}&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="f-pr f-tc"&gt;
+&lt;a data-action="ok" href="javascript:void(0)" class="u-btn2 u-btn2-2 {if oktext.length&lt;=2}u-btn2-w2{/if}" hidefocus="true"&gt;&lt;i&gt;${oktext}&lt;/i&gt;&lt;/a&gt;
+{if showSongText}&lt;a data-action="song" class="song s-fc4" href="javascript:void(0)"&gt;${songTxt}&lt;/a&gt;{/if}
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-popup-alert" style="display:none;">&lt;div class="lyct f-tc"&gt;
+&lt;p&gt;&lt;i class="${icon}"&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;p class="msg1"&gt;&lt;span class="f-fs1 s-fc1"&gt;${tip}&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="lsbtn f-tc"&gt;
+{if typeof(oktext) != 'undefined'}&lt;a data-action="ok" href="javascript:void(0)" class="u-btn2 u-btn2-2 u-btn2-2-h {if oktext.length&lt;=2}u-btn2-w2{/if}" hidefocus="true"&gt;&lt;i&gt;${oktext}&lt;/i&gt;&lt;/a&gt;{/if}
+{if typeof(cctext) != 'undefined'}&lt;a data-action="cc" href="javascript:void(0)" class="u-btn2 u-btn2-1 u-btn2-1-h {if cctext.length&lt;=2}u-btn2-w2{/if}" hidefocus="true"&gt;&lt;i&gt;${cctext}&lt;/i&gt;&lt;/a&gt;{/if}
+&lt;/div&gt;
+</textarea>
+<textarea name="txt" id="m-donate-tip" style="display:none;">&lt;p&gt;该资源为公益歌曲&lt;p&gt;
+&lt;p&gt;捐赠任意金额（2~4999元）即可无限畅听下载&lt;/p&gt;
+</textarea>
+<textarea name="ntp" id="m-simple-share-layer" style="display:none;"> &lt;div class="lyct lyct-1"&gt;
+&lt;ul class="n-outshr f-cb"&gt;
+&lt;li data-type="xlwb"&gt;
+&lt;a href="javascript:;" class="logo xlwb"&gt;&lt;/a&gt;
+&lt;a href="javascript:;" class="wd"&gt;新浪微博&lt;/a&gt;
+&lt;/li&gt;
+&lt;li data-type="wx"&gt;
+&lt;a href="javascript:;" class="logo wxfrd"&gt;&lt;/a&gt;
+&lt;a href="javascript:;" class="wd"&gt;微信&lt;/a&gt;
+&lt;/li&gt;
+&lt;li data-type="yx"&gt;
+&lt;a href="javascript:;" class="logo yxfrd"&gt;&lt;/a&gt;
+&lt;a href="javascript:;" class="wd"&gt;易信好友&lt;/a&gt;
+&lt;/li&gt;
+&lt;li data-type="qzone"&gt;
+&lt;a href="javascript:;" class="logo qzone"&gt;&lt;/a&gt;
+&lt;a href="javascript:;" class="wd"&gt;QQ空间&lt;/a&gt;
+&lt;/li&gt;
+&lt;li data-type="lofter" style="display:none;"&gt;
+&lt;a href="javascript:;" class="logo lofte"&gt;&lt;/a&gt;
+&lt;a href="javascript:;" class="wd"&gt;LOFTER&lt;/a&gt;
+&lt;/li&gt;
+&lt;li data-type="db" style="display:none;"&gt;
+&lt;a href="javascript:;" class="logo db"&gt;&lt;/a&gt;
+&lt;a href="javascript:;" class="wd"&gt;豆瓣&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="txt" id="m-report-point" style="display:none;">&lt;div class="zcnt"&gt;
+&lt;div class="lyct f-cb f-tc"&gt;
+&lt;p class="f-fs2"&gt;悬赏1积分让大家来帮你补歌词，是否继续？&lt;/p&gt;
+&lt;p style="padding-top: 10px;"&gt;若30天内歌词未补充，积分将退还给您&lt;/p&gt;
+&lt;div class="lybtn"&gt;
+&lt;a href="javascript:;" data-action="ok" class="u-btn2 u-btn2-2 u-btn2-w2" hidefocus="true"&gt;&lt;i&gt;继续求&lt;/i&gt;&lt;/a&gt;
+&lt;a href="javascript:;" data-action="cc" class="u-btn2 u-btn2-1 u-btn2-w2" hidefocus="true"&gt;&lt;i&gt;取消&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="txt" id="txt-mobilestatus" style="display:none;">&lt;div class="box f-cb"&gt;
+&lt;div data-action="invalid" class="item z-first f-fl"&gt;
+&lt;div class="icon"&gt;&lt;/div&gt;
+&lt;p&gt;原手机号已停用&lt;/p&gt;
+&lt;p class="s-fc3"&gt;(使用其他方式验证)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div data-action="valid" class="item f-fr"&gt;
+&lt;div class="icon"&gt;&lt;/div&gt;
+&lt;p&gt;原手机号仍能使用&lt;/p&gt;
+&lt;p class="s-fc3"&gt;(使用手机验证码验证)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="m-question" style="display:none;">&lt;div class="m-question"&gt;
+&lt;div&gt;请填写以下安全问题的答案&lt;/div&gt;
+&lt;div class="qa j-flag f-cb"&gt;
+&lt;label class="f-fl"&gt;问题：&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="qa f-cb"&gt;
+&lt;label class="f-fl"&gt;回答：&lt;/label&gt;
+&lt;input type="text" class="u-txt txt f-fl j-flag"&gt;
+&lt;/div&gt;
+&lt;div class="u-err f-hide j-flag"&gt;&lt;i class="u-icn u-icn-25"&gt;&lt;/i&gt;帐号或密码错误&lt;/div&gt;
+&lt;div class="btnwrap"&gt;
+&lt;a data-action="back" class="u-btn2 u-btn2-1 u-btn2-w2" hidefocus="true" href="javascript:void(0)"&gt;&lt;i&gt;上一步&lt;/i&gt;&lt;/a&gt;
+&lt;a data-action="next" class="u-btn2 u-btn2-2 u-btn2-w2" hidefocus="true" href="javascript:void(0)"&gt;&lt;i&gt;下一步&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="g-select" style="display:none;">&lt;div class="u-slt f-ib"&gt;
+&lt;span class="curr f-thide"&gt;－请选择－&lt;/span&gt;
+&lt;i class="btn"&gt;&lt;/i&gt;
+&lt;ul class="f-hide"&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="ntp-linuxlinks" style="display:none;">&lt;div class="lyct lyct-1"&gt;
+&lt;div class="dc f-cb"&gt;
+&lt;ul class="links"&gt;
+&lt;li class="link f-cb"&gt;
+&lt;a href="" class="right" target="_blank" hidefocus="true" title="Linux版下载"&gt;deepin15（64位）&lt;/a&gt;
+&lt;a href="" class="right" target="_blank" hidefocus="true" title="Linux版下载"&gt;ubuntu16.04（64位）&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="ntp-pcRedirect" style="display:none;">&lt;div class="lyct lyct-1"&gt;
+&lt;div class="pcdld f-cb"&gt;
+&lt;img src="../../../style/web2/img/down/uwpWindown.png" alt="网易云音乐-UWP版"&gt;
+&lt;p class="txt"&gt;您的系统为Windows 10，推荐下载UWP版&lt;/p&gt;
+&lt;div class="choose"&gt;
+&lt;a class="u-btn2 u-btn2-2" data-res-action="bilog" data-log-action="downloadapp" data-log-json='{"type":"pc","source":"downloadapp"}' href="https://www.microsoft.com/store/apps/9nblggh6g0jf" onclick="g_stat('uwp',true,event);_gaq.push(['_trackEvent','download','uwp','download']);" hidefocus="true" title="UWP版下载" target="_blank"&gt;&lt;i&gt;下载UWP版本&lt;/i&gt;&lt;/a&gt;
+&lt;a class="link" data-res-action="bilog" data-log-action="downloadapp" data-log-json='{"type":"pc","source":"downloadapp"}' href="https://music.163.com/api/pc/download/latest" onclick="g_stat('pc',true,event);_gaq.push(['_trackEvent','download','pc','download']);" hidefocus="true" title="PC版下载" target="_blank"&gt;&lt;i&gt;继续下载PC版本&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="g-select-item" style="display:none;">{list options as o}
+&lt;li class="f-thide" data-index="${o_index}"&gt;&lt;a href="javascript:;"&gt;${o|filter}&lt;/a&gt;&lt;/li&gt;
+{/list}
+</textarea>
+<textarea name="ntp" id="m-download-layer" style="display:none;">&lt;h3 class="f-tc"&gt;使用云音乐客户端&lt;/h3&gt;
+&lt;h4 class="f-tc s-fc3"&gt;即可无限下载高品质音乐&lt;/h4&gt;
+&lt;div class="f-cb wrap"&gt;
+&lt;div class="left"&gt;
+&lt;div data-action="download" data-src="https://music.163.com/api/osx/download/latest" class="btn btn-mac"&gt;&lt;i&gt;&lt;/i&gt;Mac版&lt;span class="ver j-flag"&gt;V1.9.1&lt;/span&gt;&lt;/div&gt;
+&lt;div data-action="download" data-src="https://music.163.com/api/pc/download/latest" class="btn f-hide"&gt;&lt;i&gt;&lt;/i&gt;PC版&lt;span class="ver j-flag"&gt;V1.9.1&lt;/span&gt;&lt;/div&gt;
+&lt;div data-action="orpheus" class="btn btn-installed j-flag"&gt;已安装PC版&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="right"&gt;
+&lt;div class="qtcode"&gt;&lt;/div&gt;
+&lt;div class="s-fc3 f-tc"&gt;扫描下载手机版&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="ntp" id="m-programtips-layer" style="display:none;">&lt;div class="f-tc wrap "&gt;
+&lt;p class="f-fs1 s-fc1 wrap-p"&gt;该资源为付费内容，扫描下方二维码，使用最新的安卓或iPhone版本购买后即可畅享&lt;/p&gt;
+&lt;div class="f-tc wrap-d"&gt;
+&lt;span class="qtcode j-flag"&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="com-artists-title" style="display:none;">{var title=""}
+{if artists &amp;&amp; artists.length}
+{list artists as x}
+{if x}
+{var title = title + x.name}
+{if x_index &lt; x_length - 1}
+{var title = title + " / "}
+{/if}
+{/if}
+{/list}
+{/if}
+${escape(title)}
+</textarea>
+<textarea name="jst" id="com-mv-artists" style="display:none;">{if artists &amp;&amp; artists.length}
+&lt;span class="${boxClazz}" title="${comJST('com-artists-title', artists)}"&gt;
+{list artists as x}
+{if !!x}
+{if !!x.id}
+&lt;a href="/artist?id=${x.id}" class="${clazz}"&gt;${mark(escape(x.name))}&lt;/a&gt;
+{else}
+&lt;span class="${clazz}"&gt;${mark(escape(x.name))}&lt;/span&gt;
+{/if}
+{if x_index &lt; x_length - 1}&nbsp;/&nbsp;{/if}
+{/if}
+{/list}
+&lt;/span&gt;
+{/if}
+</textarea>
+<textarea name="jst" id="com-album-artists" style="display:none;">${comJST('com-mv-artists', artists, clazz, mark, boxClazz)}
+</textarea>
+<textarea name="jst" id="com-user-type" style="display:none;">{if x.userType==4}${before}&lt;sup class="${clazz2} u-icn2 u-icn2-music2 ${clazz}"&gt;&lt;/sup&gt;${after}{elseif x.authStatus==1}${before}&lt;sup class="u-icn u-icn-1 ${clazz}"&gt;&lt;/sup&gt;${after}{elseif (x.expertTags &amp;&amp; x.expertTags.length&gt;0) || !isEmptyObject(x.experts)}${before}&lt;sup class="u-icn u-icn-84 ${clazz}"&gt;&lt;/sup&gt;${after}{/if}
+</textarea>
+<textarea name="ntp" id="ntp-portrait" style="display:none;">&lt;div class="m-emts z-show"&gt;
+&lt;div class="j-flag emtwrap f-cb"&gt;&lt;/div&gt;
+&lt;div class="page"&gt;
+&lt;a href="#" hidefocus="true" class="j-flag u-btn u-btn-prv"&gt;&lt;/a&gt;&lt;em class="j-flag s-fc3"&gt;1/2&lt;/em&gt;&lt;a href="#" hidefocus="true" class="j-flag u-btn u-btn-nxt"&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="jst-portrait" style="display:none;">{list plist as item}
+&lt;span title="${item.key}" class="emtitm"&gt;&lt;img data-text="${item.key}" data-url="${item.key|purl}" class="f-alpha" src="${item.key|purl}"&gt;&lt;/span&gt;
+{/list}
+</textarea>
+<textarea name="ntp" id="m-wgt-song-box" style="display:none;">&lt;div class="j-flag"&gt;&lt;/div&gt;
+&lt;div class="j-flag"&gt;&lt;/div&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-song-list" style="display:none;">&lt;table class="m-table {if type=='rank'}m-table-rank{/if}"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th class="first {if type=='rank'}wrk{else}w1{/if}"&gt;&lt;div class="wp"&gt;&nbsp;&lt;/div&gt;&lt;/th&gt;
+&lt;th&gt;&lt;div class="wp af0"&gt;&lt;/div&gt;&lt;/th&gt;
+&lt;th class="w2"&gt;&lt;div class="wp af1"&gt;&lt;/div&gt;&lt;/th&gt;
+&lt;th class="w3"&gt;&lt;div class="wp af2"&gt;&lt;/div&gt;&lt;/th&gt;
+&lt;th class="w4"&gt;&lt;div class="wp af3"&gt;&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+{list beg..end as y}
+{var x=xlist[y]}
+&lt;tr id="${x.id|seed}" class="{if y%2==0}even{/if} {if disable(x)}js-dis{/if}"&gt;
+&lt;td class="left"&gt;
+&lt;div class="hd {if type=='rank'}rank{/if}"&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}"&gt;&nbsp;&lt;/span&gt;
+&lt;span class="num"&gt;${y+1}&lt;/span&gt;
+{if type=='rank'}
+&lt;div class="rk rk-1"&gt;
+{if x.lastRank&gt;=0}
+{if y-x.lastRank&gt;0}
+&lt;span class="ico u-icn u-icn-74 s-fc10"&gt;${y-x.lastRank}&lt;/span&gt;
+{elseif y-x.lastRank==0}
+&lt;span class="ico u-icn u-icn-72 s-fc4"&gt;0&lt;/span&gt;
+{else}
+&lt;span class="ico u-icn u-icn-73 s-fc9"&gt;${x.lastRank-y}&lt;/span&gt;
+{/if}
+{else}
+&lt;span class="u-icn u-icn-75"&gt;&lt;/span&gt;
+{/if}
+&lt;/div&gt;
+{/if}
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=""&gt;
+&lt;div class="f-cb"&gt;
+&lt;div class="tt"&gt;
+&lt;div class="ttc"&gt;
+&lt;span class="txt"&gt;
+{var alia=songAlia(x)}
+&lt;a href="/song?id=${x.id}"&gt;&lt;b title="${x.name|escape}{if alia} - (${alia|escape}){/if}"&gt;${soil(x.name)}&lt;/b&gt;&lt;/a&gt;{if alia}&lt;span title="${alia|escape}" class="s-fc8"&gt; - (${soil(alia)})&lt;/span&gt;{/if}
+{if x.mvid&gt;0}
+&lt;span data-res-id="${x.id}" data-res-action="mv" title="播放mv" class="mv"&gt;MV&lt;/span&gt;
+{/if}
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=" s-fc3"&gt;
+&lt;span class="u-dur {if canDel}candel{/if}"&gt;${dur2time(x.duration/1000)}{if x.ftype==2}&lt;i title="歌曲来自第三方网站" class="migu u-icn2 u-icn2-14"&gt;&lt;/i&gt;{/if}&lt;/span&gt;
+&lt;div class="opt hshow"&gt;
+&lt;a class="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表" hidefocus="true"
+data-res-type="18"
+data-res-id="${x.id}"
+data-res-action="addto"
+{if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if}&gt;&lt;/a&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="fav" class="icn icn-fav" title="收藏"&gt;&lt;/span&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="share" data-res-name="${x.name}" data-res-author="{list x.artists as art}${art.name}{if art_index&lt;x.artists.length-1}/{/if}{/list}" {if x.album}data-res-pic="${x.album.picUrl}"{/if} class="icn icn-share" title="分享"&gt;分享&lt;/span&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="download" class="icn icn-dl" title="下载"&gt;&lt;/span&gt;
+{if canDel}
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="delete" class="icn icn-del" title="删除"&gt;删除&lt;/span&gt;
+{/if}
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=""&gt;
+&lt;div class="text" title="{list x.artists as art}${art.name}{if art_index&lt;x.artists.length-1}/{/if}{/list}"&gt;
+${getArtistName(x.artists, '', '', false, false, true)}
+&lt;/div&gt;
+&lt;/td&gt;
+{if type=='dayRcmd'}
+&lt;td class="hascls"&gt;
+&lt;div class="f-pr"&gt;
+&lt;div class="text"&gt;{if x.album}&lt;a href="/album?id=${x.album.id}" title="${x.album.name}"&gt;${x.album.name}&lt;/a&gt;{/if}&lt;/div&gt;
+&lt;a href="javascript:;" data-res-action="dislike" data-res-id="${x.id}" data-res-alg="${x.alg}" class="cls u-icn u-icn-80 f-tid icn-dislike" title="不感兴趣"&gt;不感兴趣&lt;/a&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+{else}
+&lt;td class=""&gt;
+&lt;div class="text"&gt;
+{if x.album}
+&lt;a href="/album?id=${x.album.id}" title="${x.album.name|escape}"&gt;${soil(x.album.name)}&lt;/a&gt;
+{/if}
+&lt;/div&gt;
+&lt;/td&gt;
+{/if}
+&lt;/tr&gt;
+{/list}
+&lt;/tbody&gt;
+&lt;/table&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-album-list" style="display:none;">&lt;table class="m-table {if type=='rank'}m-table-rank{/if}"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th class="first {if type=='rank'}wrk{else}w1{/if}"&gt;&lt;div class="wp"&gt;&nbsp;&lt;/div&gt;&lt;/th&gt;
+&lt;th&gt;&lt;div class="wp"&gt;歌曲标题&lt;/div&gt;&lt;/th&gt;
+&lt;th class="w2-1"&gt;&lt;div class="wp"&gt;时长&lt;/div&gt;&lt;/th&gt;
+&lt;th class="w4"&gt;&lt;div class="wp"&gt;歌手&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+{list beg..end as y}
+{var x=xlist[y]}
+&lt;tr id="${x.id|seed}" class="{if y%2==0}even{/if} {if disable(x)}js-dis{/if}"&gt;
+&lt;td class="left"&gt;
+&lt;div class="hd {if type=='rank'}rank{/if}"&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}"&gt;&nbsp;&lt;/span&gt;
+&lt;span class="num"&gt;${y+1}&lt;/span&gt;
+{if type=='rank'}
+&lt;div class="rk rk-1"&gt;
+{if x.lastRank&gt;=0}
+{if y-x.lastRank&gt;0}
+&lt;span class="ico u-icn u-icn-74 s-fc10"&gt;${y-x.lastRank}&lt;/span&gt;
+{elseif y-x.lastRank==0}
+&lt;span class="ico u-icn u-icn-72 s-fc4"&gt;0&lt;/span&gt;
+{else}
+&lt;span class="ico u-icn u-icn-73 s-fc9"&gt;${x.lastRank-y}&lt;/span&gt;
+{/if}
+{else}
+&lt;span class="u-icn u-icn-75"&gt;&lt;/span&gt;
+{/if}
+&lt;/div&gt;
+{/if}
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=""&gt;
+&lt;div class="f-cb"&gt;
+&lt;div class="tt"&gt;
+&lt;div class="ttc"&gt;
+&lt;span class="txt"&gt;
+{var alia=songAlia(x)}
+&lt;a href="/song?id=${x.id}"&gt;&lt;b title="${x.name|escape}{if alia} - (${alia|escape}){/if}"&gt;${soil(x.name)}&lt;/b&gt;&lt;/a&gt;{if alia}&lt;span title="${alia|escape}" class="s-fc8"&gt; - (${soil(alia)})&lt;/span&gt;{/if}
+{if x.mvid&gt;0}
+&lt;span data-res-id="${x.id}" data-res-action="mv" title="播放mv" class="mv"&gt;MV&lt;/span&gt;
+{/if}
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=" s-fc3"&gt;
+&lt;span class="u-dur {if canDel}candel{/if}"&gt;${dur2time(x.duration/1000)}{if x.ftype==2}&lt;i title="歌曲来自第三方网站" class="migu u-icn2 u-icn2-14"&gt;&lt;/i&gt;{/if}&lt;/span&gt;
+&lt;div class="opt hshow"&gt;
+&lt;a class="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表" hidefocus="true"
+data-res-type="18"
+data-res-id="${x.id}"
+data-res-action="addto"
+{if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if}&gt;&lt;/a&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="fav" class="icn icn-fav" title="收藏"&gt;&lt;/span&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="share" data-res-name="${x.name}" data-res-author="{list x.artists as art}${art.name}{if art_index&lt;x.artists.length-1}/{/if}{/list}" {if x.album}data-res-pic="${x.album.picUrl}"{/if} class="icn icn-share" title="分享"&gt;分享&lt;/span&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="download" class="icn icn-dl" title="下载"&gt;&lt;/span&gt;
+{if canDel}
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="delete" class="icn icn-del" title="删除"&gt;删除&lt;/span&gt;
+{/if}
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=""&gt;
+&lt;div class="text" title="{list x.artists as art}${art.name}{if art_index&lt;x.artists.length-1}/{/if}{/list}"&gt;
+${getArtistName(x.artists, '', '/', false, true, true)}
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+{/list}
+&lt;/tbody&gt;
+&lt;/table&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-song-top50-list" style="display:none;">&lt;table class="m-table m-table-1 m-table-4"&gt;
+&lt;tbody&gt;
+{list beg..end as y}
+{var x=xlist[y]}
+&lt;tr id="${x.id|seed}" class="{if y%2==0}even{/if} {if disable(x)}js-dis{/if}"&gt;
+&lt;td class="w1"&gt;
+&lt;div class="hd"&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}"&gt;&nbsp;&lt;/span&gt;
+&lt;span class="num"&gt;${y+1}&lt;/span&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=""&gt;
+&lt;div class="f-cb"&gt;
+&lt;div class="tt"&gt;
+&lt;div class="ttc"&gt;
+&lt;span class="txt"&gt;
+{var alia=songAlia(x)}
+&lt;a href="/song?id=${x.id}"&gt;&lt;b title="${x.name|escape}{if alia} - (${alia|escape}){/if}"&gt;${soil(x.name)}&lt;/b&gt;&lt;/a&gt;{if alia}&lt;span title="${alia|escape}" class="s-fc8"&gt; - (${soil(alia)})&lt;/span&gt;{/if}
+{if x.mvid&gt;0}
+&lt;span data-res-id="${x.id}" data-res-action="mv" title="播放mv" class="mv"&gt;MV&lt;/span&gt;
+{/if}
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="w2-1 s-fc3"&gt;
+&lt;span class="u-dur {if canDel}candel{/if}"&gt;${dur2time(x.duration/1000)}{if x.ftype==2}&lt;i title="歌曲来自第三方网站" class="migu u-icn2 u-icn2-14"&gt;&lt;/i&gt;{/if}&lt;/span&gt;
+&lt;div class="opt hshow"&gt;
+&lt;a class="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表" hidefocus="true"
+data-res-type="18"
+data-res-id="${x.id}"
+data-res-action="addto"
+{if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if}&gt;&lt;/a&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="fav" class="icn icn-fav" title="收藏"&gt;&lt;/span&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="share" data-res-name="${x.name}" data-res-author="{list x.artists as art}${art.name}{if art_index&lt;x.artists.length-1}/{/if}{/list}" {if x.album}data-res-pic="${x.album.picUrl}"{/if} class="icn icn-share" title="分享"&gt;分享&lt;/span&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="download" class="icn icn-dl" title="下载"&gt;&lt;/span&gt;
+{if canDel}
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="delete" class="icn icn-del" title="删除"&gt;删除&lt;/span&gt;
+{/if}
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="w4"&gt;
+&lt;div class="text"&gt;
+{if x.album}
+{var transName = x.album.tns &amp;&amp; x.album.tns.length &gt; 0 ? x.album.tns[0] : ''}
+&lt;a href="/album?id=${x.album.id}" title="${x.album.name|escape}{if transName} - (${transName|escape}){/if}"&gt;${soil(x.album.name)}&lt;/a&gt;
+{if transName}
+&lt;span title="${transName|escape}" class="s-fc8"&gt; - (${transName|escape})&lt;/span&gt;
+{/if}
+{/if}
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+{/list}
+&lt;/tbody&gt;
+&lt;/table&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-song-rank-list" style="display:none;">&lt;table class="m-table m-table-rank"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th class="first w1"&gt;&lt;/th&gt;
+&lt;th&gt;&lt;div class="wp"&gt;标题&lt;/div&gt;&lt;/th&gt;
+&lt;th class="w2-1"&gt;&lt;div class="wp"&gt;时长&lt;/div&gt;&lt;/th&gt;
+&lt;th class="w3"&gt;&lt;div class="wp"&gt;歌手&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+{list beg..end as y}
+{var x=xlist[y]}
+&lt;tr id="${x.id|seed}" class="{if y%2==0}even{/if} {if disable(x)}js-dis{/if}"&gt;
+{if y&lt;3}
+&lt;td&gt;
+&lt;div class="hd"&gt;
+&lt;span class="num"&gt;${y+1}&lt;/span&gt;
+&lt;div class="rk "&gt;
+{if x.lastRank&gt;=0}
+{if y-x.lastRank&gt;0}
+&lt;span class="ico u-icn u-icn-74 s-fc10"&gt;${y-x.lastRank}&lt;/span&gt;
+{elseif y-x.lastRank==0}
+&lt;span class="ico u-icn u-icn-72 s-fc4"&gt;0&lt;/span&gt;
+{else}
+&lt;span class="ico u-icn u-icn-73 s-fc9"&gt;${x.lastRank-y}&lt;/span&gt;
+{/if}
+{else}
+&lt;span class="u-icn u-icn-75"&gt;&lt;/span&gt;
+{/if}
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="rank"&gt;
+&lt;div class="f-cb"&gt;
+&lt;div class="tt"&gt;
+&lt;a href="/song?id=${x.id}"&gt;{if x.album}&lt;img class="rpic" src="${x.album.picUrl}?param=50y50&amp;quality=100"&gt;{/if}&lt;/a&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}"&gt;&nbsp;&lt;/span&gt;
+&lt;div class="ttc"&gt;
+&lt;span class="txt"&gt;
+{var alia=songAlia(x)}
+&lt;a href="/song?id=${x.id}"&gt;&lt;b title="${x.name|escape}{if alia} - (${alia|escape}){/if}"&gt;${soil(x.name)}&lt;/b&gt;&lt;/a&gt;{if alia}&lt;span title="${alia|escape}" class="s-fc8"&gt; - (${soil(alia)})&lt;/span&gt;{/if}
+{if x.mvid&gt;0}
+&lt;span data-res-id="${x.id}" data-res-action="mv" title="播放mv" class="mv"&gt;MV&lt;/span&gt;
+{/if}
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+{else}
+&lt;td&gt;
+&lt;div class="hd"&gt;
+&lt;span class="num"&gt;${y+1}&lt;/span&gt;
+&lt;div class="rk "&gt;
+{if x.lastRank&gt;=0}
+{if y-x.lastRank&gt;0}
+&lt;span class="ico u-icn u-icn-74 s-fc10"&gt;${y-x.lastRank}&lt;/span&gt;
+{elseif y-x.lastRank==0}
+&lt;span class="ico u-icn u-icn-72 s-fc4"&gt;0&lt;/span&gt;
+{else}
+&lt;span class="ico u-icn u-icn-73 s-fc9"&gt;${x.lastRank-y}&lt;/span&gt;
+{/if}
+{else}
+&lt;span class="u-icn u-icn-75"&gt;&lt;/span&gt;
+{/if}
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=""&gt;
+&lt;div class="f-cb"&gt;
+&lt;div class="tt"&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}"&gt;&nbsp;&lt;/span&gt;
+&lt;div class="ttc"&gt;
+&lt;span class="txt"&gt;
+{var alia=songAlia(x)}
+&lt;a href="/song?id=${x.id}"&gt;&lt;b title="${x.name|escape}{if alia} - (${alia|escape}){/if}"&gt;${soil(x.name)}&lt;/b&gt;&lt;/a&gt;{if alia}&lt;span title="${alia|escape}" class="s-fc8"&gt; - (${soil(alia)})&lt;/span&gt;{/if}
+{if x.mvid&gt;0}
+&lt;span data-res-id="${x.id}" data-res-action="mv" title="播放mv" class="mv"&gt;MV&lt;/span&gt;
+{/if}
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+{/if}
+&lt;td class=" s-fc3"&gt;
+&lt;span class="u-dur {if canDel}candel{/if}"&gt;${dur2time(x.duration/1000)}{if x.ftype==2}&lt;i title="歌曲来自第三方网站" class="migu u-icn2 u-icn2-14"&gt;&lt;/i&gt;{/if}&lt;/span&gt;
+&lt;div class="opt hshow"&gt;
+&lt;a class="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表" hidefocus="true"
+data-res-type="18"
+data-res-id="${x.id}"
+data-res-action="addto"
+{if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if}&gt;&lt;/a&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="fav" class="icn icn-fav" title="收藏"&gt;&lt;/span&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="share" data-res-name="${x.name}" data-res-author="{list x.artists as art}${art.name}{if art_index&lt;x.artists.length-1}/{/if}{/list}" {if x.album}data-res-pic="${x.album.picUrl}"{/if} class="icn icn-share" title="分享"&gt;分享&lt;/span&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="download" class="icn icn-dl" title="下载"&gt;&lt;/span&gt;
+{if canDel}
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="delete" class="icn icn-del" title="删除"&gt;删除&lt;/span&gt;
+{/if}
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=""&gt;
+&lt;div class="text" title="{list x.artists as art}${art.name}{if art_index&lt;x.artists.length-1}/{/if}{/list}"&gt;
+${getArtistName(x.artists, '', '', false, false, true)}
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+{/list}
+&lt;/tbody&gt;
+&lt;/table&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-song-pgm-list" style="display:none;">&lt;table class="m-table m-table-prog"&gt;
+&lt;tbody id="song-list"&gt;
+{list beg..end as y}
+{var x=xlist[y]}
+&lt;tr id="${x.id|seed}" class="{if y%2!=0}even{/if} {if disable(x)}js-dis{/if}"&gt;
+&lt;td class="first col1"&gt;
+&lt;div class="hd"&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}"&gt;&nbsp;&lt;/span&gt;
+&lt;span class="num"&gt;${y+1}&lt;/span&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="col2"&gt;
+&lt;div class="f-cb"&gt;
+&lt;div class="tt"&gt;
+&lt;div class="ttc"&gt;
+&lt;span class="txt"&gt;
+{var alia=songAlia(x)}
+&lt;a href="/song?id=${x.id}"&gt;&lt;b title="${x.name|escape}{if alia} - (${alia|escape}){/if}"&gt;${soil(x.name)}&lt;/b&gt;&lt;/a&gt;{if alia}&lt;span title="${alia|escape}" class="s-fc8"&gt; - (${soil(alia)})&lt;/span&gt;{/if}
+{if x.mvid&gt;0}
+&lt;span data-res-id="${x.id}" data-res-action="mv" title="播放mv" class="mv"&gt;MV&lt;/span&gt;
+{/if}
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="col3 s-fc3"&gt;
+&lt;span class="u-dur {if canDel}candel{/if}"&gt;${dur2time(x.duration/1000)}{if x.ftype==2}&lt;i title="歌曲来自第三方网站" class="migu u-icn2 u-icn2-14"&gt;&lt;/i&gt;{/if}&lt;/span&gt;
+&lt;div class="opt hshow"&gt;
+&lt;a class="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表" hidefocus="true"
+data-res-type="18"
+data-res-id="${x.id}"
+data-res-action="addto"
+{if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if}&gt;&lt;/a&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="fav" class="icn icn-fav" title="收藏"&gt;&lt;/span&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="share" data-res-name="${x.name}" data-res-author="{list x.artists as art}${art.name}{if art_index&lt;x.artists.length-1}/{/if}{/list}" {if x.album}data-res-pic="${x.album.picUrl}"{/if} class="icn icn-share" title="分享"&gt;分享&lt;/span&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="download" class="icn icn-dl" title="下载"&gt;&lt;/span&gt;
+{if canDel}
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="delete" class="icn icn-del" title="删除"&gt;删除&lt;/span&gt;
+{/if}
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="col4"&gt;
+&lt;div class="text" title="{list x.artists as art}${art.name}{if art_index&lt;x.artists.length-1}/{/if}{/list}"&gt;
+${getArtistName(x.artists, '', '', false, false, true)}
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="col5"&gt;
+&lt;div class="text"&gt;
+{if x.album}
+&lt;a href="/album?id=${x.album.id}" title="${x.album.name|escape}"&gt;${soil(x.album.name)}&lt;/a&gt;
+{/if}
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+{/list}
+&lt;/tbody&gt;
+&lt;/table&gt;
+</textarea>
+<textarea name="jst" id="m-wgt-song-listen" style="display:none;"> &lt;ul&gt;
+{list beg..end as y}
+{var x=xlist[y]}
+{if extData&amp;&amp;extData.limit&amp;&amp;y&gt;=extData.limit}
+{break}
+{/if}
+{var from=getFrom()}
+&lt;li id="${x.id|seed}" {if y%2 !=0 }class='even'{/if}&gt;
+&lt;div class="hd "&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}"&gt;&nbsp;&lt;/span&gt;
+&lt;span class="num"&gt;${y+1}.&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="song"&gt;
+&lt;div class="tt"&gt;
+&lt;div class="ttc"&gt;
+&lt;span class="txt"&gt;&lt;a href="/song?id=${x.id}"&gt;&lt;b title="${x.name}"&gt;${x.name}&lt;/b&gt;&lt;/a&gt;
+&lt;span class='ar s-fc8'&gt; &lt;em&gt;-&lt;/em&gt;
+${getArtistName(x.artists, 's-fc8')}
+&lt;/span&gt;
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="opt"&gt;
+&lt;a class="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表" hidefocus="true" data-res-type="18" data-res-id="${x.id}" data-res-action="addto" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if}&gt;&lt;/a&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="subscribe" class="icn icn-fav" title="收藏"&gt;&lt;/span&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="share" data-res-name="${x.name}" data-res-author="{list x.artists as art}${art.name}{if art_index&lt;x.artists.length-1}/{/if}{/list}" class="icn icn-share" title="分享"&gt;分享&lt;/span&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="download" class="icn icn-dl" title="下载"&gt;下载&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="tops"&gt;
+&lt;span class="bg" style='width:${x.score*100/x.max}%;'&gt;&lt;/span&gt;
+{if extData.showCount&amp;&amp;x.playCount}&lt;span class="times f-ff2"&gt;${x.playCount}次&lt;/span&gt;{/if}
+&lt;/div&gt;
+&lt;/li&gt;
+{/list}
+&lt;/ul&gt;
+{if extData&amp;&amp;extData.limit&amp;&amp;xlist.length&gt;extData.limit}
+&lt;div class="more"&gt;
+&lt;a href="/user/songs/rank?id=${hostId}" &gt;查看更多&gt;&lt;/a&gt;
+&lt;/div&gt;
+{/if}
+</textarea>
+<textarea name="jst" id="m-wgt-purchased-song-list" style="display:none;"> {list beg..end as y}
+{var x=xlist[y]}
+&lt;tr id="${x.id|seed}" class="{if y%2==1}even{/if} {if disable(x)}js-dis{/if}"&gt;
+&lt;td class="left"&gt;
+&lt;div class="hd {if type=='rank'}rank{/if}"&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}"&gt;&nbsp;&lt;/span&gt;
+&lt;span class="num"&gt;${y+1}&lt;/span&gt;
+{if type=='rank'}
+&lt;div class="rk rk-1"&gt;
+{if x.lastRank&gt;=0}
+{if y-x.lastRank&gt;0}
+&lt;span class="ico u-icn u-icn-74 s-fc10"&gt;${y-x.lastRank}&lt;/span&gt;
+{elseif y-x.lastRank==0}
+&lt;span class="ico u-icn u-icn-72 s-fc4"&gt;0&lt;/span&gt;
+{else}
+&lt;span class="ico u-icn u-icn-73 s-fc9"&gt;${x.lastRank-y}&lt;/span&gt;
+{/if}
+{else}
+&lt;span class="u-icn u-icn-75"&gt;&lt;/span&gt;
+{/if}
+&lt;/div&gt;
+{/if}
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="u-hasopt"&gt;
+&lt;div class="f-cb"&gt;
+&lt;div class="tt"&gt;
+&lt;div class="ttc"&gt;
+&lt;span class="txt"&gt;
+{var alia=songAlia(x)}
+&lt;a href="/song?id=${x.id}"&gt;&lt;b title="${x.name|escape}{if alia} - (${alia|escape}){/if}"&gt;${soil(x.name)}&lt;/b&gt;&lt;/a&gt;{if alia}&lt;span title="${alia|escape}" class="s-fc8"&gt; - (${soil(alia)})&lt;/span&gt;{/if}
+{if x.mvid&gt;0}
+&lt;span data-res-id="${x.id}" data-res-action="mv" title="播放mv" class="mv"&gt;MV&lt;/span&gt;
+{/if}
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="opt hshow"&gt;
+&lt;a class="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表" hidefocus="true"
+data-res-type="18"
+data-res-id="${x.id}"
+data-res-action="addto"
+{if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if}&gt;&lt;/a&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="fav" class="icn icn-fav" title="收藏"&gt;&lt;/span&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="share" data-res-name="${x.name}" data-res-author="{list x.artists as art}${art.name}{if art_index&lt;x.artists.length-1}/{/if}{/list}" {if x.album}data-res-pic="${x.album.picUrl}"{/if} class="icn icn-share" title="分享"&gt;分享&lt;/span&gt;
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="download" class="icn icn-dl" title="下载"&gt;&lt;/span&gt;
+{if canDel}
+&lt;span data-res-id="${x.id}" data-res-type="18" data-res-action="delete" class="icn icn-del" title="删除"&gt;删除&lt;/span&gt;
+{/if}
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=""&gt;
+&lt;div class="text" title="{list x.artists as art}${art.name}{if art_index&lt;x.artists.length-1}/{/if}{/list}"&gt;
+${getArtistName(x.artists, '', '', false, false, true)}
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class=""&gt;
+&lt;div class="text"&gt;
+{if x.album}
+&lt;a href="/album?id=${x.album.id}" title="${x.album.name|escape}"&gt;${soil(x.album.name)}&lt;/a&gt;
+{/if}
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="s-fc3"&gt;${formatTime(x.paidTime)}&lt;/td&gt;
+&lt;/tr&gt;
+{/list}
+</textarea>
+<textarea name="ntp" id="m-msg-private-send" style="display:none;">&lt;div class="lyct lyct-1 f-cb"&gt;
+&lt;div class="m-lyshare m-plshare"&gt;
+&lt;div class="u-err j-flag" style="display: none;"&gt;最多选择10位好友&lt;/div&gt;
+&lt;div class="item item-1 f-cb"&gt;
+&lt;label&gt;发 给：&lt;/label&gt;
+&lt;div class="ct f-pr j-flag"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="item f-cb"&gt;
+&lt;label&gt;内 容：&lt;/label&gt;
+&lt;div class="ct j-flag"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+</div>
+<script type="text/javascript">
+</script>
+<script src="//s3.music.126.net/web/s/core_71c05e84b926c7c235ba399e0228c0cb.js?71c05e84b926c7c235ba399e0228c0cb" type="text/javascript"></script><iframe frameborder="0" id="auto-id-39TnTiODh7IfFS32" style="display: none;" src="about:blank"></iframe><script type="text/javascript" src="https://acstatic-dun.126.net/tool.min.js"></script><script src="//s3.music.126.net/web/s/pt_artist_index_d5c8a79dbf07a67f14f774a5fdabd697.js?d5c8a79dbf07a67f14f774a5fdabd697" type="text/javascript"></script>
+<script defer="defer" src="//img3.126.net/kaola/dsp1f/js/ntes-ad-cloud.min.js?v=1.0"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-38766552-1'],['_setLocalGifPath', '/UA-38766552-1/__utm.gif'],['_setLocalRemoteServerMode']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script');
+ga.type = 'text/javascript';
+ga.async = true;
+ga.src = '//wr.da.netease.com/ga.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();//fix ipad下的一个bug
+if (navigator.userAgent.indexOf('iPad') != -1) {
+iframeHeight = Math.max(
+Math.max(document.body.scrollHeight, document.documentElement.scrollHeight),
+Math.max(document.body.offsetHeight, document.documentElement.offsetHeight),
+Math.max(document.body.clientHeight, document.documentElement.clientHeight)
+);
+top.document.body.style.height = iframeHeight + 20 + 'px';
+}</script>
+</body></html>
