@@ -14,6 +14,7 @@ import hashlib
 import urlparse
 from gcpy_utils.upyun import *
 from gcpy_utils.spider_utils.async_image_push import image_push
+import pymysql
 
 class AfSpider(RedisCrawlSpider):
     name = 'af'
@@ -209,20 +210,6 @@ class AfSpider(RedisCrawlSpider):
         turn_off = ""
         if u'商品已下架' in response.text:
             turn_off = "off"
-        # goods_data = {
-        #     'source_url': response.url,
-        #     'title': title ,
-        #     'price': price ,
-        #     'offer_num': offer_num ,
-        #     'com_name': com_name ,
-        #     'com_url': com_url ,
-        #     'attrs_kv': attrs_kv ,
-        #     'thumb_1': thumb_1 ,
-        #     'thumb_2': thumb_2 ,
-        #     'thumb': thumb ,
-        #     'min_price': min_price ,
-        #     'max_price': max_price ,
-        # }
 
         goods_data = {
             'source_url' : response.url ,
@@ -293,46 +280,16 @@ class AfSpider(RedisCrawlSpider):
 
         if goods_data["thumb"]:
             try:
-                # hl = hashlib.md5()
-                # hl.update(goods_data["thumb"].encode(encoding='utf-8'))
-                # src_md5 = hl.hexdigest()  # md5加密的文件名
-                # # 取出图片后缀
-                # b = goods_data["thumb"].split(".")
-                # tail = b[-1]
-                # full_name = src_md5 + "." + tail
-                # new_src = urlparse.urljoin(response.url, goods_data["thumb"])
-                # pic_byte = self.get_pic_byte(new_src , 10)
-                # goods_data["thumb"] = self.my_up_upyun("/" + full_name, pic_byte , 10)
                 goods_data["thumb"] = image_push(response.url , goods_data["thumb"])
             except:
                 pass
         if goods_data["thumb_1"]:
             try:
-                # hl = hashlib.md5()
-                # hl.update(goods_data["thumb_1"].encode(encoding='utf-8'))
-                # src_md5 = hl.hexdigest()  # md5加密的文件名
-                # # 取出图片后缀
-                # b = goods_data["thumb_1"].split(".")
-                # tail = b[-1]
-                # full_name = src_md5 + "." + tail
-                # new_src = urlparse.urljoin(response.url, goods_data["thumb_1"])
-                # pic_byte = self.get_pic_byte(new_src , 10)
-                # goods_data["thumb_1"] = self.my_up_upyun("/" + full_name, pic_byte , 10)
                 goods_data["thumb_1"] = image_push(response.url, goods_data["thumb_1"])
             except:
                 pass
         if goods_data["thumb_2"]:
             try:
-                # hl = hashlib.md5()
-                # hl.update(goods_data["thumb_2"].encode(encoding='utf-8'))
-                # src_md5 = hl.hexdigest()  # md5加密的文件名
-                # # 取出图片后缀
-                # b = goods_data["thumb_2"].split(".")
-                # tail = b[-1]
-                # full_name = src_md5 + "." + tail
-                # new_src = urlparse.urljoin(response.url, goods_data["thumb_2"])
-                # pic_byte = self.get_pic_byte(new_src , 10)
-                # goods_data["thumb_2"] = self.my_up_upyun("/" + full_name, pic_byte , 10)
                 goods_data["thumb_2"] = image_push(response.url, goods_data["thumb_2"])
             except:
                 pass
@@ -491,20 +448,6 @@ class AfSpider(RedisCrawlSpider):
                                 src = src.split('?')[0]
                         except:
                             pass
-                        # # hl = hashlib.md5()
-                        # # hl.update(src.encode(encoding='utf-8'))
-                        # # src_md5 = hl.hexdigest()  # md5加密的文件名
-                        # # # 取出图片后缀
-                        # # b = src.split(".")
-                        # # tail = b[-1]
-                        # # full_name = src_md5 + "." + tail
-                        # # pic_byte = ""
-                        # # new_src = src
-                        # # pic_byte = self.get_pic_byte(new_src, 10)
-                        # # if not pic_byte:
-                        # #     i.remove()
-                        # #     continue
-                        # upyun_pic = self.my_up_upyun("/" + full_name, pic_byte, 10)
                         upyun_pic = image_push(response.url, src)
                         i.attr('src', upyun_pic)
                 except:
@@ -557,20 +500,6 @@ class AfSpider(RedisCrawlSpider):
                             src = src.replace('"' , '').replace('\\' , '')
                     except:
                         pass
-                    # hl = hashlib.md5()
-                    # hl.update(src.encode(encoding='utf-8'))
-                    # src_md5 = hl.hexdigest()  # md5加密的文件名
-                    # # 取出图片后缀
-                    # b = src.split(".")
-                    # tail = b[-1]
-                    # full_name = src_md5 + "." + tail
-                    # pic_byte = ""
-                    # new_src = src
-                    # pic_byte = self.get_pic_byte(new_src, 10)
-                    # if not pic_byte:
-                    #     i.remove()
-                    #     continue
-                    # upyun_pic = self.my_up_upyun("/" + full_name, pic_byte, 10)
                     upyun_pic = image_push(response.url, src)
                     i.attr('src', upyun_pic)
             except:
@@ -679,19 +608,34 @@ class AfSpider(RedisCrawlSpider):
                 com_data["comname_short"] = com_data["comname"]
             except:
                 pass
-        test_com_url = 'http://spiderhub.gongchang.com/write_to_online/data_show_onerow?secret=gc7232275&dataset=1688_company&hkey=' + \
-                       com_data["source_url"]
-        response = requests.get(test_com_url)
-        # print(response.text)
-        response = json.loads(response.text)
-        # False则该企业未被爬取，True则该企业已被爬取
-        print(com_data["source_url"], response["status"])
-        if response["status"] != True:
+        test_com_url = com_data["source_url"]
+        conn = pymysql.connect(
+            host='192.168.14.90',
+            port=3306,
+            user='root',
+            passwd='123456',
+            db='1688',
+            charset='utf8'
+        )
+        cursor = conn.cursor()
+        cursor.execute("select * from com_url where url = '{}'".format(test_com_url))
+        conn.commit()
+        result = cursor.fetchone()
+        if not result:
+            try:
+                cursor.execute("insert into com_url (url) values ('{}')".format(test_com_url))
+                conn.commit()
+            except:
+                pass
+            cursor.close()
+            conn.close()
             Item = AliFenbuItem()
             Item["goods_data"] = goods_data
             Item["com_data"] = com_data
             yield Item
         else:
+            cursor.close()
+            conn.close()
             Item = AliFenbuItem()
             Item["goods_data"] = goods_data
             Item["com_data"] = ""
