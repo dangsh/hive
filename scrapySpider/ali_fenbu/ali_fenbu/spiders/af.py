@@ -8,10 +8,6 @@ import re
 import pyquery
 from pymongo import MongoClient
 import requests
-import urllib2
-import urllib
-import hashlib
-import urlparse
 from gcpy_utils.upyun import *
 from gcpy_utils.spider_utils.async_image_push import image_push
 import pymysql
@@ -19,27 +15,6 @@ import pymysql
 class AfSpider(RedisCrawlSpider):
     name = 'af'
     redis_key = 'ali_url'
-
-    def my_up_upyun(self , name, byte, retry_time):
-        upyun_pic = ''
-        for j in range(retry_time):
-            try:
-                upyun_pic = up_to_upyun(name, byte)
-                break
-            except Exception as e:
-                print "exception:", str(e)
-
-        return upyun_pic
-
-    def get_pic_byte(self , src, retry_time):
-        pic_byte = ''
-        for k in range(retry_time):
-            try:
-                pic_byte = urllib2.urlopen(src).read()
-                break
-            except:
-                print "download exception:" , str(e)
-        return pic_byte
 
     def parse(self, response):
         title = ""
@@ -121,10 +96,20 @@ class AfSpider(RedisCrawlSpider):
             com_name = response.xpath('//div[@class="company-name"]/a/text()').extract()[0]
         except:
             pass
+        if not com_name:
+            try:
+                com_name = response.xpath('//a[@class="name"]/text()').extract()[0]
+            except:
+                pass
         try:
             com_url = response.xpath('//div[@class="company-name"]/a/@href').extract()[0]
         except:
             pass
+        if not com_url:
+            try:
+                com_url = response.xpath('//a[@class="name"]/@href').extract()[0]
+            except:
+                pass
         attr_key = []
         attr_value = []
         try:
@@ -248,10 +233,10 @@ class AfSpider(RedisCrawlSpider):
             'fax': fax ,
             'wechat': wechat ,
         }
-        new_url = com_url.replace("companyinfo.htm" , "contactinfo.htm")
-        if not turn_off=="off":
+        if not turn_off:
+            new_url = com_url.replace("companyinfo.htm" , "contactinfo.htm")
             try:
-                yield scrapy.Request(url=new_url , meta={"goods_data": goods_data , "detail_url":detail_url} , callback=self.parse2)
+                yield scrapy.Request(url=new_url , meta={"goods_data": goods_data , "detail_url":detail_url} , callback=self.parse2 , dont_filter=True)
             except:
                 pass
 
@@ -426,7 +411,7 @@ class AfSpider(RedisCrawlSpider):
 
         if detail_url:
             try:
-                yield scrapy.Request(url=detail_url , meta={"goods_data": goods_data , "com_data" : com_data} , callback=self.parse3)
+                yield scrapy.Request(url=detail_url , meta={"goods_data": goods_data , "com_data" : com_data} , callback=self.parse3 , dont_filter=True)
             except:
                 pass
         else:
@@ -464,7 +449,7 @@ class AfSpider(RedisCrawlSpider):
                 if 'alicdn' in goods_data["detail"]:
                     goods_data["detail"] = ''
             try:
-                yield scrapy.Request(url=goods_data["com_url"] , meta={"goods_data": goods_data , "com_data" : com_data} , callback=self.parse_company)
+                yield scrapy.Request(url=goods_data["com_url"] , meta={"goods_data": goods_data , "com_data" : com_data} , callback=self.parse_company , dont_filter=True)
             except:
                 pass
 
@@ -521,7 +506,7 @@ class AfSpider(RedisCrawlSpider):
                 pass
             goods_data["detail"] = doc.outer_html()
         try:
-            yield scrapy.Request(url=goods_data["com_url"], meta={"goods_data": goods_data , "com_data":com_data},callback=self.parse_company)
+            yield scrapy.Request(url=goods_data["com_url"], meta={"goods_data": goods_data , "com_data":com_data},callback=self.parse_company , dont_filter=True)
         except:
             pass
 
