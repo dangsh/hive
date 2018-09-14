@@ -393,7 +393,7 @@ class HgfSpider(RedisCrawlSpider):
         # 取出企业的关键词
         reg = 'http://(.*?).b2b.hc360.com'
         com_word = re.findall(reg, com_url)[0]
-        print("start test com")
+        print(" ")
         test_com_url = 'http://' + com_word + '.wx.hc360.com/shop/show.html'
         conn = pymysql.connect(
             host='192.168.14.90',
@@ -410,11 +410,10 @@ class HgfSpider(RedisCrawlSpider):
         if not result:
             # 企业没有爬过
             try:
-                cursor.execute("insert into com_url (url) values ('{}')".format(test_com_url))
+                cursor.execute("in sert into com_tmp (url) v  alues ('{}')".format(test_com_url))
                 conn.commit()
             except:
                 pass
-
             cursor.close()
             conn.close()
             # 爬取该企业的信息,并将企业信息放入Item 的 com_data中，与goods_data 一起交给mongoPipe处理
