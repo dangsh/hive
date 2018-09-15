@@ -2,7 +2,7 @@
 from scrapy.conf import settings
 from pymongo import MongoClient
 from gcpy_utils.spider_utils import  sync_dataflow_push
-
+from gcpy_utils.spider_utils import  async_dataflow_push
 
 class MongopipClass(object):
 
@@ -28,19 +28,37 @@ class MongopipClass(object):
         #         self.myCollection2.insert([item["com_data"]])
         #     except:
         #         pass
+
+        # if not item["com_data"]:
+        #     try:
+        #         sync_dataflow_push.dataflow_push("1688_product", item["goods_data"]["source_url"], item["goods_data"])
+        #     except:
+        #         pass
+        # else:
+        #     try:
+        #         sync_dataflow_push.dataflow_push("1688_product", item["goods_data"]["source_url"], item["goods_data"])
+        #     except:
+        #         print("update goods error2")
+        #         pass
+        #     try:
+        #         sync_dataflow_push.dataflow_push("1688_company", item["com_data"]["source_url"], item["com_data"])
+        #     except:
+        #         print("update goods error2")
+        #         pass
+
         if not item["com_data"]:
             try:
-                sync_dataflow_push.dataflow_push("1688_product", item["goods_data"]["source_url"], item["goods_data"])
+                async_dataflow_push.dataflow_push("1688_product", item["goods_data"]["source_url"], item["goods_data"])
             except:
                 pass
         else:
             try:
-                sync_dataflow_push.dataflow_push("1688_product", item["goods_data"]["source_url"], item["goods_data"])
+                async_dataflow_push.dataflow_push("1688_product", item["goods_data"]["source_url"], item["goods_data"])
             except:
                 print("update goods error2")
                 pass
             try:
-                sync_dataflow_push.dataflow_push("1688_company", item["com_data"]["source_url"], item["com_data"])
+                async_dataflow_push.dataflow_push("1688_company", item["com_data"]["source_url"], item["com_data"])
             except:
                 print("update goods error2")
                 pass
